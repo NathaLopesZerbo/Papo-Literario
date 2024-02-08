@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+
+:root{
+
+    --cor01:#F4F4F4;
+    --cor02:#FF6F61;
+    --cor03:#333333;
+    --cor04:#3498DB;
+    --cor05:#5E5CE6;
 }
-body {
-    font-family: 'Open Sans', sans-serif;
-}
+
 .container {
     display: flex;
     justify-content: center;
@@ -26,7 +29,7 @@ body {
 .content::before {
     content: "";
     position: absolute;
-    background-color: #58af9b;
+    background-color: var(--cor04);
     width: 40%;
     height: 100%;
     border-top-left-radius: 15px;
@@ -44,7 +47,7 @@ body {
     color: #fff;
 }
 .title-second {
-    color: #58af9b;
+    color: var(--cor03);
 }
 .description {
     font-size: 14px;
@@ -77,17 +80,17 @@ body {
 }
 .btn-primary:hover {
     background-color: #fff;
-    color: #58af9b;
+    color: var(--cor04);
 }
 .btn-second {
-    background-color: #58af9b;
-    border: 1px solid #58af9b;
+    background-color: var(--cor04);
+    border: 1px solid var(--cor04);
     transition: background-color .5s;
 }
 .btn-second:hover {
     background-color: #fff;
-    border: 1px solid #58af9b;
-    color: #58af9b;
+    border: 1px solid var(--cor04);
+    color: var(--cor04);
 }
 .first-content {
     display: flex;
