@@ -1,3 +1,10 @@
-document.getElementById('open_btn').addEventListener('click', function () {
-    document.getElementById('sidebar').classList.toggle('open-sidebar');
-});
+$(document).ready(function(){
+    $('.menu-btn').click(function(){
+        $('.sidebar').addClass('active');
+        $('.menu-btn').css("visibility", 'visible');
+    });
+    $('.close-btn').click(function(){
+        $('.sidebar').removeClass('active');
+        $('.menu-btn').css("visibility", 'visible');
+    })
+})
