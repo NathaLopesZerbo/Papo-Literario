@@ -6,76 +6,65 @@
     --cor05:#5E5CE6;
 }
 
-
-header{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: var(--cor01);
+.header{
+    background-color: #c5c5c5;
 }
 
-li, a, button {
-    font-weight: 500;
-    font-size: 20px;
-    color: black;
-    text-decoration: none;
-}
-
-.buscar{
+.menu{
     display: flex;
-    align-items: center;
     justify-content: center;
-    border: 1px solid rgba(0, 0, 0, 0.363);
-    border-radius: 50px;
-    width: 350px;
-    height: 45px;
-    padding: 10px;
+    align-items: center;
 }
 
-.input-buscar input{
-    font-size: 20px;
+.sidebar{
+    margin-right: 20px;
 }
 
-.buscar .input-lupa i{
-    font-size: 18px;
-}
-
-.buscar .input-buscar input{
-    border: 0;
-    outline: 0;
-}
-
-.logo{
+.sidebar span i{
+    font-size: 35px;
     cursor: pointer;
 }
 
-.nav-links{
-    list-style: none;
+.nav{
+    height: 110px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.nav-links li{
-    display: inline-block;
-    padding: 0px 20px;
+.nav-list{
+    display: flex;
+    gap: 32px;
 }
 
-.nav-links li a{
-    transition: all 0.3s ease 0s;
+.nav-list li a i{
+    margin-right: 4px;
 }
 
-.nav-links li a:hover{
-    color: #FF6F61;
-}
-
-.nav-links li a i{
+.nav-list a{ 
     font-size: 20px;
-    padding-right: 6px;
+    color: black;
+}
+/* Menu de Navegação */
+
+
+.buscar-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 15px;
+    width: 380px;
+    height: 45px;
 }
 
-
-
-
-
-
-
-
+.buscar-box .input-buscar input{
+    background-color: transparent;
+    color: black;
+    border: 0;
+    outline: 0;
+    font-size: 18px;
+}
+/* Barra de Pesquisa */
 
