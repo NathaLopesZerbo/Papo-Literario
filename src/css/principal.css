@@ -7,7 +7,7 @@
 }
 
 .header{
-    background-color: #c5c5c5;
+    background-color: #c5c5c5; /* Mudar a cor */
 }
 
 .logo img{
@@ -64,7 +64,7 @@
 }
 
 .sidebar{
-    background-color: #cecccc;
+    background-color: #cecccc; /* Mudar a cor */
     width: 360px;
     left: -500px;
     height: 100vh;
@@ -78,6 +78,16 @@
 .sidebar.active{
     left: 0;
 }
+/* Overlay -> Fundo ao clicar na Sidebar */
+.cor{ 
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,0.14609593837535018) 0%, rgba(0,0,0,0.5690651260504201) 0%);
+} 
 
 .menu-btn{
     font-size: 35px;
@@ -109,11 +119,58 @@
     height: 80pt;
 }
 
+.sidebar .menu-sidebar{
+    width: 100%;
+    margin-top: 50px;
+}
 
+.sidebar .menu-sidebar .item{
+    position: relative;
+    cursor: pointer;
+}
 
+.sidebar .menu-sidebar .item a{
+    color: black;
+    font-size: 18px;
+    display: block;
+    padding: 5px 30px;
+    line-height: 60px;
+    transition: 0.6s ease;
+}
 
+.sidebar .menu-sidebar .item a:hover{
+    background-color: #333333; /*Mudar a cor*/
+}
 
+.sidebar .menu-sidebar .item i{
+    margin-right: 15px;
+}
 
+.sidebar .menu-sidebar .item a .dropdown{
+    position: absolute;
+    right: 0;
+    margin: 20px;
+    transition: 0.3s ease;
+}
 
+.sidebar .menu-sidebar .item .sub-menu{
+    background-color: aqua; /* Mudar a cor */
+    display: none;
+}
+
+.sidebar .menu-sidebar .item .sub-menu a{
+    padding-left: 60px;
+}
+
+.rotate{
+    transform: rotate(90deg);
+}
+
+.meio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+}
 
 
