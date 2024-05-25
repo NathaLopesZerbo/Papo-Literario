@@ -4,6 +4,10 @@
     --cor03:#333333;
     --cor04:#3498DB;
     --cor05:#5E5CE6;
+    --cor06:#95B8D1;
+}
+body{
+    background-color: #f5f5f586;
 }
 
 .header{
@@ -171,7 +175,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 160px;
+    gap: 130px;
     height: 36px;
     box-shadow: 5px 10px 7px 0px rgba(0, 0, 0, 0.041);
     width: 75%;
@@ -187,9 +191,92 @@
     margin-right: 9px;
 }
 
-.meio{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-shadow: 1px 3px 6px rgba(0, 0, 0, 0.281);
+.chat-balao{
+    background-color: #CCCCCC;
+    padding: 0px 10px 0px 10px;
+    border-radius: 25px;
+    text-align: center;
 }
+
+/* Sub-Cabeçalho */
+
+
+
+.site{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.site-content{
+    flex-grow: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: start;
+    width: 100%;
+    height: 100%;
+    /* background-color: var(--cor06); */
+    background: rgb(149,184,209);
+    background: linear-gradient(180deg, rgba(149,184,209,1) 0%, rgba(26,71,137,0.7511379551820728) 100%);
+    padding: 20px;
+}
+
+.coluna-social{
+    text-align: center;
+    padding: 20px;
+}
+
+.coluna-social h2{
+   margin-bottom: 10px;
+}
+
+.redes-sociais{
+    font-size: 35px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+.redes-sociais a{
+    color: white;
+}
+
+.coluna{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.item-coluna{
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.item-coluna a{
+    color: white;
+}
+
+.item-coluna:hover{
+    text-decoration: underline;
+    color: white;
+}
+
