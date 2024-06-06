@@ -180,6 +180,7 @@ body{
     box-shadow: 5px 10px 7px 0px rgba(0, 0, 0, 0.041);
     width: 75%;
     margin: auto;
+    position: relative;
 }
 
 .sub-cabecalho .item-cabecalho a{
@@ -191,6 +192,22 @@ body{
     margin-right: 9px;
 }
 
+.sub-item::after{
+    content: "";
+    position: absolute;
+    background-color: #333333;
+    height: 3px;
+    width: 0;
+    right: 0;
+    left: 0;
+    bottom: 1px;
+    transition: ease;
+}
+
+.sub-item::after{
+    width: 10%;
+} 
+
 .chat-balao{
     background-color: #CCCCCC;
     padding: 0px 10px 0px 10px;
@@ -199,8 +216,6 @@ body{
 }
 
 /* Sub-Cabeçalho */
-
-
 
 main.site{
     height: 100vh;
