@@ -68,21 +68,6 @@ body{
     align-items: center;
 }
 
-.sidebar{
-    background-color: var(--cor01); /* Mudar a cor #cecccc*/
-    width: 360px;
-    left: -500px;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    overflow-y: auto;
-    transition: 0.6s ease-out;
-    transition-property: left;
-}
-
-.sidebar.active{
-    left: 0;
-}
 /* Overlay -> Fundo ao clicar na Sidebar */
 .cor{ 
     width: 100%;
@@ -92,7 +77,25 @@ body{
     position: absolute;
     background: rgb(0,0,0);
     background: linear-gradient(90deg, rgba(0,0,0,0.14609593837535018) 0%, rgba(0,0,0,0.5690651260504201) 0%);
+    z-index: 1;
 } 
+
+.sidebar{
+    background-color: var(--cor01); /* Mudar a cor #cecccc*/
+    width: 390px;
+    left: -500px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    overflow-y: auto;
+    transition: 0.6s ease-out;
+    transition-property: left;
+    z-index: 2;
+}
+
+.sidebar.active{
+    left: 0;
+}
 
 .menu-btn{
     font-size: 35px;
@@ -117,16 +120,16 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
 .logo-sidebar img{
-    height: 80pt;
+    height: 90pt;
 }
 
 .sidebar .menu-sidebar{
     width: 100%;
-    margin-top: 50px;
+    
 }
 
 .sidebar .menu-sidebar .item{
@@ -136,16 +139,16 @@ body{
 
 .sidebar .menu-sidebar .item a{
     color: black;
-    font-size: 18px;
+    font-size: 22px;
     display: block;
     padding: 5px 30px;
     line-height: 60px;
     transition: 0.6s ease;
 }
 
-.sidebar .menu-sidebar .item a:hover{
-    background-color: #333333; /*Mudar a cor*/
-}
+/* .sidebar .menu-sidebar .item a:hover{
+    color: ; /*Mudar a cor*/
+/* } */
 
 .sidebar .menu-sidebar .item i{
     margin-right: 15px;
@@ -165,6 +168,19 @@ body{
 
 .sidebar .menu-sidebar .item .sub-menu a{
     padding-left: 60px;
+    font-size: 16px;
+}
+
+.sidebar .menu-sidebar .separacao{
+    height: 2px;
+    width: 75%;
+    margin: auto;
+    margin-top: 20px;   
+    background-color: #CCCCCC;
+}
+
+.sidebar .menu-sidebar .destaque a {
+    color: #5E5CE6;
 }
 
 .rotate{
@@ -192,21 +208,6 @@ body{
     margin-right: 9px;
 }
 
-.sub-item::after{
-    content: "";
-    position: absolute;
-    background-color: #333333;
-    height: 3px;
-    width: 0;
-    right: 0;
-    left: 0;
-    bottom: 1px;
-    transition: ease;
-}
-
-.sub-item::after{
-    width: 10%;
-} 
 
 .chat-balao{
     background-color: #CCCCCC;
@@ -214,12 +215,46 @@ body{
     border-radius: 25px;
     text-align: center;
 }
-
 /* Sub-Cabeçalho */
+
+
 
 main.site{
     height: 100vh;
 }
+
+.tudo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.elemento{
+    display: flex;
+    flex-direction: column;
+    height: 210px;
+    width: 300px;
+    border-radius: 20px;
+    margin-right: 20px;
+    background-color: #BDAE76;
+}
+
+.imagem{
+    height: 100%;
+    border-radius: 20px 20px 0px 0px;
+    background: no-repeat url("../img/mais-procurados.jpg");
+}
+
+.titulo-elemento{
+    border-radius: 0px 0px 20px 20px;
+    background-color: #3498DB;
+    text-align: center;
+    padding: 8px;
+}
+
+
+
 
 
 
