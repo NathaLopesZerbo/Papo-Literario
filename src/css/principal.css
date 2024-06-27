@@ -223,6 +223,7 @@ main.site{
     height: 100vh;
 }
 
+
 .tudo{
     display: flex;
     justify-content: center;
@@ -231,27 +232,35 @@ main.site{
 }
 
 .elemento{
-    display: flex;
-    flex-direction: column;
-    height: 210px;
-    width: 300px;
     border-radius: 20px;
+    width: 360px;
     margin-right: 20px;
-    background-color: #BDAE76;
+}
+
+.imagem img{
+    height: 100%;
+    width: 100%;
+    transition: 0.2s ease-in-out;
 }
 
 .imagem{
-    height: 100%;
     border-radius: 20px 20px 0px 0px;
-    background: no-repeat url("../img/mais-procurados.jpg");
+    overflow: hidden;
 }
 
-.titulo-elemento{
+.elemento:hover .imagem>img{
+    transform: scale(1.01);
+}
+
+ .titulo-elemento{
     border-radius: 0px 0px 20px 20px;
-    background-color: #3498DB;
+    background-color: #BDAE76;
     text-align: center;
     padding: 8px;
-}
+    font-size: 15px;
+    color: white;
+    text-transform: uppercase;
+} 
 
 
 
