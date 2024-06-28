@@ -224,7 +224,7 @@ main.site{
 }
 
 
-.tudo{
+.recomendados1, .recomendados2, .recomendados3{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -233,33 +233,73 @@ main.site{
 
 .elemento{
     border-radius: 20px;
-    width: 360px;
+    width: 280px;
     margin-right: 20px;
 }
 
-.imagem img{
+ .imagem img{
     height: 100%;
     width: 100%;
     transition: 0.2s ease-in-out;
 }
 
-.imagem{
+.recomendados1 .imagem{
     border-radius: 20px 20px 0px 0px;
     overflow: hidden;
+    background-color: #BDAE76;
+    z-index: 1;
+}
+
+.recomendados2 .imagem{
+    border-radius: 20px 20px 0px 0px;
+    overflow: hidden;
+    background-color: #57758C;
+    z-index: 1;
+}
+
+.recomendados3 .imagem{
+    border-radius: 20px 20px 0px 0px;
+    overflow: hidden;
+    background-color: #695740;
+    z-index: 1;
 }
 
 .elemento:hover .imagem>img{
-    transform: scale(1.01);
+    transform: scale(1.007);
 }
 
- .titulo-elemento{
+
+.recomendados1 .titulo-elemento{
     border-radius: 0px 0px 20px 20px;
     background-color: #BDAE76;
     text-align: center;
-    padding: 8px;
+    padding: 4px 0px 9px 5px;
     font-size: 15px;
     color: white;
     text-transform: uppercase;
+    z-index: 0;
+} 
+
+.recomendados2 .titulo-elemento{
+    border-radius: 0px 0px 20px 20px;
+    background-color: #57758C;
+    text-align: center;
+    padding: 4px 0px 9px 5px;
+    font-size: 15px;
+    color: white;
+    text-transform: uppercase;
+    z-index: 0;
+}
+
+.recomendados3 .titulo-elemento{
+    border-radius: 0px 0px 20px 20px;
+    background-color: #695740;
+    text-align: center;
+    padding: 4px 0px 9px 5px;
+    font-size: 15px;
+    color: white;
+    text-transform: uppercase;
+    z-index: 0;
 } 
 
 
