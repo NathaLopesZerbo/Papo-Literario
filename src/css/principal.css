@@ -233,14 +233,19 @@ main.site{
 
 .elemento{
     border-radius: 20px;
-    width: 280px;
-    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    height: 200px;
+    width: 305px;
+    cursor: pointer;
 }
 
  .imagem img{
     height: 100%;
     width: 100%;
-    transition: 0.2s ease-in-out;
+    object-fit: cover;
+    transition: 0.3s ease;
 }
 
 .recomendados1 .imagem{
@@ -262,10 +267,10 @@ main.site{
     overflow: hidden;
     background-color: #695740;
     z-index: 1;
-}
+} 
 
 .elemento:hover .imagem>img{
-    transform: scale(1.007);
+    transform: scale(1.006);
 }
 
 
