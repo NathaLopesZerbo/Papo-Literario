@@ -1,5 +1,4 @@
 
-// Abrir menu Sidebar
 $(document).ready(function(){
     $('.menu-btn').click(function(){
         $('.sidebar').addClass('active');
@@ -12,7 +11,6 @@ $(document).ready(function(){
 })
 
 
-// Dropdown dentro do Sidebar
 $(document).ready(function(){
     $('.sub-btn').click(function(){
     $(this).next('.sub-menu').slideToggle();
