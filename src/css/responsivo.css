@@ -81,8 +81,7 @@
     }
     
     .nav-list li span i{
-        font-size: 24px;
-        
+        font-size: 24px; 
     }
 
     .buscar-box{
@@ -103,12 +102,53 @@
     .logo img{
         display: none;
     }
+
+    .logo-sidebar img{
+        height: 75pt;
+    }
+
+    .cabecalho-sidebar{
+        margin-top: 20px;
+    }
+
+    .sidebar{
+        width: 280px;
+    }
+
+    .sidebar .menu-sidebar .item a{
+        font-size: 18px;
+    }
+
+    .sidebar .menu-sidebar .item .sub-menu a{
+        padding-left: 60px;
+        font-size: 14px;
+    }
+
     .nav{
-        padding-top: 10px;
+        padding: 10px 5px 0px 5px;
         height: 60px;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
+    }
+
+    .nav-list li span i{
+        font-size: 20px; 
+    }
+    .menu-btn{
+        font-size: 22px;
+        margin-right: 2px;
+    }
+
+    .buscar-box{
+        padding: 2px;
+        width: 180px;
+        height: 34px;
+        justify-content: space-evenly;
+    }
+
+    .buscar-box .input-buscar input{
+        font-size: 12px;
     }
 
     .footer{

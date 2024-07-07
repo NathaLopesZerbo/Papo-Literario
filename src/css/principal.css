@@ -96,6 +96,7 @@ body{
     z-index: 98;
 }
 
+
 .sidebar.active{
     left: 0;
 }
@@ -132,7 +133,6 @@ body{
 
 .sidebar .menu-sidebar{
     width: 100%;
-    
 }
 
 .sidebar .menu-sidebar .item{
@@ -164,9 +164,9 @@ body{
     transition: 0.3s ease;
 }
 
+
 .sidebar .menu-sidebar .item .sub-menu{
     background-color: aqua; /* Mudar a cor */
-    display: none;
 }
 
 .sidebar .menu-sidebar .item .sub-menu a{
