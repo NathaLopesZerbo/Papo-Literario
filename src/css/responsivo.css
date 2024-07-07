@@ -1,0 +1,96 @@
+@media(max-width: 1484px){
+    .sub-cabecalho{
+        gap: 100px;
+    }
+    .sub-cabecalho .item-cabecalho a{
+        font-size: 16px;
+    }
+
+}
+
+@media(max-width: 1321px){
+    .sub-cabecalho{
+        width: 80%;
+        gap: 80px;
+    }
+    .sub-cabecalho .item-cabecalho a{
+        font-size: 16px;
+    }
+}
+
+@media(max-width: 1074px){
+    .sub-cabecalho{
+        gap: 60px;
+    }
+    .sub-cabecalho .item-cabecalho a{
+        font-size: 16px;
+    }
+    .nav-list li a{
+       font-size: 18px;
+    }
+}
+
+@media(max-width: 1024px){
+    .sub-cabecalho{
+        visibility: hidden;
+    }
+
+    .nav-list li a{
+        visibility: hidden;
+        display: none;
+    }
+    .nav-list li span i{
+        font-size: 27px;
+    }
+
+    .buscar-box{
+        padding: 10px;
+        width: 250px;
+        height: 45px;
+        justify-content: space-evenly;
+        margin-right: 10px;
+    }
+
+    .buscar-box .input-buscar input{
+        font-size: 16px;
+    }
+}
+
+@media(max-width: 700px){
+
+    .logo img{
+        height: 50pt;
+    }
+    
+    .nav-list li span i{
+        font-size: 23px;
+    }
+
+    .buscar-box{
+        padding: 1px;
+        width: 200px;
+        height: 45px;
+        justify-content: space-evenly;
+        margin-right: 10px;
+    }
+
+    .buscar-box .input-buscar input{
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 544px){
+    .logo img{
+        visibility: hidden;
+    }
+
+    
+
+    .nav{
+        height: 80px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+}

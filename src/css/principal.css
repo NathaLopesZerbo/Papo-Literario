@@ -31,14 +31,16 @@ body{
     gap: 32px;
 }
 
-.nav-list li a i{
-    margin-right: 4px;
+.nav-list li span i{
+    font-size: 20px;
+    margin-right: 3px;
 }
 
-.nav-list a{ 
+.nav-list li a{ 
     font-size: 20px;
     color: black;
 }
+
 /* Menu de Navegação */
 
 
@@ -196,7 +198,6 @@ body{
     box-shadow: 5px 10px 7px 0px rgba(0, 0, 0, 0.041);
     width: 75%;
     margin: auto;
-    position: relative;
 }
 
 .sub-cabecalho .item-cabecalho a{
@@ -210,7 +211,7 @@ body{
 
 
 .chat-balao{
-    background-color: #CCCCCC;
+    background-color: #CCCCCC; 
     padding: 0px 10px 0px 10px;
     border-radius: 25px;
     text-align: center;
