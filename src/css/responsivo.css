@@ -6,6 +6,10 @@
         font-size: 16px;
     }
 
+    .slider-wrapper{
+        margin: 0 10px 40px;
+    }
+
 }
 
 @media(max-width: 1321px){
@@ -69,6 +73,12 @@
 
 
 }
+@media(max-width: 768px){
+    .slider-wrapper{
+        margin: 0 10px 40px;
+    }
+}
+
 
 @media(max-width: 700px){
 
@@ -149,6 +159,9 @@
 
     .buscar-box .input-buscar input{
         font-size: 12px;
+    }
+    .swiper-button-prev, .swiper-button-next{
+        display: none;
     }
 
     .footer{
