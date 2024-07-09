@@ -268,7 +268,7 @@
     .swiper-button-prev, .swiper-button-next{
         display: none;
     }
-    
+
     main.site div.container div.slider-wrapper{
         margin: 0px;
     }
@@ -294,6 +294,8 @@
         grid-template-columns: minmax(120px, 2fr) 2fr;
     }
 
+
+    
    
 
 
