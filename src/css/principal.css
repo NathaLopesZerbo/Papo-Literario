@@ -232,7 +232,7 @@ main.site{
 
 main.site div.container div.slider-wrapper{
     overflow: hidden;
-    max-width: 1100px;
+    max-width: 1000px;
     margin: 0 70px 9px;
 }
 
@@ -252,7 +252,7 @@ main.site div.container div.slider-wrapper{
 .card-list .card-item .user-image{
     border-radius: 12px 12px 0px 0px;
     padding-bottom: 5px;
-    width: 260px;
+    width: 230px;
     object-fit: cover;
     background-position: center;
 }
@@ -260,9 +260,9 @@ main.site div.container div.slider-wrapper{
 .card-list .card-item img.user-image:hover{
     transform: scale(1.003);
 }
-
 .titulo-card, .titulo-card2, .titulo-card3{
-    width: 260px;
+    width: 230px;
+    font-size: 15px;
 }
 
 .titulo-card{
@@ -275,7 +275,6 @@ main.site div.container div.slider-wrapper{
 }
 
 .titulo-card2{
-    width: 260px;
     position: absolute;
     bottom: 0;
     text-align: center;
@@ -285,7 +284,6 @@ main.site div.container div.slider-wrapper{
 }
 
 .titulo-card3{
-    width: 260px;
     position: absolute;
     bottom: 0;
     text-align: center;
@@ -296,7 +294,7 @@ main.site div.container div.slider-wrapper{
 
 .button-prev{
     position: absolute;
-    right: 217px;
+    right: 320px;
     top: 110px;
 }
 
@@ -311,11 +309,11 @@ main.site div.container div.slider-wrapper{
     padding-left: 10px;
     text-transform: uppercase;
     margin-bottom: 20px;
+    font-size: 22px;
 }
 
 .container{
     margin-top: 20px;
-
 }
 
 
@@ -334,18 +332,19 @@ main.site div.container div.slider-wrapper{
     background-color: #33333375;
 }
 
-
 .carrossel{
     width: 75%;
     height: 280px;
     margin-top: 20px;
     cursor: pointer;
+    box-shadow: 5px 10px 7px 0px rgba(0, 0, 0, 0.068);
 }
 
-.carrossel1 img{
+.carrossel img{
    width: 100%;
    height: 280px;
    object-fit: cover;
+   background-position: center;
 }
 
 .swiper-button-prev, .swiper-button-next{
