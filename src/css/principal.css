@@ -343,15 +343,15 @@ main.site div.container div.slider-wrapper{
 }
 
 .carrossel1{
-    background: url('/src/img/img-carrossel/carrossel1.jpg');
+    background-image: url('/src/img/img-carrossel/carrossel1.jpg');
 }
 
 .carrossel2{
-    background: url('/src/img/img-carrossel/carrossel2.jpg');
+    background-image: url('/src/img/img-carrossel/carrossel2.jpg');
 }
 
 .carrossel3{
-    background: url('/src/img/img-carrossel/carrossel3.jpg');
+    background-image: url('/src/img/img-carrossel/carrossel3.jpg');
 }
 
 .swiper-button-prev, .swiper-button-next{

@@ -1,12 +1,12 @@
 @media(max-width: 1598px){
     .carrossel1{
-        background: url('/src/img/img-carrossel/carrossel1-1187px.jpg');
+        background-image: url('/src/img/img-carrossel/carrossel1-1187px.jpg');
     }   
     .carrossel2{
-        background: url('/src/img/img-carrossel/carrossel2-1187px.jpg');
+        background-image: url('/src/img/img-carrossel/carrossel2-1187px.jpg');
     }  
     .carrossel3{
-        background: url('/src/img/img-carrossel/carrossel3-1187px.jpg');
+        background-image: url('/src/img/img-carrossel/carrossel3-1187px.jpg');
     }  
 
     .button-next, .button-prev{
@@ -51,13 +51,13 @@
 
 @media(max-width: 1360px){
     .carrossel1{
-        background: url('/src/img/img-carrossel/carrossel1-1004px.jpg');
+        background-image: url('/src/img/img-carrossel/carrossel1-1004px.jpg');
     }   
     .carrossel2{
-        background: url('/src/img/img-carrossel/carrossel2-1004px.jpg');
+        background-image: url('/src/img/img-carrossel/carrossel2-1004px.jpg');
     }  
     .carrossel3{
-        background: url('/src/img/img-carrossel/carrossel3-1004px.jpg');
+        background-image: url('/src/img/img-carrossel/carrossel3-1004px.jpg');
     }  
 
     main.site div.container div.slider-wrapper{
@@ -68,13 +68,13 @@
 
 @media(max-width: 1170px){
     .carrossel1{
-        background: url('/src/img/img-carrossel/carrossel1-896px.jpg');
+        background-image: url('/src/img/img-carrossel/carrossel1-896px.jpg');
     }   
     .carrossel2{
-        background: url('/src/img/img-carrossel/carrossel2-896px.jpg');
+        background-image: url('/src/img/img-carrossel/carrossel2-896px.jpg');
     }  
     .carrossel3{
-        background: url('/src/img/img-carrossel/carrossel3-896px.jpg');
+        background-image: url('/src/img/img-carrossel/carrossel3-896px.jpg');
     }  
 
     .card-list .card-item .user-image{
@@ -154,13 +154,13 @@
     }
 
     .carrossel1{
-        background: url('/src/img/img-carrossel/carrossel1-200px.jpg');
+        background-image: url('/src/img/img-carrossel/carrossel1-200px.jpg');
     }   
     .carrossel2{
-        background: url('/src/img/img-carrossel/carrossel2-200px.jpg');
+        background-image: url('/src/img/img-carrossel/carrossel2-200px.jpg');
     }  
     .carrossel3{
-        background: url('/src/img/img-carrossel/carrossel3-200px.jpg');
+        background-image: url('/src/img/img-carrossel/carrossel3-200px.jpg');
     }  
 
 
@@ -275,13 +275,13 @@
     }
         
     .carrossel1{
-        background: url('/src/img/img-carrossel/carrossel1-160px.jpg');
+        background-image: url('/src/img/img-carrossel/carrossel1-160px.jpg');
     }   
     .carrossel2{
-        background: url('/src/img/img-carrossel/carrossel2-160px.jpg');
+        background-image: url('/src/img/img-carrossel/carrossel2-160px.jpg');
     }  
     .carrossel3{
-        background: url('/src/img/img-carrossel/carrossel3-160px.jpg');
+        background-image: url('/src/img/img-carrossel/carrossel3-160px.jpg');
     }  
 
     main.site div.container div.slider-wrapper{
