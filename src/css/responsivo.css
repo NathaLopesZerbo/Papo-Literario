@@ -124,17 +124,6 @@
         height: 200px;
     }
 
-    .carrossel1{
-        background-image: url('/src/img/img-carrossel/carrossel1-200px.jpg');
-    }   
-    .carrossel2{
-        background-image: url('/src/img/img-carrossel/carrossel2-200px.jpg');
-    }  
-    .carrossel3{
-        background-image: url('/src/img/img-carrossel/carrossel3-200px.jpg');
-    }  
-
-
 }
 @media(max-width: 768px){
     main.site div.container div.slider-wrapper{
@@ -240,20 +229,6 @@
         display: grid;
         grid-template-columns: minmax(120px, 2fr) 2fr;
     }
-
-    .carrossel{
-        height: 160px;
-    }
-        
-    .carrossel1{
-        background-image: url('/src/img/img-carrossel/carrossel1-160px.jpg');
-    }   
-    .carrossel2{
-        background-image: url('/src/img/img-carrossel/carrossel2-160px.jpg');
-    }  
-    .carrossel3{
-        background-image: url('/src/img/img-carrossel/carrossel3-160px.jpg');
-    }  
 
     main.site div.container div.slider-wrapper{
         margin: 0 ;
