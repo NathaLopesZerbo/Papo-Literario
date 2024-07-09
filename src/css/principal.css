@@ -342,17 +342,13 @@ main.site div.container div.slider-wrapper{
     cursor: pointer;
 }
 
-.carrossel1{
-    background-image: url('/src/img/img-carrossel/carrossel1.jpg');
+.carrossel1 img{
+   width: 100%;
+   height: 280px;
+   object-fit: cover;
 }
 
-.carrossel2{
-    background-image: url('/src/img/img-carrossel/carrossel2.jpg');
-}
 
-.carrossel3{
-    background-image: url('/src/img/img-carrossel/carrossel3.jpg');
-}
 
 .swiper-button-prev, .swiper-button-next{
     color: #CCCCCC;
