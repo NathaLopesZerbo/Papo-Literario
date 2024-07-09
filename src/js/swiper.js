@@ -1,7 +1,7 @@
-const swiper = new Swiper('.slider-wrapper', {
+const swiper = new Swiper('.slider-wrapper1', {
     loop: false,
     grabCursor: true,
-    spaceBetween: true,
+    spaceBetween: false,
 
     navigation: {
       nextEl: '.button-prev',
@@ -19,4 +19,14 @@ const swiper = new Swiper('.slider-wrapper', {
          slidesPerView:4
        },
     }
+  });
+
+  const swiperCarrossel = new Swiper('.carrossel', {
+    loop: true,
+
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
   });

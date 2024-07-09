@@ -1,3 +1,16 @@
+@media(max-width: 1598px){
+    .carrossel{
+        width: 80%;
+        height: 200px;
+    }
+    .carrossel1{
+        background: url('/src/img/carrossel1-pq.jpg');
+    }
+
+    
+}
+
+
 @media(max-width: 1484px){
     .sub-cabecalho{
         gap: 100px;
@@ -9,6 +22,8 @@
     .slider-wrapper{
         margin: 0 10px 40px;
     }
+
+   
 
 }
 
