@@ -131,6 +131,24 @@ body{
     height: 90pt;
 }
 
+.item img{
+    width: 20px;
+    object-fit: contain;
+    background-position: center;
+    margin-right: 5px;
+}
+
+.sub-btn i{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.conta {
+    font-size: 18px;
+    margin-right: 5px;
+}
+
 .no-scroll {
     overflow: hidden;
 }
@@ -147,7 +165,8 @@ body{
 .sidebar .menu-sidebar .item a{
     color: black;
     font-size: 22px;
-    display: block;
+    display: flex;
+    flex-direction: row;
     padding: 5px 30px;
     line-height: 60px;
     transition: 0.1s ease;
@@ -157,9 +176,6 @@ body{
     color: ; /*Mudar a cor*/
 /* } */
 
-.sidebar .menu-sidebar .item i{
-    margin-right: 15px;
-}
 
 .sidebar .menu-sidebar .item a .dropdown{
     position: absolute;
@@ -190,6 +206,7 @@ body{
 .sidebar .menu-sidebar .destaque a {
     color: #5E5CE6;
 }
+
 
 .rotate{
     transform: rotate(90deg);
@@ -232,8 +249,8 @@ main.site{
 
 main.site div.container div.slider-wrapper{
     overflow: hidden;
-    max-width: 1000px;
-    margin: 0 70px 9px;
+    max-width: 1100px;
+    margin: 0px 70px 0px 30px;
 }
 
 
@@ -292,7 +309,28 @@ main.site div.container div.slider-wrapper{
     background-color: #695740;
 }
 
-.button-prev{
+.cards{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.titulo-recomendados h2{
+    display: flex;
+    margin: 15px 0px 22px 0px;
+    padding-left: 10px;
+    text-transform: uppercase;
+    font-size: 22px;
+    display: flex;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* .button-prev{
     position: absolute;
     right: 320px;
     top: 110px;
@@ -303,19 +341,7 @@ main.site div.container div.slider-wrapper{
     top: 110px;
     position: absolute;
     font-size: 20px;
-}
-
-.titulo-recomendados{
-    padding-left: 10px;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    font-size: 22px;
-}
-
-.container{
-    margin-top: 20px;
-}
-
+} */
 
 .button-next, .button-prev{
     font-size: 12px;

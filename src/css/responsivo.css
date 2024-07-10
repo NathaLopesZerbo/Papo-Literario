@@ -145,18 +145,15 @@
         width: 200px;
     }
 
-    main.site div.container div.slider-wrapper{
-        max-width: 1300px;
-        margin: 0 10px 9px;
+    main.site div.container{
+        max-width: 1600px;
+        margin-left: 30px;
     }
 
 }
 
 @media(max-width: 782px){
-    main.site div.container div.slider-wrapper{
-        max-width: 1200px;
-        margin: 0 10px 9px;
-    }
+    
 
     .card-list .card-item .user-image{
         width: 180px;
@@ -267,10 +264,6 @@
     }
     .swiper-button-prev, .swiper-button-next{
         display: none;
-    }
-
-    main.site div.container div.slider-wrapper{
-        margin: 0px;
     }
 
     .carrossel img{

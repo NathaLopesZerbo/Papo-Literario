@@ -1,7 +1,7 @@
 const swiper = new Swiper('.slider-wrapper', {
     loop: false,
     grabCursor: true,
-    spaceBetween: false,
+    spaceBetween: 10,
 
     navigation: {
       nextEl: '.button-prev',
@@ -10,7 +10,7 @@ const swiper = new Swiper('.slider-wrapper', {
 
     breakpoints: {
        0: {
-         slidesPerView:1
+         slidesPerView:1,
        },
        768: {
          slidesPerView:3
