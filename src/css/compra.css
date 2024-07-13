@@ -1,0 +1,248 @@
+
+.card-compra{
+    gap: 50px;
+    max-width: 75%;
+    margin: 0 auto;
+    display: flex;
+    margin-top: 90px;
+}
+
+.cor-card-compra{
+    display: flex;
+    gap: 10px;
+    background-color: #D6D6D6;
+    border-radius: 7px;
+    padding: 30px;
+}
+
+.separar{
+    width: 1px;
+    background-color: #0000001f;
+}
+
+.olhar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-livros{
+    height: 80px;
+    width: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+}
+
+.img{
+    background-color: gray;
+    width: 100px;
+    height: 80px;
+}
+
+.social{
+    display: flex;
+    gap: 80px;
+    margin-bottom: 3px;
+}
+
+.social a{
+    text-decoration: underline;
+}
+
+.avaliacao-compra{
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.informacoes{
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.informacoes-livro{
+    text-align: justify;
+    padding: 10px;
+    line-height: 1.6;
+}
+
+.titulo-compra{
+    text-align: center;
+}
+
+.autor{
+    text-indent: 1.5em;
+    margin-top: 6px;
+}
+
+.mais-informacoes a{
+    margin-left: 10px;
+    text-decoration: underline;
+}
+
+.mais-informacoes i{
+    margin-left: 2px;
+    font-size: 12px;
+}
+
+.fabricante{
+    margin-top: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.fabricante img{
+    width: 28px;
+}
+
+
+.paginas, .idioma, .editora{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+.card-comprar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 25%;
+    background-color: #D6D6D6;
+    padding: 20px;
+    gap: 20px;
+}
+
+
+.card-comprar img{
+    width: 20px;
+}
+
+
+.preco-comprar h1{
+    font-size: 50px;
+    text-align: center;
+}
+
+.pagar-cartao{
+    display: flex;
+    gap: 3px;
+    align-items: center;
+}
+
+.pagamentos{
+    text-decoration: underline;
+}
+
+.calcular-frete{
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.calcular-frete img{
+    width: 40px;
+}
+
+.button-frete, .input-frete{
+    border: 0;
+    outline: 0;
+}
+
+.inserir-frete{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-evenly;
+}
+
+.input-frete{
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+    background-color: #E3E6E6;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 30px;
+}
+
+.button-frete{
+    background-color: #205FBB;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    width: 60px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.compra, .botoes-abaixo{
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.compra{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: #205FBB;
+    font-size: 24px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.compra, .carrinho, .chat{
+    background: rgb(90,158,212);
+    background: linear-gradient(180deg, rgba(90,158,212,1) 0%, rgba(46,91,153,1) 35%);
+    cursor: pointer;
+}
+
+.compra img{
+    width: 26px;
+}
+
+
+.carrinho, .chat{
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.botoes-abaixo{
+    gap: 10px;
+}
+
+.carrinho{
+    font-size: 24px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.chat{
+    font-size: 24px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+
+
+
+
+
+
