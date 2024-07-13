@@ -378,7 +378,6 @@ main.site div.container div.slider-wrapper{
 }
 
 .livros{
-    padding-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -386,33 +385,33 @@ main.site div.container div.slider-wrapper{
 }
 
 .card-livro{
+    margin-top: 50px;
+    margin-bottom: 20px;
     background-color: #E6E5E5;
     display: flex;
     flex-direction: column;
     justify-content: center;
     border-radius: 8px;
-    width: 290px;
-    height: 540px;
-    padding: 10px;
+    width: 230px;
+    height: 385px;
     transition: 0.2s ease-in-out;
     cursor: pointer;
 }
 
-.card-livro:hover{
+/* .card-livro:hover{
     transform: scale(1.003);
     box-shadow: 5px 5px 7px 0px rgba(0, 0, 0, 0.041);
-}
+} */
 
 .img-livro{
-    margin-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .img-livro img{
-    width: 200px;
-    height: 300px;
+    width: 140px;
+    height: 210px;
     object-fit: cover;
     background-position: center;
 }
@@ -425,39 +424,48 @@ main.site div.container div.slider-wrapper{
     margin-top: 5px;
     margin-bottom: 15px;
 }
+.capa{
+    font-size: 12px;
+}
 
 .titulo-livro{
+    font-size: 18px;
     margin-top: 2px;
     margin-bottom: 4px;
 }
 
-.avaliacao{
-    display: flex;
-    margin-left: 20px;
-    margin-bottom: 12px;
+.autor-livro{
+    font-size: 12px;
 }
 
-.titulo-avaliacao{
+ .avaliacao{
+    display: flex;
+    align-items: center;
+    font-size: 12px;
     margin-left: 20px;
+    margin-bottom: 12px;
+} 
+
+.titulo-avaliacao{
+    font-size: 10px;
+    margin-left: 10px;
 }
 
 .capa{
     margin-left: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
     
 .comprar{
-    margin-top: 200px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 0px;
     padding: 10px 20px 0px 20px;
 }
 
 .preco{
-    font-size: 25px;
+    font-size: 16px;
 }
 
 .icones-card-livro{
@@ -469,14 +477,6 @@ main.site div.container div.slider-wrapper{
     margin-right: 10px;
     cursor: pointer;
 }
-
-
-
-
-
-
-
-
 
 .footer{
     display: flex;
@@ -537,3 +537,5 @@ main.site div.container div.slider-wrapper{
     text-decoration: underline;
     color: white;
 }
+
+

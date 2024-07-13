@@ -2,10 +2,225 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=], initial-scale=1.0">
-    <title>Compra</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" class="favicon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/principal.css">
+    <link rel="stylesheet" href="../css/compra.css">
+    <link rel="stylesheet" href="../css/responsivo.css">
+    <title>Graça Transformadora - Luciano Subira</title>
 </head>
 <body>
+
+    <header class="header">
+        <nav class="nav">
+            <div class="menu">
+                <div class="menu-btn" id="menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="overlay"></div>
+
+                <div class="sidebar" id="sidebar">
+                    <div class="close-btn">
+                        <span><i class="fa-solid fa-xmark"></i></span>
+                    </div>
+                    <div class="cabecalho-sidebar">
+                        <div class="logo-sidebar">
+                            <a href=""><img src="../img/logo.png" alt="logo"></a>
+                         </div>
+                    </div>
+                    <div class="menu-sidebar">
+                     <div class="item">
+                        <a class="sub-btn">
+                             <img src="../img/icons/icone-categoria.png" alt="icone-categoria">
+                            Categorias
+                            <i class="fa-solid fa-angle-right dropdown"></i></a>
+                        <div class="sub-menu">
+                            <a href="#" class="sub-item">Sub Item 01</a>
+                            <a href="#" class="sub-item">Sub Item 02</a>
+                            <a href="#" class="sub-item">Sub Item 03</a>
+                        </div>
+                    </div>   
+                        
+                    <div class="item">
+                        <a class="sub-btn">
+                            <img src="../img/icons/icone-autores.png" alt="icone-autores">
+                            Autores
+                            <i class="fa-solid fa-angle-right dropdown"></i>
+                        </a>
+                        <div class="sub-menu">
+                            <a href="#" class="sub-item">Sub Item 01</a>
+                            <a href="#" class="sub-item">Sub Item 02</a>
+                            <a href="#" class="sub-item">Sub Item 03</a>
+                        </div>
+                    </div>
+
+                        <div class="item">
+                            <a href="#">
+                            <img src="../img/icons/icone-vendidos.png" alt="icone-vendidos">
+                            Mais Vendidos
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="#">
+                                <img src="../img/icons/icone-recomendados.png" alt="icone-recomendados">
+                                Recomendados
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="#">
+                                <img src="../img/icons/icone-bate-papo.png" alt="icone-bate-papo">
+                                Bate-Papo
+                            </a>
+                        </div>
+                        <div class="separacao"></div>
+                        <div class="item">
+                            <a href="#">
+                                <img src="../img/icons/icone-suporte.png" alt="icone-suporte">
+                                Suporte
+                            </a>
+                        </div>
+
+                        <div class="item destaque">
+                            <a class="sub-btn">
+                                <i class="fa-solid fa-user-plus conta"></i>
+                                Minha Conta
+                                <i class="fa-solid fa-angle-right dropdown"></i></a>
+                            <div class="sub-menu">
+                                <a href="#" class="sub-item">Sub Item 01</a>
+                                <a href="#" class="sub-item">Sub Item 02</a>
+                                <a href="#" class="sub-item">Sub Item 03</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="logo">
+                    <a href="../../index.html">
+                        <img src="../img/logo.png" alt="logo">
+                    </a>
+                </div>
+            </div>
     
+            <div class="buscar-box">
+                 <div class="input-buscar">
+                    <input type="text" name="" id="" placeholder="Busque aqui o seu livro">
+                </div>
+                <div class="lupa-buscar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+
+        <ul class="nav-list">
+            <li>
+                <span><i class="fa-regular fa-heart"></i></span>
+                <a href="#">Favoritos</a>
+            </li>
+
+            <li>
+                <span><i class="fa-solid fa-cart-shopping"></i></span>
+                <a href="#">Carrinho</a>
+            </li>
+
+            <li>
+                <span><i class="fa-solid fa-user"></i></span>
+                <a href="#">Login</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+    
+    <div class="sub-cabecalho">
+        <div class="item-cabecalho">
+            <a href="#" class="sub-item">
+            <span><i class="fa-solid fa-location-dot"></i></span>Minha Região
+            </a>
+        </div>
+        <div class="item-cabecalho">
+            <a href="#" class="sub-item"><span><i class="fa-solid fa-bars"></i></span>Categorias</a>
+        </div>
+        <div class="item-cabecalho">
+            <a href="#" class="sub-item"><span><i class="fa-regular fa-bookmark"></i></span>Autores</a>
+        </div>
+        <div class="item-cabecalho">
+            <a href="#" class="sub-item"><span><i class="fa-regular fa-hand-point-up"></i></span>Recomendados</a>
+        </div>
+        <div class="item-cabecalho chat-balao">
+            <a href="#" class="sub-item"><span><i class="fa-regular fa-comments"></i></span>Chat</a>
+        </div>
+    </div>
+
+        <div class="card-compra">
+
+            <div class="olhar">
+                <div class="sociais">
+                    <button>
+                        <i class="fa-regular fa-heart coracao"></i>
+                        <a href="">Favoritar</a>
+                    </button>
+                    <button>
+                        <a href="">Compartilhar</a>
+                    </button>
+                </div>
+
+                <div class="imagem-compra">
+                    <img src="../img/graca-transformadora.png" alt="graca-transformadora">
+                </div>
+
+                <div class="avaliacao-compra">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+
+                <div class="img-livros">
+                    <div class="img1"></div>
+                    <div class="img2"></div>
+                    <div class="img3"></div>
+                    <div class="img4"></div>
+                </div>
+            </div>
+
+
+            <div class="informacoes">
+                    <h1 class="titulo-compra"> Graça Transformadora</h1>
+
+                <div class="autor-compra">
+                    <p>Luciano Subira</p>
+                </div>
+
+                <div class="informacoes-livro">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ipsum excepturi nulla esse reiciendis itaque, distinctio autem et quasi illum praesentium voluptatem deleniti soluta temporibus expedita fuga neque doloremque? Reprehenderit.
+                </div>
+
+                <div class="mais-inforamacoes">
+                    <a href="">Mais Informações</a>
+                </div>
+
+                <div class="fabricante">
+                    <div class="paginas">
+                        
+                    </div>
+                </div>
+
+             </div>
+
+        
+        </div>
+
+
+
+
+
+
+    
+
+
+<script src="../js/sidebar.js"></script>
 </body>
 </html>
