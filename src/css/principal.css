@@ -73,6 +73,7 @@ body{
 
 /* Overlay -> Fundo ao clicar na Sidebar */
 .cor{ 
+    display: none;
     width: 100%;
     height: 160vh;
     top: 0;

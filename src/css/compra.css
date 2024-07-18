@@ -271,8 +271,11 @@
     position: absolute;
     background: rgb(0,0,0);
     background: linear-gradient(90deg, rgba(0,0,0,0.14609593837535018) 0%, rgba(0,0,0,0.5690651260504201) 0%);
-    z-index: 1;
+    z-index: 98;
 } 
+
+
+
 
 .card-modal{
     z-index: 99;
