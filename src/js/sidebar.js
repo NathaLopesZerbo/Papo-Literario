@@ -19,5 +19,27 @@ $(document).ready(function(){
 });
 
 
+ const modal = document.getElementById('modal')
+ const openModal = document.getElementById('openModal')
+ const closeModal = document.getElementById('closeModal')
+ const cardCompra = document.getElementById('card-compra')
+ const overlay = document.getElementById('overlay')
+
+ 
+
+ openModal.addEventListener('click',function(){
+     modal.style.display = "flex";
+     overlay.style.display = "flex";
+     document.body.classList.add("no-scroll");
+ })
+
+
+ overlay.addEventListener('click', function(event){
+     if(event.target === overlay){
+         modal.style.display = "none";
+         overlay.style.display = "none";
+         document.body.classList.remove("no-scroll");
+     }
+ })
 
 

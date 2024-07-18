@@ -21,7 +21,7 @@
                 <div class="menu-btn" id="menu-btn">
                     <i class="fa-solid fa-bars"></i>
                 </div>
-                <div class="overlay"></div>
+                <div class="overlay cor" id="overlay"></div>
 
                 <div class="sidebar" id="sidebar">
                     <div class="close-btn">
@@ -153,7 +153,7 @@
         </div>
     </div>
 
-        <div class="card-compra">
+        <div class="card-compra" id="modalClose">
 
             <div class="cor-card-compra">
                 <div class="olhar">
@@ -222,7 +222,7 @@
                  </div>
             </div>
 
-             <div class="card-comprar">
+             <div class="card-comprar" id="card-compra">
 
                 <div class="preco-comprar">
                     <h1>R$ 69,90</h1>
@@ -233,7 +233,7 @@
                     <p>No cartão de crédito</p>
                 </div>
 
-                <div class="pagamentos">
+                <div class="pagamentos" id="openModal">
                     <p>Outras formas de pagamento</p>
                 </div>
 
@@ -244,7 +244,7 @@
 
                 <div class="inserir-frete">
                     <input type="text" placeholder="Digite seu CEP" class="input-frete">
-                    <button class="button-frete">OK</button>
+                    <button class="button-frete" id="closeModal">OK</button>
                 </div>
 
                 <div class="compra">
@@ -262,23 +262,14 @@
                         <p>Chat</p>
                         </div>
                     </div>
-            </div>
-
-
+                </div>
              </div>
 
-        </div>
+             <div class="modal" id="modal">
+                <div class="card-modal">
 
-      
-
-       
-
-
-
-
-
-
-    
+                </div>
+             </div>
 
 
 <script src="../js/sidebar.js"></script>

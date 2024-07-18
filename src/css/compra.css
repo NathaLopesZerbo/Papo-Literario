@@ -1,4 +1,13 @@
 
+:root {
+    --cor01:#F4F4F4;
+    --cor02:#FF6F61;
+    --cor03:#333333;
+    --cor04:#3498DB;
+    --cor05:#5E5CE6;
+    --cor06:#95B8D1;
+}
+
 .card-compra{
     gap: 50px;
     max-width: 75%;
@@ -139,6 +148,12 @@
 
 .pagamentos{
     text-decoration: underline;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.pagamentos:hover{
+    color: #b82114be;
 }
 
 .calcular-frete{
@@ -240,6 +255,36 @@
     border-radius: 20px;
 }
 
+.modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.cor{ 
+    display: none;
+    width: 100%;
+    height: 160vh;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,0.14609593837535018) 0%, rgba(0,0,0,0.5690651260504201) 0%);
+    z-index: 1;
+} 
+
+.card-modal{
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 30%;
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background-color: #DBDBDB;
+}
 
 
 
