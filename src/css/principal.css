@@ -213,6 +213,7 @@ body{
     transform: rotate(90deg);
 }
 
+
 .sub-cabecalho{
     display: flex;
     align-items: center;
@@ -228,6 +229,7 @@ body{
     color: black;
     font-size: 18px;
 }
+
 
 .sub-cabecalho .item-cabecalho a span i{
     margin-right: 9px;
@@ -382,8 +384,20 @@ main.site div.container div.slider-wrapper{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
 }
+
+.cards-livros{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    height: 450px;
+}
+
+ .slide-livros {
+    align-items: center;
+    justify-content: start;
+} 
+
 
 .card-livro{
     margin-top: 50px;
@@ -429,13 +443,21 @@ main.site div.container div.slider-wrapper{
 }
 
 .titulo-livro{
-    font-size: 19px;
+    font-size: 18px;
+    width: 220px;
+    text-align: center;
     margin-top: 2px;
     margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .autor-livro{
     font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
  .avaliacao{
@@ -479,6 +501,7 @@ main.site div.container div.slider-wrapper{
 }
 
 
+
 .objetivos{
     margin-top: 70px;
     display: flex;
@@ -486,6 +509,7 @@ main.site div.container div.slider-wrapper{
     justify-content: center;
     gap: 30px;
     cursor: pointer;
+    flex-wrap: wrap;
 }
 
 .objetivo-item{
