@@ -22,27 +22,29 @@
     document.body.classList.add("no-scroll");
  })
 
- 
- closeSidebar.addEventListener('click',function(){
+
+
+ closeSidebar.addEventListener('click', function(){
     sidebar.classList.remove('active')
     overlay.style.display = "none"
     document.body.classList.remove("no-scroll");
 })
 
- 
+openModal.addEventListener('click', function(){
+    modal.style.display = 'flex'
+    overlay.style.display = 'flex'
+})
 
- openModal.addEventListener('click',function(){
-     modal.style.display = "flex";
-     overlay.style.display = "flex";
-     document.body.classList.add("no-scroll");
- })
+
 
 
  overlay.addEventListener('click', function(event){
      if(event.target === overlay){
-         modal.style.display = "none";
+         modal.style.display = 'none'
+         sidebar.classList.remove('active');
          overlay.style.display = "none";
          document.body.classList.remove("no-scroll");
+         
      }
  })
 
