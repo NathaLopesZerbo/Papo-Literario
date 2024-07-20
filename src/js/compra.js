@@ -1,7 +1,6 @@
 
  const modal = document.getElementById('modal')
  const openModal = document.getElementById('openModal')
- const closeModal = document.getElementById('closeModal')
  const cardCompra = document.getElementById('card-compra')
  const overlay = document.getElementById('overlay')
  const openSidebar = document.getElementById('menu-btn')
@@ -16,13 +15,11 @@
 });
 
 
- openSidebar.addEventListener('click',function(){
+openSidebar.addEventListener('click',function(){
     sidebar.classList.add('active')
     overlay.style.display = "flex"
     document.body.classList.add("no-scroll");
  })
-
-
 
  closeSidebar.addEventListener('click', function(){
     sidebar.classList.remove('active')
@@ -30,22 +27,21 @@
     document.body.classList.remove("no-scroll");
 })
 
-openModal.addEventListener('click', function(){
+ openModal.addEventListener('click', function(){
     modal.style.display = 'flex'
     overlay.style.display = 'flex'
-})
-
-
+ })
 
 
  overlay.addEventListener('click', function(event){
-     if(event.target === overlay){
-         modal.style.display = 'none'
-         sidebar.classList.remove('active');
-         overlay.style.display = "none";
-         document.body.classList.remove("no-scroll");
-         
-     }
+    if(event.target === overlay){
+        sidebar.classList.remove('active');
+        modal.style.display = 'none'
+        overlay.style.display = "none";
+        document.body.classList.remove("no-scroll"); 
+    }
  })
+
+
 
 
