@@ -498,6 +498,21 @@ main.site div.container div.slider-wrapper{
 .coracao, .carrinho{
     margin-right: 10px;
     cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.coracao:hover{
+    border-radius: 50%;
+    padding: 3px;
+    color: white;
+    background-color: red;
+}
+
+.carrinho:hover{
+    border-radius: 50%;
+    padding: 3px;
+    color: white;
+    background-color: var(--cor04);
 }
 
 

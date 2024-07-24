@@ -218,7 +218,7 @@
     border-radius: 20px;
 }
 
-.compra, .carrinho, .chat{
+.compra, .carrinho-compra, .chat{
     background: rgb(90,158,212);
     background: linear-gradient(180deg, rgba(90,158,212,1) 0%, rgba(46,91,153,1) 35%);
     cursor: pointer;
@@ -229,7 +229,7 @@
 }
 
 
-.carrinho, .chat{
+.carrinho-compra, .chat{
     display: flex;
     gap: 3px;
     align-items: center;
@@ -241,15 +241,14 @@
     gap: 10px;
 }
 
-.carrinho{
+.carrinho-compra{
     font-size: 24px;
     width: 200px;
     padding: 10px;
     border-radius: 20px;
 }
-
-a{
-    
+.chat-a{
+    color: white;
 }
 
 .chat{
