@@ -5,6 +5,8 @@
  const overlay = document.getElementById('overlay')
  const openSidebar = document.getElementById('menu-btn')
  const sidebar = document.getElementById('sidebar')
+ const dropdown = document.getElementById('dropdown')
+ const dropdownContent = document.getElementById('dropdownContent')
  const closeSidebar = document.getElementById('close-btn')
 
  $(document).ready(function(){
@@ -13,6 +15,24 @@
     $(this).find('.dropdown').toggleClass('rotate');
     });
 });
+
+
+// let timeout;
+
+// function showDropdown() {
+//     clearTimeout(timeout);
+//     dropdownContent.style.display = 'block';
+// }
+
+// dropdown.addEventListener('mouseover', showDropdown);
+// dropdown.addEventListener('mouseout', hideDropdown);
+
+// function hideDropdown() {
+//     timeout = setTimeout(() => {
+//         dropdownContent.style.display = 'none';
+//     }, 100);
+// }
+
 
 
 openSidebar.addEventListener('click',function(){
@@ -31,6 +51,7 @@ openSidebar.addEventListener('click',function(){
  overlay.addEventListener('click', function(event){
     if(event.target === overlay){
         sidebar.classList.remove('active');
+        dropdownOpen.style.display = 'none'
         overlay.style.display = "none";
         document.body.classList.remove("no-scroll"); 
     }
