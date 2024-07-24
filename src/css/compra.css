@@ -248,6 +248,10 @@
     border-radius: 20px;
 }
 
+a{
+    
+}
+
 .chat{
     font-size: 24px;
     width: 200px;
@@ -261,6 +265,7 @@
     justify-content: center;
     display: none;
 }
+
 
 .cor{ 
     display: none;

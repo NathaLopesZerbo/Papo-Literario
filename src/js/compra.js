@@ -30,6 +30,7 @@ openSidebar.addEventListener('click',function(){
  openModal.addEventListener('click', function(){
     modal.style.display = 'flex'
     overlay.style.display = 'flex'
+    document.body.classList.add("no-scroll");
  })
 
 
