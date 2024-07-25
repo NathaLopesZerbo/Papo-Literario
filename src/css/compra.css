@@ -224,14 +224,13 @@
     cursor: pointer;
 }
 
-.compra img{
-    width: 26px;
+.compra img, .carrinho-compra img, .chat img {
+    width: 24px;
 }
-
 
 .carrinho-compra, .chat{
     display: flex;
-    gap: 3px;
+    gap: 4px;
     align-items: center;
     justify-content: center;
     margin: auto;

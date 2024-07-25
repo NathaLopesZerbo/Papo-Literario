@@ -17,21 +17,21 @@
 });
 
 
-// let timeout;
+let timeout;
 
-// function showDropdown() {
-//     clearTimeout(timeout);
-//     dropdownContent.style.display = 'block';
-// }
+function showDropdown() {
+    clearTimeout(timeout);
+    dropdownContent.style.display = 'block';
+}
 
-// dropdown.addEventListener('mouseover', showDropdown);
-// dropdown.addEventListener('mouseout', hideDropdown);
+dropdown.addEventListener('mouseover', showDropdown);
+dropdown.addEventListener('mouseout', hideDropdown);
 
-// function hideDropdown() {
-//     timeout = setTimeout(() => {
-//         dropdownContent.style.display = 'none';
-//     }, 100);
-// }
+function hideDropdown() {
+    timeout = setTimeout(() => {
+        dropdownContent.style.display = 'none';
+    }, 100);
+}
 
 
 
@@ -51,7 +51,6 @@ openSidebar.addEventListener('click',function(){
  overlay.addEventListener('click', function(event){
     if(event.target === overlay){
         sidebar.classList.remove('active');
-        dropdownOpen.style.display = 'none'
         overlay.style.display = "none";
         document.body.classList.remove("no-scroll"); 
     }

@@ -5,6 +5,10 @@
 }
 
 
+html,body{
+    scroll-behavior: smooth;
+}
+
 li{
     list-style: none;
 }
