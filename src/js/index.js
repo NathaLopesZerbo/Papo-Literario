@@ -7,7 +7,11 @@
  const sidebar = document.getElementById('sidebar')
  const dropdown = document.getElementById('dropdown')
  const dropdownContent = document.getElementById('dropdownContent')
+ const sidebarCarrinho = document.getElementById('sidebar-carrinho')
+ const closeSidebarCarrinho = document.getElementById('close-btn-carrinho')
+ const openSidebarCarrinho = document.getElementById('openSidebarCarrinho')
  const closeSidebar = document.getElementById('close-btn')
+
 
  $(document).ready(function(){
     $('.sub-btn').click(function(){
@@ -33,6 +37,20 @@ function hideDropdown() {
     }, 100);
 }
 
+openSidebarCarrinho.addEventListener('click',function(){
+    sidebarCarrinho.classList.add('active-carrinho')
+    overlay.style.display = 'flex'
+    document.body.classList.add("no-scroll");
+})
+
+
+closeSidebarCarrinho.addEventListener('click',function(){
+    sidebarCarrinho.classList.remove('active-carrinho')
+    overlay.style.display = 'none'
+    document.body.classList.remove("no-scroll");
+})
+
+
 
 
 openSidebar.addEventListener('click',function(){
@@ -51,6 +69,7 @@ openSidebar.addEventListener('click',function(){
  overlay.addEventListener('click', function(event){
     if(event.target === overlay){
         sidebar.classList.remove('active');
+        sidebarCarrinho.classList.remove('active-carrinho')
         overlay.style.display = "none";
         document.body.classList.remove("no-scroll"); 
     }

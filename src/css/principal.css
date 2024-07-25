@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
 :root {
     --cor01:#F4F4F4;
     --cor02:#FF6F61;
@@ -5,6 +9,8 @@
     --cor04:#3498DB;
     --cor05:#5E5CE6;
     --cor06:#95B8D1;
+
+    --fonte-Playfair:"Playfair Display", serif;
 }
 body{
     background-color: #f5f5f586;
@@ -85,7 +91,7 @@ body{
 } 
 
 .sidebar{
-    background-color: var(--cor01); /* Mudar a cor #cecccc*/
+    background-color: var(--cor01); /* Mudar a cor #cecccc */
     width: 390px;
     left: -500px;
     height: 100vh;
@@ -94,7 +100,7 @@ body{
     overflow-y: auto;
     transition: 0.6s ease-out;
     transition-property: left;
-    z-index: 99;
+    z-index: 99; 
 }
 
 
@@ -295,6 +301,64 @@ body{
 }
 
 
+.sidebar-carrinho{
+    background-color: var(--cor01); /* Mudar a cor #cecccc*/
+    width: 430px;
+    right: -800px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    overflow-y: auto;
+    transition: 0.6s ease-out;
+    transition-property: right;
+    z-index: 99;
+}
+
+.sidebar-carrinho.active-carrinho{
+    right: 0;
+}
+
+.cabecalho-carrinho{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80px;
+    background-color: #3498DB;
+    border-radius: 0px 0px 4px 4px;
+    box-shadow: 5px 10px 7px 0px rgba(0, 0, 0, 0.041);
+}
+
+.titulo-sidebar-carrinho{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px; 
+    font-family:var(--fonte-Playfair);
+    color: white;
+    gap: 10px;
+}
+
+.titulo-sidebar-carrinho img{
+    width: 30px;
+    object-fit: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.close-btn-carrinho{
+    color: #0000004b;
+    position: absolute;
+    right: 0;
+    margin: 15px;
+    font-size: 35px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.close-btn-carrinho:hover{
+    color: #333333;
+}
 
 
 

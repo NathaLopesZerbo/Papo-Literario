@@ -1,4 +1,7 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
 :root {
     --cor01:#F4F4F4;
     --cor02:#FF6F61;
@@ -6,6 +9,8 @@
     --cor04:#3498DB;
     --cor05:#5E5CE6;
     --cor06:#95B8D1;
+
+    --fonte-aleo:"Aleo", serif;
 }
 
 .card-compra{
@@ -79,7 +84,11 @@
 }
 
 .titulo-compra{
+    font-size: 28px;
+    font-family: var(--fonte-aleo); 
+    font-style: italic;
     text-align: center;
+    text-transform: uppercase;
 }
 
 .autor{
