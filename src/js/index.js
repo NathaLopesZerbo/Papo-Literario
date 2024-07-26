@@ -10,6 +10,7 @@
  const sidebarCarrinho = document.getElementById('sidebar-carrinho')
  const closeSidebarCarrinho = document.getElementById('close-btn-carrinho')
  const openSidebarCarrinho = document.getElementById('openSidebarCarrinho')
+ const carrinhoIcone = document.getElementById('carrinhoIcone')
  const closeSidebar = document.getElementById('close-btn')
 
 
@@ -36,6 +37,8 @@ function hideDropdown() {
         dropdownContent.style.display = 'none';
     }, 100);
 }
+
+
 
 openSidebarCarrinho.addEventListener('click',function(){
     sidebarCarrinho.classList.add('active-carrinho')
