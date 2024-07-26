@@ -51,8 +51,6 @@ closeSidebarCarrinho.addEventListener('click',function(){
 })
 
 
-
-
 openSidebar.addEventListener('click',function(){
     sidebar.classList.add('active')
     overlay.style.display = "flex"
