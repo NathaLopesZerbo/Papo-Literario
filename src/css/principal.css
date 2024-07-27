@@ -318,7 +318,7 @@ body{
 .sidebar-carrinho{
     background-color: #F4F4F4; /* Mudar a cor #cecccc*/
     width: 430px;
-    right: 00px;
+    right: -800px;
     height: 100vh;
     position: fixed;
     top: 0;
