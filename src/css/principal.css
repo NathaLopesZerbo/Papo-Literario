@@ -316,16 +316,16 @@ body{
 
 
 .sidebar-carrinho{
-    background-color: var(--cor01); /* Mudar a cor #cecccc*/
+    background-color: #F4F4F4; /* Mudar a cor #cecccc*/
     width: 430px;
-    right: -800px;
+    right: 00px;
     height: 100vh;
     position: fixed;
     top: 0;
     overflow-y: auto;
     transition: 0.6s ease-out;
     transition-property: right;
-    z-index: 99;
+    z-index: 90;
 }
 
 .sidebar-carrinho.active-carrinho{
@@ -372,6 +372,61 @@ body{
 
 .close-btn-carrinho:hover{
     color: #333333;
+}
+
+
+.item-carrinho{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 300px;
+}
+
+.img-titulo-carrinho{
+    max-height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-item-carrinho img{
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+.lixeira-valor-livro{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.remove-from-cart-btn{
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #c91212d3;
+}
+
+.valor-item-carrinho{
+    font-weight: 400;
+}
+
+.separacao-carrinho{
+    margin: 0 auto;
+    width: 78%;
+    height: 2px;
+    background-color: #CCCCCC;
+}
+
+
+.total-compra-carrinho{
+    position: absolute;
+    bottom: 0;
+    background-color: #CCCCCC;
+    width: 100%;
+    height: 100px;
 }
 
 
@@ -723,7 +778,6 @@ main.site div.container div.slider-wrapper{
     line-height: 1.2em;
     padding: 0px 15px;
 }
-
 
 
 

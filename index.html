@@ -100,8 +100,8 @@
                         </div>
 
                         <div class="sidebar-carrinho" id="sidebar-carrinho">
-                            <div class="cabecalho-carrinho">
 
+                            <div class="cabecalho-carrinho">
                                 <div class="close-btn-carrinho" id="close-btn-carrinho">
                                     <span><i class="fa-solid fa-xmark"></i></span>
                                 </div>
@@ -110,9 +110,41 @@
                                     <img src="src/img/icons/icone-carrinho.png" alt="">
                                     <h3>Meu Carrinho</h3>
                                 </div>  
-
                             </div>
-                        </div>
+
+                            <div class="itens-carrinho" id="itens-carrinho">
+                                
+                            <!-- <div class="item-carrinho">
+                                <div class="img-titulo-carrinho">
+                                    <div class="img-item-carrinho">
+                                        <img src="src/img/capa-livros/graca-transformadora.png" alt="image-capa-livro">
+                                    </div>
+                                    <div class="titulo-item-carrinho">
+                                        <h1>Graça Transformadora</h1>
+                                    </div>
+                                </div>
+                                <div class="lixeira-valor-livro">
+                                    <button class = "remove-from-cart-btn" data-name = "${item.name}">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                    <p>Valor: 78,90</p>
+                                </div>
+                                <div class="separacao-carrinho"></div>
+                            </div> -->
+
+                            <span></span>
+                    </div>
+
+
+                            <div class="total-compra">
+                                <div class="total-compra-carrinho">
+                                    <p class="item-total">Valor Total:
+                                        <span id="cart-total">0.00</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div> 
 
 
 
@@ -141,7 +173,7 @@
                     <li id="openSidebarCarrinho">
                         <span><i class="fa-solid fa-cart-shopping"></i></span>
                         <a href="#">Carrinho</a>
-                        <span class="contador-carrinho" id="countCart">0</span>
+                        <span class="contador-carrinho" id="cartCount">0</span>
                     </li>
 
                     <li>
@@ -249,7 +281,7 @@
               </div> 
 
 
-            <main class="site">
+            <main class="site" id="site">
 
                 <div #swiperRef="" class="swiper mySwiper">
                     <div class="swiper-wrapper cards-livros">
@@ -280,7 +312,11 @@
                                     <div class="icones-card-livro">
                                         <span>
                                             <i class="fa-regular fa-heart coracao"></i>
-                                            <i class="fa-solid fa-cart-plus carrinho" id="carrinhoIcone"></i>
+                                            <i class="fa-solid fa-cart-plus carrinho" id="add-to-cart-btn" 
+                                            data-name="Graça Transformadora"
+                                            data-price="78.90"
+                                            data-image="src/img/capa-livros/graca-transformadora.png"
+                                            ></i>
                                         </span>
                                     </div>
                                 </div>
@@ -312,7 +348,10 @@
                                 <div class="icones-card-livro">
                                     <span>
                                         <i class="fa-regular fa-heart coracao"></i>
-                                        <i class="fa-solid fa-cart-plus carrinho"></i>
+                                        <i class="fa-solid fa-cart-plus carrinho" id="add-to-cart-btn" 
+                                        data-name="Vimos e Ouvimos"
+                                        data-price="45.00"
+                                        data-image="src/img/capa-livros/vimos-e-ouvimos.png"></i>
                                     </span>
                                 </div>
                             </div>
@@ -344,7 +383,10 @@
                                 <div class="icones-card-livro">
                                     <span>
                                         <i class="fa-regular fa-heart coracao"></i>
-                                        <i class="fa-solid fa-cart-plus carrinho"></i>
+                                        <i class="fa-solid fa-cart-plus carrinho" id="add-to-cart-btn" 
+                                        data-name="Porque Nós Dormimos"
+                                        data-price="45.98"
+                                        ></i>
                                     </span>
                                 </div>
                             </div>
