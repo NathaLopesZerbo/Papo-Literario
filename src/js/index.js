@@ -136,15 +136,15 @@ function updateCarrinho(){
 
                         <div class="titulo-item-carrinho">
                             <h1>${item.name}</h1>
+                            <p class = "quantidade-livro"> Quantidade: ${item.quantity}</p>
                         </div>
                     </div>
 
-                    <p>Qtd: ${item.quantity}</p>
+                    
 
                     <div class="lixeira-valor-livro">
-                        <button class = "remove-from-cart-btn" data-name = "${item.name}">
-                            <i class="fa-solid fa-trash"></i>
-                        </button>
+                            <i class="fa-solid fa-trash remove-from-cart-btn" 
+                            data-name = "${item.name}"></i>
                         <p>Valor: <span class = "valor-item-carrinho"> R$ ${item.price.toFixed(2)}</span></p>
                     </div>
 
