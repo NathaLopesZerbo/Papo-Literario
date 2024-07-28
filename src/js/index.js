@@ -10,13 +10,19 @@
  const sidebarCarrinho = document.getElementById('sidebar-carrinho')
  const closeSidebarCarrinho = document.getElementById('close-btn-carrinho')
  const cartCounter = document.getElementById('cartCount')
+ const cartFavorito = document.getElementById('countFavorito')
  const cartTotal = document.getElementById('cart-total')
  const openSidebarCarrinho = document.getElementById('openSidebarCarrinho')
  const cartItemsContainer = document.getElementById('itens-carrinho')
+ const cartItemsFavoritos = document.getElementById('item-favoritos')
  const closeSidebar = document.getElementById('close-btn')
+ const openSidebarFavorito = document.getElementById('openSidebarFavorito')
+ const sidebarFavorito = document.getElementById('sidebar-favorito')
+ const closeSidebarFavorito = document.getElementById('close-btn-favorito')
 
 
  let cart = [];
+ let favoritos = [];
 
 
  $(document).ready(function(){
@@ -43,7 +49,14 @@ function hideDropdown() {
     }, 100);
 }
 
+openSidebarFavorito.addEventListener('click', function(){
+    updateFavoritos()
+    sidebarFavorito.classList.add('active-favorito')
+})
 
+closeSidebarFavorito.addEventListener('click',function(){
+    sidebarFavorito.classList.remove('active-favorito')
+})
 
 openSidebarCarrinho.addEventListener('click',function(){
     sidebarCarrinho.classList.add('active-carrinho')
@@ -82,6 +95,7 @@ openSidebar.addEventListener('click',function(){
  })
 
 
+// Carrinho
 
 site.addEventListener('click', function(event){
 
@@ -191,3 +205,93 @@ function removeItemCart(name){
 
 
 
+
+// Favoritos
+
+site.addEventListener('click', function (event){
+    // console.log(event.target)
+
+    let buttonFavoritos = event.target.closest("#add-to-favoritos-btn")
+    
+    if(buttonFavoritos){
+        const imageFavoritos = buttonFavoritos.getAttribute('data-image')
+        const nameFavoritos = buttonFavoritos.getAttribute('data-name')
+        const priceFavoritos = parseFloat(buttonFavoritos.getAttribute('data-price'))
+
+        //Adicionar aos Favoritos
+        addToFavoritos(nameFavoritos, priceFavoritos, imageFavoritos);
+    }
+})
+
+
+function addToFavoritos(nameFavoritos, priceFavoritos, imageFavoritos){
+
+    const existingFavoritos = favoritos.find(itemf => itemf.nameFavoritos === nameFavoritos)
+
+    if(existingFavoritos){
+        existingFavoritos.quantidadeFavoritos +=1;
+    } else{
+          favoritos.push({
+        imageFavoritos,
+        nameFavoritos,
+        priceFavoritos,
+        quantidadeFavoritos:1
+    })
+}
+
+    updateFavoritos()
+
+}
+
+function updateFavoritos(){
+    cartItemsFavoritos.innerHTML = '';
+
+    favoritos.forEach(itemf => {
+        const cartItemElementFavoritos = document.createElement("div");
+
+        cartItemElementFavoritos.innerHTML = `
+            <div class = "flex items-center justify-between">
+                <div> 
+                    <p class = "font-medium">${itemf.nameFavoritos}</p>
+                    <p>Qtd: ${itemf.quantidadeFavoritos}</p>
+                    <p class = "font-medium mt-2">R$ ${itemf.priceFavoritos.toFixed(2)}</p>
+                </div>
+
+                <button class = "bg-gray-400 px-4 py-1 rounded text-white remove-from-favoritos-btn" data-name = "${itemf.nameFavoritos}">Remover</button>
+      
+            </div>
+        `
+        cartItemsFavoritos.appendChild(cartItemElementFavoritos)
+
+    })
+
+    cartFavorito.innerHTML = favoritos.length;
+
+}
+
+
+cartItemsFavoritos.addEventListener('click', function (event){
+    if(event.target.classList.contains("remove-from-favoritos-btn")){
+        const nameFavoritos = event.target.getAttribute("data-name");
+        
+        removeItemFavorito(nameFavoritos)
+    }
+})
+
+function removeItemFavorito(nameFavoritos){
+    const index = favoritos.findIndex(itemf => itemf.nameFavoritos = nameFavoritos)
+
+    if(index !== -1){
+        const itemf = favoritos[index];
+        
+        if(itemf.quantidadeFavoritos >1){
+            itemf.quantidadeFavoritos -=1;
+            updateFavoritos();
+            return;
+        }
+
+        favoritos.splice(index, 1);
+        updateFavoritos();
+
+    }
+}

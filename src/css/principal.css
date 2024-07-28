@@ -58,8 +58,24 @@ body{
     left: -4px;
     border-radius: 50%;
     padding: 4px;
-    background-color: var(--cor02);
+    background-color: var(--cor04);
 }
+
+
+.contador-favorito{
+    text-align: center;
+    color: white;
+    font-size: 10px;
+    position: relative;
+    top: -10px;
+    left: -4px;
+    border-radius: 50%;
+    padding: 4px;
+    background-color: red;
+}
+
+
+
 
 
 /* Menu de Navegação */
@@ -463,8 +479,8 @@ body{
 }
 
 .compra-carrinho{
-    position: fixed;
-    right: 15px;
+    position: absolute;
+    left: 220px;
     bottom: 30px;
     background-color:#3498DB;
     padding: 10px;
@@ -481,8 +497,23 @@ body{
 }
 
 
+.sidebar-favoritos{
+    background-color: #F4F4F4; /* Mudar a cor #cecccc*/
+    width: 430px;
+    right: -800px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    overflow-y: auto;
+    transition: 0.4s ease-out;
+    transition-property: right;
+    z-index: 90;
+}
 
-
+.sidebar-favoritos.active-favorito{
+    width: 100%;
+    right: 0;
+}
 
 
 

@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="src/css/reset.css">
     <link rel="stylesheet" href="src/css/principal.css">
+    <link rel="stylesheet" href="src/css/favoritos.css">
     <link rel="stylesheet" href="src/css/responsivo.css">
     <title>Papo - Literário</title>
     
 </head>
 <body>
-    
             <header class="header">
                 <nav class="nav">
                     <div class="menu">
@@ -115,7 +115,6 @@
                             <div class="itens-carrinho"id="itens-carrinho">     
                             </div>
 
-
                             <div class="total-compra">
                                 <div class="total-compra-carrinho">
                                     <p class="item-total">Valor Total:
@@ -125,6 +124,35 @@
                                 <div class="compra-carrinho">Compra</div>
                             </div>
                         </div> 
+
+                              
+                        <div class="sidebar-favoritos" id="sidebar-favorito">
+                            
+                                <div class="close-btn-carrinho" id="close-btn-favorito">
+                                    <span><i class="fa-solid fa-xmark"></i></span>
+                                </div>
+                                
+                                <div class="card-favoritos">
+                                    <div class="card-favoritos-conta">
+                                    </div>
+
+                                    <div class="card-favorito">
+                                        <div class="titulo-favorito-card">
+                                        <span><i class="fa-regular fa-heart "></i></span>
+                                            Meus Favoritos
+                                        </div>
+
+                                        <div class="item-favoritos" id="item-favoritos">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                
+
+
+                            
+                        </div>
 
 
 
@@ -145,9 +173,10 @@
                     </div>
 
                 <ul class="nav-list">
-                    <li>
+                    <li id="openSidebarFavorito">
                         <span><i class="fa-regular fa-heart"></i></span>
-                        <a href="./src/paginas/favoritos.html">Favoritos</a>
+                        <a href="#">Favoritos</a>
+                        <span class="contador-favorito" id="countFavorito">0</span>
                     </li>
 
                     <li id="openSidebarCarrinho">
@@ -291,7 +320,12 @@
                                     <h2 class="preco">R$ 78,90</h2>
                                     <div class="icones-card-livro">
                                         <span>
-                                            <i class="fa-regular fa-heart coracao"></i>
+                                            <i class="fa-regular fa-heart coracao" id="add-to-favoritos-btn"
+                                            data-image="src/img/capa-livros/graca-transformadora.png"
+                                            data-name="Graça Transformadora"
+                                            data-price="78.90"
+                                            ></i>
+
                                             <i class="fa-solid fa-cart-plus carrinho" id="add-to-cart-btn" 
                                             data-name="Graça Transformadora"
                                             data-price="78.90"
@@ -327,7 +361,13 @@
                                 <h2 class="preco">R$ 45,00</h2>
                                 <div class="icones-card-livro">
                                     <span>
-                                        <i class="fa-regular fa-heart coracao"></i>
+                                        
+                                        <i class="fa-regular fa-heart coracao" id="add-to-favoritos-btn"
+                                        data-image="src/img/capa-livros/vimos-e-ouvimos.png"
+                                        data-name="Vimos e Ouvimos"
+                                        data-price="45.00"
+                                        ></i>
+
                                         <i class="fa-solid fa-cart-plus carrinho" id="add-to-cart-btn" 
                                         data-name="Vimos e Ouvimos"
                                         data-price="45.00"
