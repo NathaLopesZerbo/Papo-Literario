@@ -433,8 +433,10 @@ body{
 }
 
 
+
 .total-compra{
-    position: absolute;
+    position: fixed;
+    z-index: 0;
     bottom: 0;
     background-color: #CCCCCC;
     width: 100%;
@@ -461,9 +463,9 @@ body{
 }
 
 .compra-carrinho{
-    position: absolute;
+    position: fixed;
     right: 15px;
-    top: 30px;
+    bottom: 30px;
     background-color:#3498DB;
     padding: 10px;
     border-radius: 20px;
