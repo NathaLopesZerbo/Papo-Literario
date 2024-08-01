@@ -869,12 +869,33 @@ main.site div.container div.slider-wrapper{
 .cards-autores{
     display: flex;
     gap: 10px;
-    height: 280px;
+    height: 320px;
     align-items: center;
 }
 
 .swiper-slide.autores{
-    background-color: #95B6CD;
+    background-color: #3498DB;
+    border-radius: 30px;
+}
+
+.conteudo-autores{
+    display: flex;
+    flex-direction: column;
+}
+
+.img-autor img{ 
+    height: 120px;
+    object-fit: cover;
+    background-position: center;
+}
+
+
+.img-autor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -20px;
 }
 
 
