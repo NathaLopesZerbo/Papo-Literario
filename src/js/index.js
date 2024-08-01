@@ -94,84 +94,102 @@ openSidebar.addEventListener('click',function(){
     }
  })
 
+ function storeUsername(event) {
+    event.preventDefault(); // Previne o envio padrão do formulário
+    const username = document.getElementById('username').value;
+    localStorage.setItem('username', username);
+    window.location.href = '../../index.html'; // Redireciona para a página princi  pal
+}
+
+ const username = localStorage.getItem('username');
+ if (username) {
+     document.getElementById('welcome-message').textContent = `Olá, ${username}!`;
+ }
+
+
+
+// Carrinho
+
+function saveCart() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+
+function loadCart() {
+    const savedCart = localStorage.getItem('cart');
+    if (savedCart) {
+        cart = JSON.parse(savedCart);
+        updateCarrinho(); 
+    }
+}
 
 // Carrinho
 
 site.addEventListener('click', function(event){
-
-     let parentButton = event.target.closest('#add-to-cart-btn')
+    let parentButton = event.target.closest('#add-to-cart-btn');
 
     if(parentButton){   
-        const name = parentButton.getAttribute('data-name')
-        const image = parentButton.getAttribute('data-image')
-        const price = parseFloat(parentButton.getAttribute('data-price'))
+        const name = parentButton.getAttribute('data-name');
+        const image = parentButton.getAttribute('data-image');
+        const price = parseFloat(parentButton.getAttribute('data-price'));
 
-        console.log(parentButton)
-      
-        // Adicionar no Carrinho
         addToCart(name, price, image);
     }
-
-})
+});
 
 function addToCart(name, price, image){
-
-    const existingItem = cart.find(item => item.name === name)
+    const existingItem = cart.find(item => item.name === name);
 
     if(existingItem){
-       existingItem.quantity +=1;
+        existingItem.quantity += 1;
     } else{
         cart.push({
-        name,
-        price,
-        image,
-        quantity: 1,
-    })
-}
+            name,
+            price,
+            image,
+            quantity: 1,
+        });
+    }
 
-    updateCarrinho()
+    updateCarrinho();
+    saveCart(); 
 }
-
 
 function updateCarrinho(){
     cartItemsContainer.innerHTML = '';
     let total = 0;
 
-    cart.forEach(item =>{
+    cart.forEach(item => {
        const cartItemElement = document.createElement('div');
 
        cartItemElement.innerHTML = `
             <div class="item-carrinho">
-
-                    <div class="img-titulo-carrinho">
-                        <div class="img-item-carrinho">
-                            <img src="${item.image}" alt="image-capa-livro">
-                        </div>
-
-                        <div class="titulo-item-carrinho">
-                            <h1>${item.name}</h1>
-                            <p class = "quantidade-livro"> Quantidade: ${item.quantity}</p>
-                        </div>
+                <div class="img-titulo-carrinho">
+                    <div class="img-item-carrinho">
+                        <img src="${item.image}" alt="image-capa-livro">
                     </div>
 
-                    
-
-                    <div class="lixeira-valor-livro">
-                            <i class="fa-solid fa-trash remove-from-cart-btn" 
-                            data-name = "${item.name}"></i>
-                        <p>Valor: <span class = "valor-item-carrinho"> R$ ${item.price.toFixed(2)}</span></p>
+                    <div class="titulo-item-carrinho">
+                        <h1>${item.name}</h1>
+                        <p class="quantidade-livro">Quantidade: ${item.quantity}</p>
                     </div>
-
-                    <div class="separacao-carrinho"></div>
                 </div>
-   `
+
+                <div class="lixeira-valor-livro">
+                    <i class="fa-solid fa-trash remove-from-cart-btn" 
+                    data-name="${item.name}"></i>
+                    <p>Valor: <span class="valor-item-carrinho">R$ ${item.price.toFixed(2)}</span></p>
+                </div>
+
+                <div class="separacao-carrinho"></div>
+            </div>
+       `;
 
         total += item.price * item.quantity;
-        cartItemsContainer.appendChild(cartItemElement)
+        cartItemsContainer.appendChild(cartItemElement);
+    });
 
-    })
-
-    cartTotal.textContent = total.toLocaleString('pt-BR',{
+    cartTotal.textContent = total.toLocaleString('pt-BR', {
         style: 'currency',
         currency: 'BRL'
     });
@@ -181,11 +199,11 @@ function updateCarrinho(){
 
 cartItemsContainer.addEventListener('click', function(event){
     if(event.target.classList.contains("remove-from-cart-btn")){
-        const name = event.target.getAttribute('data-name')
+        const name = event.target.getAttribute('data-name');
 
         removeItemCart(name);
     }
-})
+});
 
 function removeItemCart(name){
     const index = cart.findIndex(item => item.name === name);
@@ -194,14 +212,24 @@ function removeItemCart(name){
         const item = cart[index];
 
         if(item.quantity > 1){
-            item.quantity -=1;
-            updateCarrinho();
-            return;
+            item.quantity -= 1;
+        } else{
+            cart.splice(index, 1);
         }
-        cart.splice(index,1);
         updateCarrinho();
+        saveCart(); 
     }
 }
+
+
+window.onload = function() {
+    loadCart();
+};
+
+
+
+
+
 
 
 
@@ -240,8 +268,22 @@ function addToFavoritos(nameFavoritos, priceFavoritos, imageFavoritos){
 }
 
     updateFavoritos()
+    saveFavoritosToLocalStorage();
 
 }
+
+function saveFavoritosToLocalStorage() {
+    localStorage.setItem('favoritos', JSON.stringify(favoritos));
+}
+
+function loadFavoritosFromLocalStorage() {
+    const favoritosData = localStorage.getItem('favoritos');
+    if (favoritosData) {
+        favoritos = JSON.parse(favoritosData);
+        updateFavoritos();
+    }
+}
+
 
 function updateFavoritos(){
     cartItemsFavoritos.innerHTML = '';
@@ -292,6 +334,11 @@ function removeItemFavorito(nameFavoritos){
 
         favoritos.splice(index, 1);
         updateFavoritos();
+        saveFavoritosToLocalStorage();
 
     }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    loadFavoritosFromLocalStorage();
+});

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <title>Login - Papo-Literário</title>
+</head>
+<body>
+    <form class="login"  onsubmit="storeUsername(event)">
+        <h2>Login</h2>
+        <div class="box-user">
+            <input type="text" id="username" required>
+            <label>Nome</label>
+        </div>
+        <div class="box-user">
+            <input type="password" id="password" required>
+            <label>Senha</label>
+        </div>
+        <div>
+            <a href="#" class="forget"> Esqueceu a senha?</a> <br>
+            <a href="../../index.html" class="forget"> Voltar a Página Inicial</a>
+        </div>
+        <button class="btn" type="submit">
+             <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Entrar
+        </button>
+    </form>
+    <script src="../js/index.js"></script>
+</body>
+</html>

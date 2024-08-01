@@ -44,6 +44,11 @@ body{
     cursor: pointer;
 }
 
+#welcome-message{
+    font-size: 18px;
+    display: inline-block;
+}
+
 .nav-list li a{ 
     font-size: 20px;
     color: black;

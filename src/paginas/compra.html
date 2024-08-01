@@ -127,10 +127,19 @@
 
             <li>
                 <span><i class="fa-solid fa-user"></i></span>
-                <a href="#">Login</a>
+                <a href="./src/paginas/login.html">
+                   <p id="welcome-message">Login</p>
+                </a>
             </li>
+            
         </ul>
     </nav>
+    <script>
+        const username = localStorage.getItem('username');
+        if (username) {
+            document.getElementById('welcome-message').textContent = `Olá, ${username}!`;
+        }
+    </script>
 </header>
     
     <div class="sub-cabecalho">
