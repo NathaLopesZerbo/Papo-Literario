@@ -861,6 +861,16 @@ main.site div.container div.slider-wrapper{
     padding: 0px 15px;
 }
 
+.cards-autores{
+    display: flex;
+    gap: 10px;
+    height: 280px;
+    align-items: center;
+}
+
+.swiper-slide.autores{
+    background-color: #95B6CD;
+}
 
 
 
