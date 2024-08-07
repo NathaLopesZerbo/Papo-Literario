@@ -180,6 +180,13 @@ body{
     margin-right: 5px;
 }
 
+.sub-menu img{
+    width: 12px;
+    object-fit: contain;
+    background-position: center;
+    margin-right: 5px;
+}
+
 .sub-btn i{
     display: flex;
     align-items: center;
