@@ -527,6 +527,56 @@ body{
     right: 0;
 }
 
+.login-favorito{
+    font-weight: bold;
+}
+
+.sair-favoritos{
+    cursor: pointer;
+    text-decoration: underline
+}
+
+.separacao-favoritos{
+    height: 2px;
+    width: 75%;
+    background-color: black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.favoritos-home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    padding: 40px;
+    gap: 5px;
+}
+
+.img-favoritos img{
+    width: 180px;
+}
+
+.home-favorito{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.home-favorito img{
+    object-fit: contain;
+    width: 25px;
+
+}
+
+.titulo-home{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+
 
 
 /* Sub-Cabeçalho */
@@ -921,18 +971,55 @@ main.site div.container div.slider-wrapper{
 
 
 .footer{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: start;
-    width: 100%;
-    height: 100%;
-    /* background-color: var(--cor06); */
-    background: rgb(164,196,219);
-    background: linear-gradient(180deg, rgba(164,196,219,1) 3%, rgba(56,106,180,0.7819502801120448) 94%);
+    background: rgb(90,158,212);
+    background: linear-gradient(180deg, rgba(90,158,212,1) 8%, rgba(46,91,153,1) 85%);
     padding: 20px;
 } 
 
-.titulo-footer{ 
+
+.colunas-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: start;
+    width: 100%;
+}
+
+.formas-pagamento{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo-pagamento{
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+
+.img-pagamentos img{
+    object-fit: contain;
+    width: 60px;
+    cursor: pointer;
+}
+
+.img-pagamentos{
+    display: flex;
+    gap: 20px;
+}
+
+.separacao-footer{
+    margin: 0 auto;
+    margin-top: 20px;
+    height: 2px;
+    background-color: #CCCCCC;
+    width: 75%;
+}
+
+
+.titulo-footer, .titulo-pagamento{ 
     font-size: 25px;
     text-shadow: 1px 2px 2px rgba(0,0,0,0.21);
     color: #f7f5f5;

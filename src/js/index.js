@@ -106,6 +106,8 @@ openSidebar.addEventListener('click',function(){
      document.getElementById('welcome-message').textContent = `Olá, ${username}!`;
  }
 
+ 
+
 
 
 // Carrinho
