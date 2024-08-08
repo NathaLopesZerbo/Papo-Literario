@@ -51,11 +51,13 @@ function hideDropdown() {
 
 openSidebarFavorito.addEventListener('click', function(){
     updateFavoritos()
-    sidebarFavorito.classList.add('active-favorito')
+    sidebarFavorito.classList.add('active-favorito');
+    document.body.classList.add("no-scroll");
 })
 
 closeSidebarFavorito.addEventListener('click',function(){
     sidebarFavorito.classList.remove('active-favorito')
+    document.body.classList.remove("no-scroll");
 })
 
 openSidebarCarrinho.addEventListener('click',function(){
@@ -103,9 +105,20 @@ openSidebar.addEventListener('click',function(){
 
  const username = localStorage.getItem('username');
  if (username) {
-     document.getElementById('welcome-message').textContent = `Olá, ${username}!`;
+     document.getElementById('welcome-message1').textContent = `Olá, ${username}!`;
  }
 
+ function storeUsername(event) {
+    event.preventDefault(); // Previne o envio padrão do formulário
+    const username = document.getElementById('username').value;
+    localStorage.setItem('username', username);
+    window.location.href = '../../index.html'; // Redireciona para a página princi  pal
+}
+
+ const username1 = localStorage.getItem('username');
+ if (username) {
+     document.getElementById('welcome-message').textContent = `Olá, ${username}!`;
+ }
  
 
 
@@ -180,7 +193,8 @@ function updateCarrinho(){
                 <div class="lixeira-valor-livro">
                     <i class="fa-solid fa-trash remove-from-cart-btn" 
                     data-name="${item.name}"></i>
-                    <p>Valor: <span class="valor-item-carrinho">R$ ${item.price.toFixed(2)}</span></p>
+                    <p>Valor: <span class="valor-item-carrinho">R$ 
+                    ${item.price.toFixed(2)}</span></p>
                 </div>
 
                 <div class="separacao-carrinho"></div>
@@ -294,16 +308,29 @@ function updateFavoritos(){
         const cartItemElementFavoritos = document.createElement("div");
 
         cartItemElementFavoritos.innerHTML = `
-            <div class = "flex items-center justify-between">
-                <div> 
-                    <p class = "font-medium">${itemf.nameFavoritos}</p>
-                    <p>Qtd: ${itemf.quantidadeFavoritos}</p>
-                    <p class = "font-medium mt-2">R$ ${itemf.priceFavoritos.toFixed(2)}</p>
-                </div>
 
-                <button class = "bg-gray-400 px-4 py-1 rounded text-white remove-from-favoritos-btn" data-name = "${itemf.nameFavoritos}">Remover</button>
-      
+        <div id="item-favoritos" class="item-favoritos">
+        <div class="teste">
+            <div class="favoritos">
+                <div class="coracao-item">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="item-favoritos" id="item-favoritos">
+                    <div class="img-favoritos-item">
+                        <img src="src/img/capa-livros/graca-transformadora.png" alt="">
+                    </div>
+            
+                    <div class="titulo-favoritos-item">Graça Transformadora</div>
+                    <div class="item-preco-remover">
+                        <i class="fa-solid fa-trash remove-from-favoritos-btn"
+                        data-name="${itemf.nameFavoritos    }"></i>
+                        <div class="preco-favoritos-item">R$ 67.90</div>
+                    </div>
+                </div>
             </div>
+        </div>
+    </div>
+    
         `
         cartItemsFavoritos.appendChild(cartItemElementFavoritos)
 
