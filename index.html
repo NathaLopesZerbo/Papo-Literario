@@ -14,6 +14,16 @@
     
 </head>
 <body>
+
+
+
+
+</head>
+<body>
+
+    
+
+
             <header class="header">
                 <nav class="nav">
                     <div class="menu">
@@ -159,22 +169,16 @@
                                             Meus Favoritos
                                         </div>
 
-                                        <div id="item-favoritos" class="item-favoritos">
-                                            
-                                    
-                                        </div>
-
-
-
-                                 
+                                        <div class="favoritos-itens" id="item-favoritos"></div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
 
                                 
 
 
-                            
-                        </div>
+
 
 
 
@@ -184,16 +188,17 @@
                             <a href="index.html"><img src="src/img/logo.png" alt="logo"></a>
                         </div>
                     </div>
-            
+
                     <div class="buscar-box">
-                         <div class="input-buscar">
-                            <input type="text" name="" id="" placeholder="Busque aqui o seu livro">
+                        <div class="input-buscar">
+                            <input type="text" id="buscar-input" placeholder="Busque aqui o seu livro">
                         </div>
+                        <button id="buscar-btn">buscar</button>
                         <div class="lupa-buscar">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
                     </div>
-
+                    
                 <ul class="nav-list">
                     <li id="openSidebarFavorito">
                         <span><i class="fa-regular fa-heart"></i></span>
@@ -313,24 +318,119 @@
                 <div class="swiper-button-next"></div>
               </div> 
 
+              
+
 
             <main class="site" id="site">
 
 
 
-                
+               
+                    <!-- <div id="lista-livros">
+                        <div class="livro" data-title="Graça Transformadora">
+                            <h3>Graça Transformadora</h3>
+                            <p>Autor: Luciano Subirá</p>
+                        </div>
+                        <div class="livro" data-title="O Poder da Esperança">
+                            <h3>O Poder da Esperança</h3>
+                            <p>Autor: Mark Finley</p>
+                        </div>
+                        <div class="livro" data-title="A Mente de Cristo">
+                            <h3>A Mente de Cristo</h3>
+                            <p>Autor: T. W. Hunt</p>
+                        </div>
+                    </div> -->
 
-                <div #swiperRef="" class="swiper mySwiper">
-                    <div class="swiper-wrapper cards-livros">
-                      <div class="swiper-slide slide-livros">
-                            <div class="card-livro">
+                <div id="lista-livros">
+                    <div #swiperRef="" class="swiper mySwiper">
+                        <div class="swiper-wrapper cards-livros">
+                          <div class="swiper-slide slide-livros">
+                            <div class="card-livro" data-title="Graça Transformadora">
                                 <a href="./src/paginas/compra.html">
+                                    <div class="img-livro">
+                                        <img src="src/img/capa-livros/graca-transformadora.png" alt="graca-transformadora">
+                                    </div>
+                                    <div class="definicao-autores">
+                                        <h2 class="titulo-livro">Graça Transformadora</h2>
+                                        <p class="autor-livro">Luciano Subira</p>
+                                    </div>
+                                    <p class="capa">Capa Comum</p>
+                                    <div class="avaliacao">
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                        <p class="titulo-avaliacao">2340 Avaliações</p>
+                                    </div>
+                                </a>
+                                <div class="comprar">
+                                    <h2 class="preco">R$ 78,90</h2>
+                                    <div class="icones-card-livro">
+                                        <span>
+                                            <i class="fa-regular fa-heart coracao" id="add-to-favoritos-btn"
+                                                data-image="src/img/capa-livros/graca-transformadora.png"
+                                                data-name="Graça Transformadora"
+                                                data-price="78.90"></i>
+                                            <i class="fa-solid fa-cart-plus carrinho" id="add-to-cart-btn"
+                                                data-name="Graça Transformadora"
+                                                data-price="78.90"
+                                                data-image="src/img/capa-livros/graca-transformadora.png"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                          </div>
+                          <div class="swiper-slide slide-livros">
+                            <div class="card-livro" data-title="Vimos e Ouvimos">
                                 <div class="img-livro">
-                                    <img src="src/img/capa-livros/graca-transformadora.png" alt="graca-transformadora">
+                                    <img src="src/img/capa-livros/vimos-e-ouvimos.png" alt="livro1">
                                 </div>
                                 <div class="definicao-autores">
-                                    <h2 class="titulo-livro">Graça Transformadora</h2>
-                                    <p class="autor-livro">Luciano Subira</p>
+                                    <h2 class="titulo-livro">Vimos e Ouvimos</h2>
+                                    <p class="autor-livro">Israel Subira</p>
+                                </div>
+                                    <p class="capa">Capa Dura</p>
+                                <div class="avaliacao">
+                                    <span>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </span>
+                                    <p class="titulo-avaliacao">2500 Avaliações</p>
+                                </div>
+                                <div class="comprar">
+                                    <h2 class="preco">R$ 45,00</h2>
+                                    <div class="icones-card-livro">
+                                        <span>
+                    
+                                            <i class="fa-regular fa-heart coracao" id="add-to-favoritos-btn"
+                                            data-image="src/img/capa-livros/vimos-e-ouvimos.png"
+                                            data-name="Vimos e Ouvimos"
+                                            data-price="45.00"
+                                            ></i>
+                                            <i class="fa-solid fa-cart-plus carrinho" id="add-to-cart-btn"
+                                            data-name="Vimos e Ouvimos"
+                                            data-price="45.00"
+                                            data-image="src/img/capa-livros/vimos-e-ouvimos.png"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide slide-livros">
+                            <div class="card-livro" data-title="Por que nós dormimos">
+                                <div class="img-livro">
+                                    <img src="src/img/capa-livros/porque-nos-dormimos.jpg" alt="livro1">
+                                </div>
+                                <div class="definicao-autores">
+                                    <h2 class="titulo-livro">Por que nós dormimos: A nova ciência do sono e do sonho</h2>
+                                    <p class="autor-livro">Matthew Walker</p>
                                 </div>
                                     <p class="capa">Capa Comum</p>
                                 <div class="avaliacao">
@@ -343,361 +443,265 @@
                                     </span>
                                     <p class="titulo-avaliacao">2340 Avaliações</p>
                                 </div>
-                            </a>
                                 <div class="comprar">
-                                    <h2 class="preco">R$ 78,90</h2>
+                                    <h2 class="preco">R$ 45,98</h2>
                                     <div class="icones-card-livro">
                                         <span>
-                                            <i class="fa-regular fa-heart coracao" id="add-to-favoritos-btn"
-                                            data-image="src/img/capa-livros/graca-transformadora.png"
-                                            data-name="Graça Transformadora"
-                                            data-price="78.90"
-                                            ></i>
-
-                                            <i class="fa-solid fa-cart-plus carrinho" id="add-to-cart-btn" 
-                                            data-name="Graça Transformadora"
-                                            data-price="78.90"
-                                            data-image="src/img/capa-livros/graca-transformadora.png"
+                                            <i class="fa-regular fa-heart coracao"
+                                            id="add-to-favoritos-btn"
+                                            data-image="src/img/capa-livros/porque-nos-dormimos.jpg"
+                                            data-name="Porque Nós Dormimos"
+                                            data-price="45.98"></i>
+                                            <i class="fa-solid fa-cart-plus carrinho" id="add-to-cart-btn"
+                                            data-name="Porque Nós Dormimos"
+                                            data-price="45.98"
+                                            data-image="src/img/capa-livros/porque-nos-dormimos.jpg"
                                             ></i>
                                         </span>
                                     </div>
                                 </div>
                             </div>
-                      </div>
-
-                      <div class="swiper-slide slide-livros">
-                        <div class="card-livro">
-                            <div class="img-livro">
-                                <img src="src/img/capa-livros/vimos-e-ouvimos.png" alt="livro1">
-                            </div>
-                            <div class="definicao-autores">
-                                <h2 class="titulo-livro">Vimos e Ouvimos</h2>
-                                <p class="autor-livro">Israel Subira</p>
-                            </div>
-                                <p class="capa">Capa Dura</p>
-                            <div class="avaliacao">
-                                <span>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>
-                                <p class="titulo-avaliacao">2500 Avaliações</p>
-                            </div>
-                            <div class="comprar">
-                                <h2 class="preco">R$ 45,00</h2>
-                                <div class="icones-card-livro">
+                          </div>
+                          <div class="swiper-slide slide-livros">
+                            <div class="card-livro" data-title="O pequeno principe">
+                                <div class="img-livro">
+                                    <img src="src/img/capa-livros/pequeno-principe.jpg" alt="livro1">
+                                </div>
+                                <div class="definicao-autores">
+                                    <h2 class="titulo-livro">O Pequeno Principe</h2>
+                                    <p class="autor-livro">Antoine de Saint-Exupéry</p>
+                                </div>
+                                    <p class="capa">Capa Comum</p>
+                                <div class="avaliacao">
                                     <span>
-                                        
-                                        <i class="fa-regular fa-heart coracao" id="add-to-favoritos-btn"
-                                        data-image="src/img/capa-livros/vimos-e-ouvimos.png"
-                                        data-name="Vimos e Ouvimos"
-                                        data-price="45.00"
-                                        ></i>
-
-                                        <i class="fa-solid fa-cart-plus carrinho" id="add-to-cart-btn" 
-                                        data-name="Vimos e Ouvimos"
-                                        data-price="45.00"
-                                        data-image="src/img/capa-livros/vimos-e-ouvimos.png"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
                                     </span>
+                                    <p class="titulo-avaliacao">2250 Avaliações</p>
+                                </div>
+                                <div class="comprar">
+                                    <h2 class="preco">R$ 65,00</h2>
+                                    <div class="icones-card-livro">
+                                        <span>
+                                            <i class="fa-regular fa-heart coracao"
+                                            id="add-to-favoritos-btn"
+                                            data-image="src/img/capa-livros/porque-nos-dormimos.jpg"
+                                            data-name="O Pequeno Principe"
+                                            data-price="65.00"></i>
+                                            <i class="fa-solid fa-cart-plus carrinho" id="add-to-cart-btn"
+                                            data-name="O Pequeno Principe"
+                                            data-price="65.00"
+                                            data-image="src/img/capa-livros/porque-nos-dormimos.jpg"
+                                            ></i>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                      </div>
-
-                      <div class="swiper-slide slide-livros">
-                        <div class="card-livro">
-                            <div class="img-livro">
-                                <img src="src/img/capa-livros/porque-nos-dormimos.jpg" alt="livro1">
-                            </div>
-                            <div class="definicao-autores">
-                                <h2 class="titulo-livro">Por que nós dormimos: A nova ciência do sono e do sonho</h2>
-                                <p class="autor-livro">Matthew Walker</p>
-                            </div>
-                                <p class="capa">Capa Comum</p>
-                            <div class="avaliacao">
-                                <span>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>
-                                <p class="titulo-avaliacao">2340 Avaliações</p>
-                            </div>
-                            <div class="comprar">
-                                <h2 class="preco">R$ 45,98</h2>
-                                <div class="icones-card-livro">
+                          </div>
+                          <div class="swiper-slide slide-livros">
+                            <div class="card-livro" data-title="A minha graça te basta">
+                                <div class="img-livro">
+                                    <img src="src/img/capa-livros/graca-te-basta.jpg" alt="livro1">
+                                </div>
+                                <div class="definicao-autores">
+                                    <h2 class="titulo-livro">A Minha Graça te Basta</h2>
+                                    <p class="autor-livro">Augustus Nicodemus</p>
+                                </div>
+                                    <p class="capa">Capa Comum</p>
+                                <div class="avaliacao">
                                     <span>
-                                        <i class="fa-regular fa-heart coracao"
-                                        id="add-to-favoritos-btn"
-                                        data-image="src/img/capa-livros/porque-nos-dormimos.jpg"
-                                        data-name="Porque Nós Dormimos"
-                                        data-price="45.98"></i>
-
-                                        <i class="fa-solid fa-cart-plus carrinho" id="add-to-cart-btn" 
-                                        data-name="Porque Nós Dormimos"
-                                        data-price="45.98"
-                                        data-image="src/img/capa-livros/porque-nos-dormimos.jpg"
-                                        ></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
                                     </span>
+                                    <p class="titulo-avaliacao">2340 Avaliações</p>
+                                </div>
+                                <div class="comprar">
+                                    <h2 class="preco">R$ 38,90</h2>
+                                    <div class="icones-card-livro">
+                                        <span>
+                                            <i class="fa-regular fa-heart coracao"
+                                            id="add-to-favoritos-btn"
+                                            data-image="src/img/capa-livros/graca-te-basta.jpg"
+                                            data-name="A Minha Graça te Basta"
+                                            data-price="38.90"></i>
+                                            <i class="fa-solid fa-cart-plus carrinho" id="add-to-cart-btn"
+                                            data-name="A Minha Graça te Basta"
+                                            data-price="38.90"
+                                            data-image="src/img/capa-livros/graca-te-basta.jpg"
+                                            ></i>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                      </div>
-
-                      <div class="swiper-slide slide-livros">
-                        <div class="card-livro">
-                            <div class="img-livro">
-                                <img src="src/img/capa-livros/pequeno-principe.jpg" alt="livro1">
-                            </div>
-                            <div class="definicao-autores">
-                                <h2 class="titulo-livro">O Pequeno Principe</h2>
-                                <p class="autor-livro">Antoine de Saint-Exupéry</p>
-                            </div>
-                                <p class="capa">Capa Comum</p>
-                            <div class="avaliacao">
-                                <span>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>
-                                <p class="titulo-avaliacao">2250 Avaliações</p>
-                            </div>
-                            <div class="comprar">
-                                <h2 class="preco">R$ 65,00</h2>
-                                <div class="icones-card-livro">
+                          </div>
+                          <div class="swiper-slide slide-livros">
+                            <div class="card-livro" data-title="A cultura do Jejum">
+                                <div class="img-livro">
+                                    <img src="src/img/capa-livros/cultura-do-jeum.jpg" alt="livro1">
+                                </div>
+                                <div class="definicao-autores">
+                                    <h2 class="titulo-livro">A Cultura do Jejum</h2>
+                                    <p class="autor-livro">Luciano Subirá</p>
+                                </div>
+                                    <p class="capa">Capa Comum</p>
+                                <div class="avaliacao">
                                     <span>
-                                        <i class="fa-regular fa-heart coracao"
-                                        id="add-to-favoritos-btn"
-                                        data-image="src/img/capa-livros/porque-nos-dormimos.jpg"
-                                        data-name="O Pequeno Principe"
-                                        data-price="65.00"></i>
-
-                                        <i class="fa-solid fa-cart-plus carrinho" id="add-to-cart-btn" 
-                                        data-name="O Pequeno Principe"
-                                        data-price="65.00"
-                                        data-image="src/img/capa-livros/porque-nos-dormimos.jpg"
-                                        ></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
                                     </span>
+                                    <p class="titulo-avaliacao">2340 Avaliações</p>
+                                </div>
+                                <div class="comprar">
+                                    <h2 class="preco">R$ 60,00</h2>
+                                    <div class="icones-card-livro">
+                                        <span>
+                                            <i class="fa-regular fa-heart coracao"
+                                            id="add-to-favoritos-btn"
+                                            data-image="src/img/capa-livros/cultura-do-jeum.jpg"
+                                            data-name="A Cultura do Jejum"
+                                            data-price="60.00"></i>
+                                            <i class="fa-solid fa-cart-plus carrinho" id="add-to-cart-btn"
+                                            data-name="A Cultura do Jejum"
+                                            data-price="60.00"
+                                            data-image="src/img/capa-livros/cultura-do-jeum.jpg"
+                                            ></i>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                      </div>
-
-                      <div class="swiper-slide slide-livros">
-                        <div class="card-livro">
-                            <div class="img-livro">
-                                <img src="src/img/capa-livros/graca-te-basta.jpg" alt="livro1">
-                            </div>
-                            <div class="definicao-autores">
-                                <h2 class="titulo-livro">A Minha Graça te Basta</h2>
-                                <p class="autor-livro">Augustus Nicodemus</p>
-                            </div>
-                                <p class="capa">Capa Comum</p>
-                            <div class="avaliacao">
-                                <span>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>
-                                <p class="titulo-avaliacao">2340 Avaliações</p>
-                            </div>
-                            <div class="comprar">
-                                <h2 class="preco">R$ 38,90</h2>
-                                <div class="icones-card-livro">
+                          </div>
+                          <div class="swiper-slide slide-livros">
+                            <div class="card-livro" data-title="O cuidado do corpo">
+                                <div class="img-livro">
+                                    <img src="src/img/capa-livros/cuidado-do-corpo.jpg" alt="livro1">
+                                </div>
+                                <div class="definicao-autores">
+                                    <h2 class="titulo-livro">O Cuidado Do Corpo</h2>
+                                    <p class="autor-livro">Luciano Subirá</p>
+                                </div>
+                                    <p class="capa">Capa Comum</p>
+                                <div class="avaliacao">
                                     <span>
-                                        <i class="fa-regular fa-heart coracao"
-                                        id="add-to-favoritos-btn"
-                                        data-image="src/img/capa-livros/graca-te-basta.jpg"
-                                        data-name="A Minha Graça te Basta"
-                                        data-price="38.90"></i>
-
-                                        <i class="fa-solid fa-cart-plus carrinho" id="add-to-cart-btn" 
-                                        data-name="A Minha Graça te Basta"
-                                        data-price="38.90"
-                                        data-image="src/img/capa-livros/graca-te-basta.jpg"
-                                        ></i>
-
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
                                     </span>
+                                    <p class="titulo-avaliacao">2340 Avaliações</p>
+                                </div>
+                                <div class="comprar">
+                                    <h2 class="preco">R$ 55,00</h2>
+                                    <div class="icones-card-livro">
+                                        <span>
+                                            <i class="fa-regular fa-heart coracao"
+                                            id="add-to-favoritos-btn"
+                                            data-image="src/img/capa-livros/cuidado-do-corpo.jpg"
+                                            data-name="O Cuidado Do Corpo"
+                                            data-price="55.00"></i>
+                                            <i class="fa-solid fa-cart-plus carrinho" id="add-to-cart-btn"
+                                            data-name="O Cuidado Do Corpo"
+                                            data-price="55.00"
+                                            data-image="src/img/capa-livros/cuidado-do-corpo.jpg"
+                                            ></i>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                      </div>
-
-                      <div class="swiper-slide slide-livros">
-                        <div class="card-livro">
-                            <div class="img-livro">
-                                <img src="src/img/capa-livros/cultura-do-jeum.jpg" alt="livro1">
-                            </div>
-                            <div class="definicao-autores">
-                                <h2 class="titulo-livro">A Cultura do Jejum</h2>
-                                <p class="autor-livro">Luciano Subirá</p>
-                            </div>
-                                <p class="capa">Capa Comum</p>
-                            <div class="avaliacao">
-                                <span>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>
-                                <p class="titulo-avaliacao">2340 Avaliações</p>
-                            </div>
-                            <div class="comprar">
-                                <h2 class="preco">R$ 60,00</h2>
-                                <div class="icones-card-livro">
+                          </div>
+                          <div class="swiper-slide slide-livros">
+                            <div class="card-livro" data-title="Descobrindo sua identidade em Cristo">
+                                <div class="img-livro">
+                                    <img src="src/img/capa-livros/Descobrindo a sua identidade em Cristo.png" alt="livro1">
+                                </div>
+                                <div class="definicao-autores">
+                                    <h2 class="titulo-livro">Descobrindo a Sua Identidade em Cristo</h2>
+                                    <p class="autor-livro">Charles Spurgeon</p>
+                                </div>
+                                    <p class="capa">Capa Comum</p>
+                                <div class="avaliacao">
                                     <span>
-                                        <i class="fa-regular fa-heart coracao"
-                                        id="add-to-favoritos-btn"
-                                        data-image="src/img/capa-livros/cultura-do-jeum.jpg"
-                                        data-name="A Cultura do Jejum"
-                                        data-price="60.00"></i>
-
-                                        <i class="fa-solid fa-cart-plus carrinho" id="add-to-cart-btn" 
-                                        data-name="A Cultura do Jejum"
-                                        data-price="60.00"
-                                        data-image="src/img/capa-livros/cultura-do-jeum.jpg"
-                                        ></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
                                     </span>
+                                    <p class="titulo-avaliacao">2340 Avaliações</p>
+                                </div>
+                                <div class="comprar">
+                                    <h2 class="preco">R$ 37,50</h2>
+                                    <div class="icones-card-livro">
+                                        <span>
+                                            <i class="fa-regular fa-heart coracao"
+                                            id="add-to-favoritos-btn"
+                                            data-image="src/img/capa-livros/Descobrindo a sua identidade em Cristo.png"
+                                            data-name="Descobrindo a Sua Identidade em Cristo"
+                                            data-price="37.50"></i>
+                                            <i class="fa-solid fa-cart-plus carrinho" id="add-to-cart-btn"
+                                            data-name="Descobrindo a Sua Identidade em Cristo"
+                                            data-price="37.50"
+                                            data-image="src/img/capa-livros/Descobrindo a sua identidade em Cristo.png"
+                                            ></i>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                      </div>
-
-                      <div class="swiper-slide slide-livros">
-                        <div class="card-livro">
-                            <div class="img-livro">
-                                <img src="src/img/capa-livros/cuidado-do-corpo.jpg" alt="livro1">
-                            </div>
-                            <div class="definicao-autores">
-                                <h2 class="titulo-livro">O Cuidado Do Corpo</h2>
-                                <p class="autor-livro">Luciano Subirá</p>
-                            </div>
-                                <p class="capa">Capa Comum</p>
-                            <div class="avaliacao">
-                                <span>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>
-                                <p class="titulo-avaliacao">2340 Avaliações</p>
-                            </div>
-                            <div class="comprar">
-                                <h2 class="preco">R$ 55,00</h2>
-                                <div class="icones-card-livro">
+                          </div>
+                        <div class="swiper-slide slide-livros">
+                            <div class="card-livro" data-title="O Deus que Destrói Sonhos">
+                                <div class="img-livro">
+                                    <img src="src/img/capa-livros/O Deus que destrói sonhos.png" alt="livro1">
+                                </div>
+                                <div class="definicao-autores">
+                                    <h2 class="titulo-livro">O Deus que Destrói Sonhos</h2>
+                                    <p class="autor-livro">Augustus Nicodemus</p>
+                                </div>
+                                    <p class="capa">Capa Comum</p>
+                                <div class="avaliacao">
                                     <span>
-                                        <i class="fa-regular fa-heart coracao"
-                                        id="add-to-favoritos-btn"
-                                        data-image="src/img/capa-livros/cuidado-do-corpo.jpg"
-                                        data-name="O Cuidado Do Corpo"
-                                        data-price="55.00"></i>
-
-                                        <i class="fa-solid fa-cart-plus carrinho" id="add-to-cart-btn" 
-                                        data-name="O Cuidado Do Corpo"
-                                        data-price="55.00"
-                                        data-image="src/img/capa-livros/cuidado-do-corpo.jpg"
-                                        ></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
                                     </span>
+                                    <p class="titulo-avaliacao">2340 Avaliações</p>
+                                </div>
+                                <div class="comprar">
+                                    <h2 class="preco">R$ 50,00</h2>
+                                    <div class="icones-card-livro">
+                                        <span>
+                                            <i class="fa-regular fa-heart coracao"
+                                            id="add-to-favoritos-btn"
+                                            data-image="src/img/capa-livros/O Deus que destrói sonhos.png"
+                                            data-name="O Deus que Destrói Sonhos"
+                                            data-price="50.00"></i>
+                                            <i class="fa-solid fa-cart-plus carrinho" id="add-to-cart-btn"
+                                            data-name="O Deus que Destrói Sonhos"
+                                            data-price="50.00"
+                                            data-image="src/img/capa-livros/O Deus que destrói sonhos.png"
+                                            ></i>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
+                          </div>
                         </div>
-                      </div>
-
-                      <div class="swiper-slide slide-livros">
-                        <div class="card-livro">
-                            <div class="img-livro">
-                                <img src="src/img/capa-livros/Descobrindo a sua identidade em Cristo.png" alt="livro1">
-                            </div>
-                            <div class="definicao-autores">
-                                <h2 class="titulo-livro">Descobrindo a Sua Identidade em Cristo</h2>
-                                <p class="autor-livro">Charles Spurgeon</p>
-                            </div>
-                                <p class="capa">Capa Comum</p>
-                            <div class="avaliacao">
-                                <span>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>
-                                <p class="titulo-avaliacao">2340 Avaliações</p>
-                            </div>
-                            <div class="comprar">
-                                <h2 class="preco">R$ 37,50</h2>
-                                <div class="icones-card-livro">
-                                    <span>
-                                        <i class="fa-regular fa-heart coracao"
-                                        id="add-to-favoritos-btn"
-                                        data-image="src/img/capa-livros/Descobrindo a sua identidade em Cristo.png"
-                                        data-name="Descobrindo a Sua Identidade em Cristo"
-                                        data-price="37.50"></i>
-
-                                        <i class="fa-solid fa-cart-plus carrinho" id="add-to-cart-btn" 
-                                        data-name="Descobrindo a Sua Identidade em Cristo"
-                                        data-price="37.50"
-                                        data-image="src/img/capa-livros/Descobrindo a sua identidade em Cristo.png"
-                                        ></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                      </div>
-
-                    <div class="swiper-slide slide-livros">
-                        <div class="card-livro">
-                            <div class="img-livro">
-                                <img src="src/img/capa-livros/O Deus que destrói sonhos.png" alt="livro1">
-                            </div>
-                            <div class="definicao-autores">
-                                <h2 class="titulo-livro">O Deus que Destrói Sonhos</h2>
-                                <p class="autor-livro">Augustus Nicodemus</p>
-                            </div>
-                                <p class="capa">Capa Comum</p>
-                            <div class="avaliacao">
-                                <span>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>
-                                <p class="titulo-avaliacao">2340 Avaliações</p>
-                            </div>
-                            <div class="comprar">
-                                <h2 class="preco">R$ 50,00</h2>
-                                <div class="icones-card-livro">
-                                    <span>
-                                        <i class="fa-regular fa-heart coracao"
-                                        id="add-to-favoritos-btn"
-                                        data-image="src/img/capa-livros/O Deus que destrói sonhos.png"
-                                        data-name="O Deus que Destrói Sonhos"
-                                        data-price="50.00"></i>
-
-                                        <i class="fa-solid fa-cart-plus carrinho" id="add-to-cart-btn" 
-                                        data-name="O Deus que Destrói Sonhos"
-                                        data-price="50.00"
-                                        data-image="src/img/capa-livros/O Deus que destrói sonhos.png"
-                                        ></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                      </div>
-                    </div>
                     
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                  </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                      </div>
+                </div>
 
 
                    <div #swiperRef="" class="swiper mySwiper">

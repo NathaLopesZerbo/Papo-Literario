@@ -19,7 +19,10 @@
  const openSidebarFavorito = document.getElementById('openSidebarFavorito')
  const sidebarFavorito = document.getElementById('sidebar-favorito')
  const closeSidebarFavorito = document.getElementById('close-btn-favorito')
-
+ const buscarInput = document.getElementById('buscar-input');
+ const buscarBtn = document.getElementById('buscar-btn');
+ const listaLivros = document.getElementById('lista-livros');
+ const livros = listaLivros.getElementsByClassName('card-livro');
 
  let cart = [];
  let favoritos = [];
@@ -309,27 +312,26 @@ function updateFavoritos(){
 
         cartItemElementFavoritos.innerHTML = `
 
-        <div id="item-favoritos" class="item-favoritos">
-        <div class="teste">
+        <div class="favorito-itens">
             <div class="favoritos">
                 <div class="coracao-item">
                     <i class="fa-solid fa-heart"></i>
                 </div>
                 <div class="item-favoritos" id="item-favoritos">
                     <div class="img-favoritos-item">
-                        <img src="src/img/capa-livros/graca-transformadora.png" alt="">
+                        <img src="${itemf.imageFavoritos}" alt="">
                     </div>
             
-                    <div class="titulo-favoritos-item">Graça Transformadora</div>
+                    <div class="titulo-favoritos-item">${itemf.nameFavoritos}</div>
                     <div class="item-preco-remover">
                         <i class="fa-solid fa-trash remove-from-favoritos-btn"
-                        data-name="${itemf.nameFavoritos    }"></i>
-                        <div class="preco-favoritos-item">R$ 67.90</div>
+                        data-name="${itemf.nameFavoritos}"></i>
+                        <div class="preco-favoritos-item">R$ 
+                        ${itemf.priceFavoritos.toFixed(2)}</div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+
     
         `
         cartItemsFavoritos.appendChild(cartItemElementFavoritos)
@@ -371,3 +373,53 @@ function removeItemFavorito(nameFavoritos){
 document.addEventListener('DOMContentLoaded', function() {
     loadFavoritosFromLocalStorage();
 });
+
+
+
+
+function filtrarLivros() {
+    const termoBusca = buscarInput.value.toLowerCase();
+    const livros = listaLivros.getElementsByClassName('card-livro');
+
+    Array.from(livros).forEach(livro => {
+        const tituloLivro = livro.getAttribute('data-name').toLowerCase();
+
+        if (tituloLivro.includes(termoBusca)) {
+            livro.parentElement.style.display = 'block'; // Exibe o slide
+        } else {
+            livro.parentElement.style.display = 'none'; // Oculta o slide
+        }
+    });
+}
+
+buscarBtn.addEventListener('click', filtrarLivros);
+
+buscarInput.addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+        filtrarLivros();
+    }
+});
+
+
+
+
+function filtrarLivros() {
+    const termoBusca = buscarInput.value.toLowerCase();
+
+    Array.from(livros).forEach(livro => {
+        const tituloLivro = livro.getAttribute('data-title').toLowerCase();
+        const autorLivro = livro.querySelector('p').textContent.toLowerCase();
+
+        if (tituloLivro.includes(termoBusca) || autorLivro.includes(termoBusca)) {
+            livro.style.display = 'block'; // Exibe o livro
+        } else {
+            livro.style.display = 'none'; // Oculta o livro
+        }
+    });
+}
+
+// Filtrar ao clicar no botão de busca
+buscarBtn.addEventListener('click', filtrarLivros);
+
+// Filtrar ao digitar no campo de busca
+buscarInput.addEventListener('keyup', filtrarLivros);
