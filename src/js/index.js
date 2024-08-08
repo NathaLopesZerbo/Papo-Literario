@@ -23,6 +23,7 @@
  const buscarBtn = document.getElementById('buscar-btn');
  const listaLivros = document.getElementById('lista-livros');
  const livros = listaLivros.getElementsByClassName('card-livro');
+ const livrosPesquisados = document.querySelector('.livros-pesquisados');
 
  let cart = [];
  let favoritos = [];
@@ -377,45 +378,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+
+
 function filtrarLivros() {
     const termoBusca = buscarInput.value.toLowerCase();
-    const livros = listaLivros.getElementsByClassName('card-livro');
+    livrosPesquisados.innerHTML = ''; // Limpa a seção de livros pesquisados
 
-    Array.from(livros).forEach(livro => {
-        const tituloLivro = livro.getAttribute('data-name').toLowerCase();
-
-        if (tituloLivro.includes(termoBusca)) {
-            livro.parentElement.style.display = 'block'; // Exibe o slide
-        } else {
-            livro.parentElement.style.display = 'none'; // Oculta o slide
-        }
-    });
-}
-
-buscarBtn.addEventListener('click', filtrarLivros);
-
-buscarInput.addEventListener('keyup', function(event) {
-    if (event.key === 'Enter') {
-        filtrarLivros();
+    if (termoBusca === '') {
+        // Se o campo de busca estiver vazio, restaura a visibilidade dos livros no Swiper
+        Array.from(livros).forEach(livro => {
+            livro.style.display = ''; // Remove qualquer estilo de exibição aplicado anteriormente
+        });
+        return; // Sai da função para evitar mostrar resultados na seção de pesquisa
     }
-});
-
-
-
-
-function filtrarLivros() {
-    const termoBusca = buscarInput.value.toLowerCase();
 
     Array.from(livros).forEach(livro => {
         const tituloLivro = livro.getAttribute('data-title').toLowerCase();
         const autorLivro = livro.querySelector('p').textContent.toLowerCase();
 
         if (tituloLivro.includes(termoBusca) || autorLivro.includes(termoBusca)) {
-            livro.style.display = 'block'; // Exibe o livro
-        } else {
-            livro.style.display = 'none'; // Oculta o livro
+            const livroClone = livro.cloneNode(true); // Clona o livro
+            livrosPesquisados.appendChild(livroClone); // Adiciona o clone na seção de pesquisados
         }
     });
+
+    if (livrosPesquisados.children.length === 0) {
+        livrosPesquisados.innerHTML = '<p>Nenhum livro encontrado.</p>';
+    }
 }
 
 // Filtrar ao clicar no botão de busca
@@ -423,3 +413,8 @@ buscarBtn.addEventListener('click', filtrarLivros);
 
 // Filtrar ao digitar no campo de busca
 buscarInput.addEventListener('keyup', filtrarLivros);
+
+
+
+
+

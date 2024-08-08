@@ -688,6 +688,13 @@ body{
     cursor: pointer;
 }
 
+.livros-pesquisados {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Ajuste o espaço entre os livros conforme necessário */
+}
+
+
 
 
 
