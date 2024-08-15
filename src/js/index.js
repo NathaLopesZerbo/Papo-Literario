@@ -383,28 +383,43 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function filtrarLivros() {
     const termoBusca = buscarInput.value.toLowerCase();
+    const mainSite = document.getElementById('site');
+    const livrosPesquisados = document.querySelector('.livros-pesquisados');
+    const mensagemNenhumLivro = '<p class="livro-pesquisado">Nenhum livro Encontrado !!!</p>';
+
     livrosPesquisados.innerHTML = ''; // Limpa a seção de livros pesquisados
 
     if (termoBusca === '') {
-        // Se o campo de busca estiver vazio, restaura a visibilidade dos livros no Swiper
-        Array.from(livros).forEach(livro => {
-            livro.style.display = ''; // Remove qualquer estilo de exibição aplicado anteriormente
-        });
-        return; // Sai da função para evitar mostrar resultados na seção de pesquisa
+        // Se o campo de busca estiver vazio, restaura a visibilidade de todos os elementos no main
+        mainSite.classList.remove('ocultar-main');
+        return;
     }
 
-    Array.from(livros).forEach(livro => {
-        const tituloLivro = livro.getAttribute('data-title').toLowerCase();
-        const autorLivro = livro.querySelector('p').textContent.toLowerCase();
+    let encontrouLivro = false;
 
-        if (tituloLivro.includes(termoBusca) || autorLivro.includes(termoBusca)) {
+    Array.from(livros).forEach(livro => {
+        const tituloLivro = livro.getAttribute('data-title');
+        const autorLivro = livro.querySelector('p')?.textContent;
+
+        // Verifica se o título e autor não são nulos/undefined antes de aplicar toLowerCase
+        const tituloLivroLower = tituloLivro ? tituloLivro.toLowerCase() : '';
+        const autorLivroLower = autorLivro ? autorLivro.toLowerCase() : '';
+
+        if (tituloLivroLower.includes(termoBusca) || autorLivroLower.includes(termoBusca)) {
             const livroClone = livro.cloneNode(true); // Clona o livro
             livrosPesquisados.appendChild(livroClone); // Adiciona o clone na seção de pesquisados
+            encontrouLivro = true;
         }
     });
 
-    if (livrosPesquisados.children.length === 0) {
-        livrosPesquisados.innerHTML = '<p>Nenhum livro encontrado.</p>';
+    if (!encontrouLivro) {
+        // Oculta todo o conteúdo dentro de main e mostra a mensagem
+        mainSite.classList.add('ocultar-main');
+        livrosPesquisados.innerHTML = mensagemNenhumLivro;
+        livrosPesquisados.style.display = 'block'; // Garante que a mensagem seja exibida
+    } else {
+        // Se encontrou livros, assegura que o conteúdo principal esteja visível
+        mainSite.classList.remove('ocultar-main');
     }
 }
 
@@ -413,6 +428,12 @@ buscarBtn.addEventListener('click', filtrarLivros);
 
 // Filtrar ao digitar no campo de busca
 buscarInput.addEventListener('keyup', filtrarLivros);
+
+
+
+
+
+
 
 
 

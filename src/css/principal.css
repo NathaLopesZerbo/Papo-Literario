@@ -1,6 +1,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&family=League+Gothic&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 
 :root {
     --cor01:#F4F4F4;
@@ -11,6 +17,9 @@
     --cor06:#95B8D1;
 
     --fonte-Playfair:"Playfair Display", serif;
+    --fonte-Poppins: "Poppins", sans-serif;
+    --fonte-Aleo: "Aleo", serif;
+    --fonte-Gothic: "League Gothic", sans-serif;
 }
 body{
     background-color: #f5f5f586;
@@ -80,6 +89,13 @@ body{
 }
 
 
+.ocultar-main > * {
+    display: none;
+}
+
+
+
+
 
 
 
@@ -104,6 +120,13 @@ body{
     outline: 0;
     font-size: 18px;
 }
+
+.buscar-btn{
+    outline: 0;
+    border: 0;
+    font-size: 18px;
+}
+
 /* Barra de Pesquisa */
 
 .menu{
@@ -145,9 +168,25 @@ body{
 
 .menu-btn{
     font-size: 35px;
-    margin-right: 20px;
+    margin-right: 30px;
     cursor: pointer;
 }
+
+ .livro-pesquisado{
+    margin: 0 auto;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-size: 20px;
+    width: 75%;
+    background-color: #7a767677;
+    color: white;
+    border-radius: 12px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.096);
+
+} 
 
 .close-btn{
     color: #0000004b;
@@ -1051,31 +1090,65 @@ main.site div.container div.slider-wrapper{
 }
 
 .swiper-slide.autores{
-    background-color: #3498DB;
+    background-color: #95b6cd;
     border-radius: 30px;
 }
 
 .conteudo-autores{
     display: flex;
-    flex-direction: column;
 }
 
 .img-autor img{ 
-    height: 120px;
+    width: 120px;
     object-fit: cover;
     background-position: center;
 }
 
 
 .img-autor{
+    padding: 10px 0px 10px 10px;
+    height: 310px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
-    top: -20px;
+    font-family: var(--fonte-Aleo);
+    font-size: 12px;
+    gap: 5px;
 }
 
 
+.text-autores{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+    text-align: justify;
+    padding: 20px;
+    font-weight: 500;   
+    line-height: 1.7em;
+    font-family: var(--fonte-Poppins);
+}
+
+.titulo-autores{
+    position: relative;
+    top: -20px;
+    font-family: var(--fonte-Gothic);
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 500;
+    color: black;
+}
+
+
+.saiba-mais-card{
+    text-decoration: underline;
+    position: absolute;
+    bottom: 35px;
+    right: 30px;
+    font-size: 12px;
+}
 
 
 
