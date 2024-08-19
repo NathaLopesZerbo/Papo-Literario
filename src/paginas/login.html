@@ -8,28 +8,59 @@
     <title>Login - Papo-Literário</title>
 </head>
 <body>
+
+
+
+
     <form class="login"  onsubmit="storeUsername(event)">
+        <div class="logo-login">
+            <img src="../img/logo.png" alt="">
+        </div>
+        <div class="separacao-login"></div>
+        <h2>Acesso Rápido</h2>
+        <div class="img-login-sociais">
+            <div class="img-social">
+                <img src="../img/icons/icone-google.png" alt="google">
+            </div>
+            <div class="img-social">
+                <img src="../img/icons/icone-facebook.png" alt="facebook">
+            </div>
+            <div class="img-social">
+                <img src="../img/icons/icone-apple.png" alt="apple">
+            </div>
+        </div>
+        <div class="separacao-login-1"></div>
+
+
+
         <h2>Login</h2>
         <div class="box-user">
             <input type="text" id="username" required>
-            <label>Nome</label>
+            <label>Nome:</label>
+        </div>
+        <div class="box-user">
+            <input type="text" id="Email" required>
+            <label>Email:</label>
         </div>
         <div class="box-user">
             <input type="password" id="password" required>
-            <label>Senha</label>
+            <label>Senha:</label>
         </div>
         <div>
-            <a href="#" class="forget"> Esqueceu a senha?</a> <br>
-            <a href="../../index.html" class="forget"> Voltar a Página Inicial</a>
+            <a href="#" class="forget"> Esqueci minha senha</a> <br>
         </div>
         <button class="btn" type="submit">
              <span></span>
             <span></span>
             <span></span>
             <span></span>
-            Entrar
+            Logar
         </button>
+
     </form>
+
+
+
     <script src="../js/index.js"></script>
 </body>
 </html>

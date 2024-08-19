@@ -1,10 +1,10 @@
 
 :root{
 
-    --cor0:#e6ab40;
-    --cor1:#F2E2C4;
-    --cor2:#D97014;
-    --cor3:#732002;
+    --cor0:#f4f4f4;
+    --cor1:#e6e3e3;
+    --cor2:#f9f9f9;
+    --cor3:#ff6f61;
     --cor4:#400D01;
 
     --fonte-padrao:'Nunito', sans-serif;
@@ -19,76 +19,139 @@ body{
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: var(--cor4);
+    background: var(--cor0);
 }
+
+
 .login{
-    background: #803425b6;
+    background:var(--cor1);
     border-radius: 10px;
-    width: 400px;
-    padding: 40px;
+    width: 1200px;
+    border-radius: 20px;
+
 }
+
+.logo-login img{
+    object-fit: cover;
+    width: 200px;
+    margin-left: 40px;
+}
+
+.separacao-login{
+    width: 100%;
+    height: 3px;
+    background-color: var(--cor3);
+}
+
 .login h2{
+    text-transform: uppercase;
     margin-bottom: 30px;
-    font-size: 30px;
-    color: #fff;
+    font-size: 25px;
+    color: black;
     text-align: center;
+    margin: 30px;
 }
+
+.img-login-sociais img{
+    object-fit: cover;
+    width: 30px;
+}
+
+.img-login-sociais{
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.img-social{
+    padding: 10px;
+    width: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+    cursor: pointer;
+}
+
+.separacao-login-1{
+    margin: 30px auto;
+    width: 85%;
+    height: 3px;
+    background-color:#cccccc;
+
+}
+
 .login .box-user{
     position: relative;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 .login .box-user input{
-    width: 100%;
+    width: 50%;
     padding: 10px 0;
     outline: none;
     border: 0;
-    background: transparent;
-    border-bottom: 1px solid var(--cor1);
-    color: var(--cor1);
     font-size: 16px;
     margin-bottom: 30px;
 }
 .login .box-user label{
     position: absolute;
     top: 0;
-    left: 0;
-    padding: 10px 0;
-    color: #fff;
-    font-size: 16px;
+    left: 305px;
+    padding: 20px 0px 6px 6px;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
     pointer-events: none;
     transition: .5s;
 }
 .login .box-user input:focus~label,
 .login .box-user input:valid~label
 {
-    top: -20px;
-    left: 0;
-    color: white;
-    font-size: 12px;
+    top: -40px;
+    left: 305px;
+    color: black;
+    font-size: 14px;
 }
 .forget{
+    text-decoration: underline;
+    position: relative;
+    left: 300px;
+    bottom: 20px;
     font-size: 12px;
-    color: var(--cor3);
-    float: right;
+    color: black;
 }
+
 .btn{
+    position: relative;
+    bottom: 20px;
+    left: 100px;
     border: none;
     position: relative;
     display: inline-block;
     padding: 12px 20px;
-    color: var(--cor1);
+    color: var(--cor2);
+    color: black;
+    border-radius: 20px;
     text-decoration: none;
     font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 4px;
     font-weight: 700;
-    margin-top: 20px;
+    margin: 20px;
     transition: .5s;
     overflow: hidden;
+    cursor: pointer;
 }
 .btn:hover{
-    background: #491603;
-    border-radius: 5px;
-    color: var(--cor1);
+    background: var(--cor1);
+    color: black;
 }
 .btn span{
     position: absolute;
@@ -99,7 +162,7 @@ body{
     left: -100%;
     width: 100%;
     height: 4px;
-    background: linear-gradient(90deg, transparent, var(--cor2));
+    background: linear-gradient(180deg, transparent, var(--cor2));
     animation: btn1 1s linear infinite;
 }
 @keyframes btn1{
