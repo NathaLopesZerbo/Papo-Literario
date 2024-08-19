@@ -111,6 +111,16 @@ body{
     pointer-events: none;
     transition: .5s;
 }
+
+.login .box-user img{
+    position: absolute;
+    left: 73%;
+    bottom: 35px;
+    object-fit: cover;
+    width: 20px;
+}
+
+
 .login .box-user input:focus~label,
 .login .box-user input:valid~label
 {
@@ -150,7 +160,7 @@ body{
     cursor: pointer;
 }
 .btn:hover{
-    background: var(--cor1);
+    background: var(--cor2);
     color: black;
 }
 .btn span{
