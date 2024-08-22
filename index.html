@@ -216,11 +216,27 @@
         </header>
             
             <div class="sub-cabecalho">
-                <div class="item-cabecalho">
-                    <a href="#" class="sub-item">
-                    <span><i class="fa-solid fa-location-dot"></i></span>Minha Região
+
+                <div class="item-cabecalho" id="item-cabecalho">
+                    <a href="#" class="sub-item dropdown" id="dropdown">
+                      <span><i class="fa-solid fa-location-dot"></i></span>
+                      <span id="localizacao-texto">Minha Região</span>
+                      <div class="dropdown-content" id="dropdown-content">
+                        <form id="cep-form">
+                          <label for="cep">Digite seu CEP:</label>
+                          <div class="input-container">
+                            <input type="text" id="cep" name="cep" placeholder="Digite o CEP">
+                            <button type="button" id="clear-button" class="clear-button">X</button>
+                          </div>
+                          <button type="button" id="ok-button">Ok</button> <!-- Adicionado botão -->
+                        </form>
+                      </div>
                     </a>
-                </div>
+                  </div>
+                  
+                  
+                  
+                
                 <div class="item-cabecalho">
                     <a href="#" class="sub-item">
                         <span><i class="fa-solid fa-bars"></i></span>
@@ -292,24 +308,24 @@
                 </div>
             </div>
             
-            <div class="swiper carrossel">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide carrossel1">
-                    <img src="src/img/carrossel1.jpg" alt="carrossel1">
-                  </div>
+                <div class="swiper carrossel">
+                    <div class="swiper-wrapper">
+                    <div class="swiper-slide carrossel1">
+                        <img src="src/img/carrossel1.jpg" alt="carrossel1">
+                    </div>
 
-                  <div class="swiper-slide carrossel2">
-                    <img src="src/img/carrossel2.jpg" alt="carrosel2">
-                  </div>
-                  
-                  <div class="swiper-slide carrossel3">
-                    <img src="src/img/carrossel3.jpg" alt="carrossel3">
-                  </div>
-                </div>
+                    <div class="swiper-slide carrossel2">
+                        <img src="src/img/carrossel2.jpg" alt="carrosel2">
+                    </div>
+                    
+                    <div class="swiper-slide carrossel3">
+                        <img src="src/img/carrossel3.jpg" alt="carrossel3">
+                    </div>
+                    </div>
 
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-              </div> 
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>  
 
               
 

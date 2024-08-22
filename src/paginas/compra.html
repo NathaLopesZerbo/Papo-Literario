@@ -143,11 +143,22 @@
 </header>
     
     <div class="sub-cabecalho">
-        <div class="item-cabecalho">
-            <a href="#" class="sub-item">
-            <span><i class="fa-solid fa-location-dot"></i></span>Minha Região
-            </a>
-        </div>
+                 <div class="item-cabecalho" id="item-cabecalho">
+                    <a href="#" class="sub-item dropdown" id="dropdown">
+                      <span><i class="fa-solid fa-location-dot"></i></span>
+                      <span id="localizacao-texto">Minha Região</span>
+                      <div class="dropdown-content" id="dropdown-content">
+                        <form id="cep-form">
+                          <label for="cep">Digite seu CEP:</label>
+                          <div class="input-container">
+                            <input type="text" id="cep" name="cep" placeholder="Digite o CEP">
+                            <button type="button" id="clear-button" class="clear-button">X</button>
+                          </div>
+                          <button type="button" id="ok-button">Ok</button> <!-- Adicionado botão -->
+                        </form>
+                      </div>
+                    </a>
+                  </div>
 
       <div class="item-cabecalho">
                     <a href="#" class="sub-item">
@@ -310,9 +321,12 @@
                 </div>
 
                 <div class="inserir-frete">
-                    <input type="text" placeholder="Digite seu CEP" class="input-frete">
-                    <button class="button-frete" id="closeModal">OK</button>
-                </div>
+                    <input type="text" id="input-frete" placeholder="Digite seu CEP" class="input-frete">
+                    <button id="button-frete" class="button-frete">OK</button>
+                    <span id="frete-localizacao" class="frete-localizacao">Minha Região</span> 
+                  </div>
+                  
+
 
                 <div class="compra">
                     <img src="../img/icons/icone-comprar.png" alt="icone-comprar">

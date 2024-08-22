@@ -64,3 +64,200 @@ openSidebar.addEventListener('click',function(){
 
 
 
+ const itemCabecalho = document.getElementById('item-cabecalho');
+const contentDropdown = document.getElementById('dropdown-content');
+const headerDropdown = document.getElementById('dropdown');
+const okButton = document.getElementById('ok-button');
+const clearButton = document.getElementById('clear-button');
+const cepInput = document.getElementById('cep');
+const inputFrete = document.getElementById('input-frete');
+const buttonFrete = document.getElementById('button-frete');
+const freteLocalizacao = document.getElementById('frete-localizacao');
+let dropdownDelay;
+
+function showDropdown() {
+  clearTimeout(dropdownDelay);
+  contentDropdown.style.display = 'block';
+}
+
+function hideDropdown() {
+    dropdownDelay = setTimeout(() => {
+      if (!isMouseInside) {
+        buscarEndereco(); // Realiza a pesquisa
+        contentDropdown.style.display = 'none'; // Fecha o dropdown
+      }
+    }, 4000); // Tempo de atraso em milissegundos
+  }
+  
+
+let isMouseInside = false;
+
+itemCabecalho.addEventListener('mouseover', function() {
+  isMouseInside = true;
+  showDropdown();
+});
+
+contentDropdown.addEventListener('mouseover', function() {
+  isMouseInside = true;
+  clearTimeout(dropdownDelay);
+  contentDropdown.style.display = 'block';
+});
+
+itemCabecalho.addEventListener('mouseout', function() {
+  isMouseInside = false;
+  hideDropdown();
+});
+
+contentDropdown.addEventListener('mouseout', function() {
+  isMouseInside = false;
+  hideDropdown();
+});
+
+// Adiciona evento de clique ao botão "OK" do dropdown
+okButton.addEventListener('click', function() {
+  salvarCep(); // Salva o CEP no localStorage
+  buscarEndereco(); // Realiza a pesquisa
+  contentDropdown.style.display = 'none'; // Fecha o dropdown
+});
+
+// Adiciona evento de clique ao botão "OK" da seção de frete
+buttonFrete.addEventListener('click', function() {
+  salvarCep(); // Salva o CEP no localStorage
+  buscarEndereco(); // Realiza a pesquisa
+});
+
+// Adiciona evento para pressionar Enter no campo de CEP
+cepInput.addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+    event.preventDefault(); // Evita o envio do formulário padrão
+    salvarCep(); // Salva o CEP no localStorage
+    buscarEndereco(); // Realiza a pesquisa
+    contentDropdown.style.display = 'none'; // Fecha o dropdown
+  }
+});
+
+// Adiciona evento para pressionar Enter no campo de frete
+inputFrete.addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+    event.preventDefault(); // Evita o envio do formulário padrão
+    salvarCep(); // Salva o CEP no localStorage
+    buscarEndereco(); // Realiza a pesquisa
+  }
+});
+
+// Adiciona evento ao botão "X" para limpar o campo de CEP
+clearButton.addEventListener('click', function() {
+  cepInput.value = ''; // Limpa o campo de CEP
+  inputFrete.value = ''; // Limpa o campo de frete
+  localStorage.removeItem('cep'); // Remove o CEP do localStorage
+  document.getElementById('localizacao-texto').textContent = 'Minha Região'; // Reseta o texto da localização
+  freteLocalizacao.textContent = 'Minha Região'; // Reseta o texto da localização no frete
+  inputFrete.style.display = 'inline-block'; // Mostra o campo de entrada
+  buttonFrete.style.display = 'inline-block'; // Mostra o botão "OK"
+  freteLocalizacao.style.display = 'none'; // Oculta o endereço
+  suggestionsList.innerHTML = ''; // Limpa a lista de sugestões
+});
+
+// Adiciona sugestões ao dropdown
+cepInput.addEventListener('input', function() {
+  const cep = cepInput.value.replace(/\D/g, '');
+  if (cep.length > 0) {
+    const storedCeps = JSON.parse(localStorage.getItem('ceps')) || [];
+    const suggestions = storedCeps.filter(storedCep => storedCep.startsWith(cep));
+    displaySuggestions(suggestions);
+  } else {
+    suggestionsList.innerHTML = ''; // Limpa a lista se o campo estiver vazio
+  }
+});
+
+// Adiciona sugestões ao campo de frete
+inputFrete.addEventListener('input', function() {
+  const cep = inputFrete.value.replace(/\D/g, '');
+  if (cep.length > 0) {
+    const storedCeps = JSON.parse(localStorage.getItem('ceps')) || [];
+    const suggestions = storedCeps.filter(storedCep => storedCep.startsWith(cep));
+    displaySuggestions(suggestions);
+  }
+});
+
+function displaySuggestions(suggestions) {
+  suggestionsList.innerHTML = ''; // Limpa a lista de sugestões
+  suggestions.forEach(suggestion => {
+    const li = document.createElement('li');
+    li.textContent = suggestion;
+    li.addEventListener('click', function() {
+      cepInput.value = suggestion;
+      inputFrete.value = suggestion;
+      salvarCep(); // Salva o CEP no localStorage
+      buscarEndereco(); // Realiza a pesquisa
+      contentDropdown.style.display = 'none'; // Fecha o dropdown
+    });
+    suggestionsList.appendChild(li);
+  });
+}
+
+function salvarCep() {
+  const cep = cepInput.value.replace(/\D/g, '') || inputFrete.value.replace(/\D/g, '');
+  if (cep.length === 8) {
+    let storedCeps = JSON.parse(localStorage.getItem('ceps')) || [];
+    if (!storedCeps.includes(cep)) {
+      storedCeps.push(cep);
+      localStorage.setItem('ceps', JSON.stringify(storedCeps));
+    }
+    localStorage.setItem('cep', cep);
+  }
+}
+
+function buscarEndereco() {
+  const cep = cepInput.value.replace(/\D/g, '') || inputFrete.value.replace(/\D/g, '');
+
+  if (cep.length === 8) {
+    const url = `https://viacep.com.br/ws/${cep}/json/`;
+
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        if (!data.erro) {
+          // Exibe a rua e o bairro
+          const localizacao = `${data.logradouro}, ${data.bairro}`;
+          document.getElementById('localizacao-texto').textContent = localizacao;
+          freteLocalizacao.textContent = localizacao; // Atualiza o endereço na seção de frete
+
+          // Atualiza o campo de entrada e o botão
+          inputFrete.style.display = 'none'; // Oculta o campo de entrada
+          buttonFrete.style.display = 'none'; // Oculta o botão "OK"
+          freteLocalizacao.style.display = 'inline'; // Mostra o endereço
+        } else {
+          document.getElementById('localizacao-texto').textContent = 'Região não encontrada';
+          freteLocalizacao.textContent = 'Região não encontrada'; // Atualiza mensagem de erro na seção de frete
+          freteLocalizacao.style.display = 'inline'; // Mostra a mensagem de erro
+        }
+      })
+      .catch(error => {
+        console.error('Erro ao buscar o endereço:', error);
+        document.getElementById('localizacao-texto').textContent = 'Erro ao buscar a região';
+        freteLocalizacao.textContent = 'Erro ao buscar a região'; // Atualiza mensagem de erro na seção de frete
+        freteLocalizacao.style.display = 'inline'; // Mostra a mensagem de erro
+      });
+  } else {
+    document.getElementById('localizacao-texto').textContent = 'CEP inválido';
+    freteLocalizacao.textContent = 'CEP inválido'; // Atualiza mensagem de CEP inválido na seção de frete
+    freteLocalizacao.style.display = 'inline'; // Mostra a mensagem de erro
+  }
+}
+
+// Atualiza a seção de frete quando o CEP é alterado
+function atualizarFrete() {
+  const cep = localStorage.getItem('cep');
+  if (cep) {
+    inputFrete.value = cep;
+    buscarEndereco(); // Atualiza o endereço com base no CEP armazenado
+  }
+}
+
+// Inicializa o campo de frete com o CEP salvo, se existir
+atualizarFrete();
+
+
+
+
