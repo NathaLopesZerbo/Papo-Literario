@@ -385,7 +385,15 @@ function filtrarLivros() {
     const termoBusca = buscarInput.value.toLowerCase();
     const mainSite = document.getElementById('site');
     const livrosPesquisados = document.querySelector('.livros-pesquisados');
-    const mensagemNenhumLivro = '<p class="livro-pesquisado">Nenhum livro Encontrado !!!</p>';
+    const mensagemNenhumLivro = `
+
+    <div class="livros-pesquisados"> 
+    <img src="./src/img/icons/icone-livro-rasgado.png" alt="livro rasgado">
+    <h1>Desculpe, livro não econtrado!</h1>
+    <p>Verifique se tem algo de errado ou tente mais tarde</p>
+    </div>
+
+    `;
 
     livrosPesquisados.innerHTML = ''; // Limpa a seção de livros pesquisados
 

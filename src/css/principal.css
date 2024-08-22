@@ -727,15 +727,29 @@ body{
     cursor: pointer;
 }
 
-.livros-pesquisados {
+
+.livros-pesquisados{
+    margin-top: 50px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* Ajuste o espaço entre os livros conforme necessário */
+    flex-direction: column;
+    align-items: center;
+        
+}
+.livros-pesquisados img{
+    object-fit: contain;
+    width: 160px;
 }
 
-
-
-
+.livros-pesquisados h1{
+    font-size: 3em;
+    margin-bottom: 7px;
+}
+.livros-pesquisados p{
+    font-family: var(--fonte-Aleo);
+    font-weight: 500;
+    font-style: italic;
+    text-transform: uppercase;
+}
 
 
 /* Sub-Cabeçalho */
@@ -763,6 +777,7 @@ main.site div.container div.slider-wrapper{
     color: white;
     text-transform: uppercase;
     cursor: pointer;
+    margin-bottom: 40px;
 }
 
 .card-list .card-item .user-image{
@@ -815,7 +830,7 @@ main.site div.container div.slider-wrapper{
 
 .titulo-recomendados h2{
     display: flex;
-    margin: 15px 0px 22px 0px;
+    margin: 80px 0px 10px 0px;
     padding-left: 10px;
     text-transform: uppercase;
     font-size: 22px;
@@ -1082,10 +1097,14 @@ main.site div.container div.slider-wrapper{
     padding: 0px 15px;
 }
 
+.titulo-card-autores{
+    margin-top: 40px;
+}
+
 .cards-autores{
-    display: flex;
+    margin-top: 7px;
+    margin-bottom: 40px;
     gap: 10px;
-    height: 320px;
     align-items: center;
 }
 
