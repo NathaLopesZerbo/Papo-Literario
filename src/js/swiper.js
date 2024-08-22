@@ -52,10 +52,6 @@ const swiperCards = new Swiper('.slider-wrapper', {
 
 
   const carrosseAutores = new Swiper('.mySwiperAutores', {
-    navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
 
 
   breakpoints: {
