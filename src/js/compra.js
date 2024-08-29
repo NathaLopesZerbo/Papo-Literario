@@ -76,7 +76,6 @@ openSidebar.addEventListener('click',function(){
  const valorFreteP = document.getElementById('valor-frete'); // Elemento para exibir o valor do frete
  const suggestionsList = document.getElementById('suggestions-list'); // Verifique se este ID está correto
  let dropdownDelay;
- let isMouseInside = false;
  
  function showDropdown() {
    clearTimeout(dropdownDelay);
@@ -91,6 +90,8 @@ openSidebar.addEventListener('click',function(){
      }
    }, 4000); // Tempo de atraso em milissegundos
  }
+ 
+ let isMouseInside = false;
  
  itemCabecalho.addEventListener('mouseover', function() {
    isMouseInside = true;
@@ -152,7 +153,7 @@ openSidebar.addEventListener('click',function(){
    localStorage.removeItem('cep'); // Remove o CEP do localStorage
    document.getElementById('localizacao-texto').textContent = 'Minha Região'; // Reseta o texto da localização
    freteLocalizacao.textContent = 'Minha Região'; // Reseta o texto da localização no frete
-   valorFreteP.textContent = ''; // Limpa o valor do frete
+   valorFreteP.textContent = 'Calcular frete e prazo'; // Reseta o texto do parágrafo
    inputFrete.style.display = 'inline-block'; // Mostra o campo de entrada
    buttonFrete.style.display = 'inline-block'; // Mostra o botão "OK"
    freteLocalizacao.style.display = 'none'; // Oculta o endereço
@@ -231,7 +232,7 @@ openSidebar.addEventListener('click',function(){
            freteLocalizacao.textContent = localizacao; // Atualiza o endereço na seção de frete
  
            // Calcula e exibe o valor do frete
-           calcularFrete(cep); // Passa o CEP completo para calcular o frete
+           atualizarFrete(cep); // Passa o CEP para a função que calcula o frete
  
            // Atualiza o campo de entrada e o botão
            inputFrete.style.display = 'none'; // Oculta o campo de entrada
@@ -241,7 +242,7 @@ openSidebar.addEventListener('click',function(){
            document.getElementById('localizacao-texto').textContent = 'Região não encontrada';
            freteLocalizacao.textContent = 'Região não encontrada'; // Atualiza mensagem de erro na seção de frete
            freteLocalizacao.style.display = 'inline'; // Mostra a mensagem de erro
-           valorFreteP.textContent = ''; // Limpa o valor do frete
+           valorFreteP.textContent = 'Calcular frete e prazo'; // Reseta o texto do parágrafo
          }
        })
        .catch(error => {
@@ -249,45 +250,44 @@ openSidebar.addEventListener('click',function(){
          document.getElementById('localizacao-texto').textContent = 'Erro ao buscar a região';
          freteLocalizacao.textContent = 'Erro ao buscar a região'; // Atualiza mensagem de erro na seção de frete
          freteLocalizacao.style.display = 'inline'; // Mostra a mensagem de erro
-         valorFreteP.textContent = ''; // Limpa o valor do frete
+         valorFreteP.textContent = 'Calcular frete e prazo'; // Reseta o texto do parágrafo
        });
    } else {
      document.getElementById('localizacao-texto').textContent = 'CEP inválido';
      freteLocalizacao.textContent = 'CEP inválido'; // Atualiza mensagem de CEP inválido na seção de frete
      freteLocalizacao.style.display = 'inline'; // Mostra a mensagem de erro
-     valorFreteP.textContent = ''; // Limpa o valor do frete
+     valorFreteP.textContent = 'Calcular frete e prazo'; // Reseta o texto do parágrafo
    }
  }
  
- // Função para calcular o frete
- function calcularFrete(cep) {
-   // Simulação de cálculo de frete com base no CEP
-   const tabelaFrete = {
-     '01001000': 10.00,
-     '02020000': 15.50,
-     '03030000': 20.75,
-     '13504731': 25.00, // Valor para o CEP 13504731
-     // Adicione outros CEPs e valores aqui
-   };
+ // Função para calcular o frete com base no CEP inserido
+ function atualizarFrete(cep) {
+   let valorFrete;
  
-   const valorFrete = tabelaFrete[cep];
-   if (valorFrete) {
-     valorFreteP.textContent = `Frete: R$ ${valorFrete.toFixed(2)}`;
+   // Simulação de valores de frete com base no CEP
+   if (cep.startsWith('13')) {
+     valorFrete = 6.00; // Frete para a região de São Paulo (exemplo)
+   } else if (cep.startsWith('20')) {
+     valorFrete = 25.00; // Frete para a região do Rio de Janeiro (exemplo)
+   } else if (cep.startsWith('30')) {
+     valorFrete = 20.00; // Frete para a região de Minas Gerais (exemplo)
    } else {
-     valorFreteP.textContent = 'Frete não disponível';
+     valorFrete = 30.00; // Frete padrão para outras regiões
    }
+ 
+   // Atualiza o valor do frete no elemento HTML
+   valorFreteP.textContent = `Frete: R$ ${valorFrete.toFixed(2)}`;
  }
  
  // Inicializa o campo de frete com o CEP salvo, se existir
- function atualizarFrete() {
-   const cep = localStorage.getItem('cep');
-   if (cep) {
-     cepInput.value = cep;
-     inputFrete.value = cep;
-     buscarEndereco(); // Realiza a pesquisa
+ window.addEventListener('load', function() {
+   const cepSalvo = localStorage.getItem('cep');
+   if (cepSalvo) {
+     cepInput.value = cepSalvo;
+     buscarEndereco(); // Realiza a pesquisa com o CEP salvo
    }
- }
- atualizarFrete();
+ });
+ 
  
 
 
