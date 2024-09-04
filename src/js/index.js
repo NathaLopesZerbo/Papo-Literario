@@ -38,21 +38,6 @@
 });
 
 
-let timeout;
-
-function showDropdown() {
-    clearTimeout(timeout);
-    dropdownContent.style.display = 'block';
-}
-
-dropdown.addEventListener('mouseover', showDropdown);
-dropdown.addEventListener('mouseout', hideDropdown);
-
-function hideDropdown() {
-    timeout = setTimeout(() => {
-        dropdownContent.style.display = 'none';
-    }, 100);
-}
 
 openSidebarFavorito.addEventListener('click', function(){
     updateFavoritos()
@@ -439,17 +424,53 @@ buscarBtn.addEventListener('click', filtrarLivros);
 buscarInput.addEventListener('keyup', filtrarLivros);
 
 
+let timeout;
+
+function showDropdown() {
+    clearTimeout(timeout);
+    dropdownContent.style.display = 'block';
+}
+
+dropdown.addEventListener('mouseover', showDropdown);
+dropdown.addEventListener('mouseout', hideDropdown);
+
+function hideDropdown() {
+    timeout = setTimeout(() => {
+        dropdownContent.style.display = 'none';
+    }, 1000);
+}
 
 
-
+// Elementos do DOM
 const itemCabecalho = document.getElementById('item-cabecalho');
-const contentDropdown = document.getElementById('dropdown-content');
+const contentDropdown2 = document.getElementById('dropdown-content-2'); // Alterado ID para evitar conflito
 const okButton = document.getElementById('ok-button');
 const clearButton = document.getElementById('clear-button');
 const cepInput = document.getElementById('cep');
+const localizacaoTexto = document.getElementById('localizacao-texto');
 
-// Recupera o CEP armazenado no localStorage ao carregar a página
-document.addEventListener('DOMContentLoaded', function() {
+let dropdownTimeout2; // Renomeado para evitar conflito
+
+// Função para mostrar o dropdown
+function showDropdown2() { // Renomeada para evitar conflito
+  clearTimeout(dropdownTimeout2); // Cancela o timeout caso exista
+  contentDropdown2.style.display = 'block'; // Mostra o dropdown
+}
+
+// Função para esconder o dropdown com atraso
+function hideDropdown2() { // Renomeada para evitar conflito
+  dropdownTimeout2 = setTimeout(() => {
+    contentDropdown2.style.display = 'none'; // Esconde o dropdown após o atraso
+  }, 1000); // Tempo de espera antes de esconder
+}
+
+// Eventos do dropdown ao passar o mouse no cabeçalho
+itemCabecalho.addEventListener('mouseover', showDropdown2); // Usar a função renomeada
+
+itemCabecalho.addEventListener('mouseout', hideDropdown2); // Usar a função renomeada
+
+// Evento de carregamento da página para recuperar o CEP armazenado no localStorage
+document.addEventListener('DOMContentLoaded', () => {
   const storedCep = localStorage.getItem('cep');
   if (storedCep) {
     cepInput.value = storedCep;
@@ -457,75 +478,56 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-function showDropdown() {
-  contentDropdown.style.display = 'block';
-}
-
-function hideDropdown() {
-  // Nenhuma ação será tomada ao remover o mouse do dropdown
-}
-
-itemCabecalho.addEventListener('mouseover', function() {
-  showDropdown();
-});
-
-itemCabecalho.addEventListener('mouseout', function() {
-  hideDropdown();
-});
-
 // Centraliza a lógica de submissão do CEP
 function handleCepSubmission() {
   const cep = cepInput.value.trim();
 
   if (cep === '') {
-    document.getElementById('localizacao-texto').textContent = 'Nenhum CEP inserido';
+    localizacaoTexto.textContent = 'Nenhum CEP inserido';
   } else if (cep.length !== 8 || !/^\d{8}$/.test(cep)) {
-    document.getElementById('localizacao-texto').textContent = 'CEP inválido';
+    localizacaoTexto.textContent = 'CEP inválido';
   } else {
     salvarCep(); // Salva o CEP no localStorage
     buscarEndereco(); // Realiza a pesquisa
-    contentDropdown.style.display = 'none'; // Fecha o dropdown
+    hideDropdown2(); // Fecha o dropdown
   }
 }
 
 // Adiciona evento de clique ao botão "Ok"
-okButton.addEventListener('click', function() {
-  handleCepSubmission(); // Chama a função centralizada
-});
+okButton.addEventListener('click', handleCepSubmission);
 
-// Adiciona evento para pressionar Enter no campo de CEP
-cepInput.addEventListener('keydown', function(event) {
+// Adiciona evento para pressionar "Enter" no campo de CEP
+cepInput.addEventListener('keydown', (event) => {
   if (event.key === 'Enter') {
-    event.preventDefault(); // Evita o envio do formulário padrão
+    event.preventDefault(); // Evita o envio do formulário
     handleCepSubmission(); // Chama a função centralizada
   }
 });
 
 // Limita o campo de CEP a 8 dígitos
-cepInput.addEventListener('input', function() {
-  let cep = cepInput.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
-  if (cep.length > 8) {
-    cep = cep.slice(0, 8); // Limita a 8 dígitos
-  }
-  cepInput.value = cep; // Atualiza o campo de CEP com o valor formatado
+cepInput.addEventListener('input', () => {
+  let cep = cepInput.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+  cepInput.value = cep.slice(0, 8); // Limita o valor a 8 dígitos
 });
 
-// Adiciona evento ao botão "X" para limpar o campo de CEP
-clearButton.addEventListener('click', function() {
+// Evento de clique no botão "X" para limpar o campo de CEP
+clearButton.addEventListener('click', () => {
   cepInput.value = ''; // Limpa o campo de CEP
   localStorage.removeItem('cep'); // Remove o CEP do localStorage
-  document.getElementById('localizacao-texto').textContent = 'Minha Região'; // Reseta o texto da localização
+  localizacaoTexto.textContent = 'Minha Região'; // Reseta o texto da localização
 });
 
+// Função para salvar o CEP no localStorage
 function salvarCep() {
-  const cep = cepInput.value.replace(/\D/g, '');
+  const cep = cepInput.value.replace(/\D/g, ''); // Remove caracteres não numéricos
   if (cep.length === 8) {
-    localStorage.setItem('cep', cep);
+    localStorage.setItem('cep', cep); // Salva o CEP se for válido
   }
 }
 
+// Função para buscar o endereço pelo CEP
 function buscarEndereco() {
-  const cep = cepInput.value.replace(/\D/g, '');
+  const cep = cepInput.value.replace(/\D/g, ''); // Remove caracteres não numéricos
 
   if (cep.length === 8) {
     const url = `https://viacep.com.br/ws/${cep}/json/`;
@@ -534,21 +536,22 @@ function buscarEndereco() {
       .then(response => response.json())
       .then(data => {
         if (!data.erro) {
-          // Exibe a rua e o bairro
-          const localizacao = `${data.logradouro}, ${data.bairro}`;
-          document.getElementById('localizacao-texto').textContent = localizacao;
+          const localizacao = `${data.logradouro}, ${data.bairro}`; // Monta o texto de localização
+          localizacaoTexto.textContent = localizacao; // Atualiza o texto da localização
         } else {
-          document.getElementById('localizacao-texto').textContent = 'Região não encontrada';
+          localizacaoTexto.textContent = 'Região não encontrada';
         }
       })
       .catch(error => {
         console.error('Erro ao buscar o endereço:', error);
-        document.getElementById('localizacao-texto').textContent = 'Erro ao buscar a região';
+        localizacaoTexto.textContent = 'Erro ao buscar a região';
       });
   } else {
-    document.getElementById('localizacao-texto').textContent = 'CEP inválido';
+    localizacaoTexto.textContent = 'CEP inválido';
   }
 }
+
+
 
 
 
