@@ -1248,16 +1248,33 @@ main.site div.container div.slider-wrapper{
 }
 
 
-.img-fixed{
+.img-fixed {
     margin-top: 60px;
-    background: linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url(../img/foto-teste.jpg);
-    box-shadow: 5px 10px 7px 0px rgba(0, 0, 0, 0.041);
     height: 300px;
     background-size: cover;
     background-attachment: fixed;
     display: flex;
     align-items: center;
+    animation: changeImage 50s infinite;
+    background-image: linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('../img/foto-fundo-1.jpg');
+    /* Transição suave para as mudanças de background */
+    transition: background-image 2s ease-in-out;
 }
+
+/* Animação para alternar entre as imagens */
+@keyframes changeImage {
+    0% {
+        background-image: linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('../img/foto-fundo-1.jpg');
+    }
+    50% {
+        background-image: linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('../img/foto-fundo-2.jpg');
+    }
+    100% {
+        background-image: linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('../img/foto-fundo-1.jpg');
+    }
+}
+
+
 
 .dentro{
     color: white;
