@@ -103,10 +103,29 @@ function storeUsername(event) {
     
     if (!currentFavoritos) {
         localStorage.setItem('favoritos', JSON.stringify([]));  // Inicia favoritos vazio se não houver
-    }
+    }    
 
-    window.location.href = '../../index.html'; 
+    window.location.href = '../../index.html';   
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const lastToastTime = localStorage.getItem('lastToastTime');
+    const currentTime = new Date().getTime();
+        Toastify({
+            text: "Seja Bem Vindo ao Papo Literário",
+            duration: 4000, // 4 segundos
+            gravity: "top", // Parte superior
+            position: "right", // Lado direito
+            backgroundColor: "#333", // Cor de fundo
+            stopOnFocus: true, // Pausa na interação
+            close: true // Adiciona um botão de fechar (x)
+        }).showToast();
+
+        // Atualiza a data da última exibição no localStorage
+        localStorage.setItem('lastToastTime', currentTime);
+    
+});
+
 
 // Função para inicializar o estado da página
 function initializePage() {

@@ -1240,6 +1240,30 @@ main.site div.container div.slider-wrapper{
 
 
 
+.img-fixed{
+    margin-top: 60px;
+    background: linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url(../img/foto-teste.jpg);
+    box-shadow: 5px 10px 7px 0px rgba(0, 0, 0, 0.041);
+    height: 300px;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+}
+
+.dentro{
+    color: white;
+    font-size: 30px;
+    margin: 0 auto;
+    text-transform: uppercase;
+}
+
+
+
+
+
+
+
 
 
 
