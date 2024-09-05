@@ -86,84 +86,107 @@
         }
     })
 
-    // Função para armazenar o nome de usuário no localStorage e redirecionar para a página principal
-    // Função para armazenar o nome de usuário no localStorage e redirecionar para a página principal
-    function storeUsername(event) {
-        event.preventDefault(); // Previne o envio padrão do formulário
-        const username = document.getElementById('username').value;
-        localStorage.setItem('username', username);
-        window.location.href = '../../index.html'; // Redireciona para a página principal
+   
+   // Função para armazenar o nome de usuário e redirecionar
+function storeUsername(event) {
+    event.preventDefault(); 
+    const username = document.getElementById('username').value;
+    localStorage.setItem('username', username);
+    
+    // Verifica se já há itens no carrinho e favoritos no localStorage
+    const currentCart = localStorage.getItem('cart');
+    const currentFavoritos = localStorage.getItem('favoritos');
+    
+    if (!currentCart) {
+        localStorage.setItem('cart', JSON.stringify([]));  // Inicia o carrinho vazio se não houver
+    }
+    
+    if (!currentFavoritos) {
+        localStorage.setItem('favoritos', JSON.stringify([]));  // Inicia favoritos vazio se não houver
     }
 
-    // Função para inicializar o estado da página
-    function initializePage() {
-        const username = localStorage.getItem('username');
-        const welcomeMessageElement = document.getElementById('welcome-message1');
-        const welcomeMessageElement2 = document.getElementById('welcome-message');
-        if (welcomeMessageElement,welcomeMessageElement2) {
-            if (username) {
-                welcomeMessageElement.textContent = `Olá, ${username}!`;
-                welcomeMessageElement2.textContent = `Olá, ${username}!`;
-            } else {
-                welcomeMessageElement.textContent = 'Login';
-                welcomeMessageElement2.textContent = 'Login';
+    window.location.href = '../../index.html'; 
+}
+
+// Função para inicializar o estado da página
+function initializePage() {
+    const username = localStorage.getItem('username');
+    const welcomeMessageElement = document.getElementById('welcome-message1');
+    const welcomeMessageElement2 = document.getElementById('welcome-message');
+
+    if (welcomeMessageElement && welcomeMessageElement2) {
+        if (username) {
+            welcomeMessageElement.textContent = `Olá, ${username}!`;
+            welcomeMessageElement2.textContent = `Olá, ${username}!`;
+            
+            // Restaurar carrinho e favoritos
+            const storedCart = localStorage.getItem('cart');
+            const storedFavoritos = localStorage.getItem('favoritos');
+            
+            if (storedCart) {
+                cart = JSON.parse(storedCart);
+                updateCarrinho();  // Atualiza a exibição do carrinho
+            }
+            
+            if (storedFavoritos) {
+                favoritos = JSON.parse(storedFavoritos);
+                updateFavoritos();  // Atualiza a exibição dos favoritos
             }
         } else {
-            console.error('Elemento com ID "welcome-message" não encontrado.');
-        }
-    }
-
-    // Função para remover o nome de usuário e atualizar a página
-    function logout() {
-        localStorage.removeItem('username');
-        localStorage.removeItem('cart');
-        localStorage.removeItem('favoritos');
-        const welcomeMessageElement = document.getElementById('welcome-message1');
-        const welcomeMessageElement2 = document.getElementById('welcome-message');
-        if (welcomeMessageElement,welcomeMessageElement2) {
             welcomeMessageElement.textContent = 'Login';
             welcomeMessageElement2.textContent = 'Login';
-        } else {
-            console.error('Elemento com ID "welcome-message" não encontrado.');
         }
-        // Aqui você pode adicionar qualquer outra lógica que queira executar após o logout
-        cart = [];
-        favoritos = [];
-        updateCarrinho();
-        updateFavoritos();
+    } else {
+        console.error('Elemento com ID "welcome-message" não encontrado.');
     }
+}
 
-    // Inicializa a página ao carregar
-    document.addEventListener('DOMContentLoaded', () => {
-        initializePage();
+// Função para remover o nome de usuário e dados armazenados, e atualizar a página
+function logout() {
+    localStorage.removeItem('username');
+    localStorage.removeItem('cart');
+    localStorage.removeItem('favoritos');
+    
+    const welcomeMessageElement = document.getElementById('welcome-message1');
+    const welcomeMessageElement2 = document.getElementById('welcome-message');
 
-        // Adiciona o evento de clique para o botão de sair
-        const sairFavoritosButton = document.querySelector('.sair-favoritos');
-        if (sairFavoritosButton) {
-            sairFavoritosButton.addEventListener('click', logout);
-        } else {
-            console.error('Elemento com a classe "sair-favoritos" não encontrado.');
-        }
-    });
-
-
-
-
-
-    // Carrinho
-
-    function saveCart() {
-        localStorage.setItem('cart', JSON.stringify(cart));
+    if (welcomeMessageElement && welcomeMessageElement2) {
+        welcomeMessageElement.textContent = 'Login';
+        welcomeMessageElement2.textContent = 'Login';
+    } else {
+        console.error('Elemento com ID "welcome-message" não encontrado.');
     }
+    
+    // Limpa as variáveis do carrinho e favoritos
+    cart = [];
+    favoritos = [];
+    updateCarrinho();
+    updateFavoritos();
+}
 
+// Inicializa a página ao carregar
+document.addEventListener('DOMContentLoaded', () => {
+    initializePage();
 
-    function loadCart() {
-        const savedCart = localStorage.getItem('cart');
-        if (savedCart) {
-            cart = JSON.parse(savedCart);
-            updateCarrinho(); 
-        }
+    // Adiciona o evento de clique para o botão de sair
+    const sairFavoritosButton = document.querySelector('.sair-favoritos');
+    if (sairFavoritosButton) {
+        sairFavoritosButton.addEventListener('click', logout);
+    } else {
+        console.error('Elemento com a classe "sair-favoritos" não encontrado.');
     }
+});
+
+// Função para atualizar o carrinho (você precisa implementá-la)
+function updateCarrinho() {
+    
+}
+
+// Função para atualizar os favoritos (você precisa implementá-la)
+function updateFavoritos() {
+    // Lógica para atualizar a interface de favoritos com os itens armazenados em "favoritos"
+}
+
 
     // Carrinho
 
@@ -474,7 +497,7 @@
     function hideDropdown() {
         timeout = setTimeout(() => {
             dropdownContent.style.display = 'none';
-        }, 1000);
+        }, 100);
     }
 
 

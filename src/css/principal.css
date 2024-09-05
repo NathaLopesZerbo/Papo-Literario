@@ -770,6 +770,12 @@ body{
     align-items: center;
     justify-content: center;
     gap: 5px;
+    transition: 0.2s  ease;
+}
+
+.home-favorito:hover{
+    background-color: #d3d3d3;
+    width: 75%;
 }
 
 .home-favorito img{
@@ -782,6 +788,7 @@ body{
     font-size: 20px;
     cursor: pointer;
 }
+
 
 
 .livros-pesquisados{
