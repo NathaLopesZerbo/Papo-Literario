@@ -1164,20 +1164,35 @@ main.site div.container div.slider-wrapper{
     margin-top: 40px;
 }
 
-.cards-autores{
+.cards-autores {
     margin-top: 7px;
     margin-bottom: 40px;
     gap: 10px;
     align-items: center;
+    position: relative;
+    z-index: 100; 
 }
 
-.swiper-slide.autores{
+.swiper-slide.autores {
     background-color: #95b6cd;
-    border-radius: 30px;
+    border-radius: 20px 20px 20px 20px;
+    position: relative; 
+    z-index: 100;
 }
 
-.conteudo-autores{
+.conteudo-autores {
     display: flex;
+    position: relative; 
+}
+
+.img-marrom {
+    background-color: #4D3F2D;
+    height: 20px;
+    width: 475px;
+    border-radius: 20px 20px 0px 0px;
+    top: 0px;
+    position: absolute;
+    z-index: -99; 
 }
 
 .img-autor img{ 
@@ -1215,7 +1230,7 @@ main.site div.container div.slider-wrapper{
 
 .titulo-autores{
     position: relative;
-    top: -20px;
+    top: 0;
     font-family: var(--fonte-Gothic);
     margin-bottom: 10px;
     font-size: 24px;
@@ -1231,13 +1246,6 @@ main.site div.container div.slider-wrapper{
     right: 30px;
     font-size: 12px;
 }
-
-
-
-
-
-
-
 
 
 .img-fixed{
@@ -1257,6 +1265,7 @@ main.site div.container div.slider-wrapper{
     margin: 0 auto;
     text-transform: uppercase;
 }
+
 
 
 

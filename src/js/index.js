@@ -111,6 +111,9 @@ function storeUsername(event) {
 document.addEventListener('DOMContentLoaded', function() {
     const lastToastTime = localStorage.getItem('lastToastTime');
     const currentTime = new Date().getTime();
+    const showToastInterval = 24 * 60 * 60 * 1000; // 24 horas em milissegundos
+
+    if (!lastToastTime || (currentTime - lastToastTime > showToastInterval)) {
         Toastify({
             text: "Seja Bem Vindo ao Papo Literário",
             duration: 4000, // 4 segundos
@@ -118,13 +121,15 @@ document.addEventListener('DOMContentLoaded', function() {
             position: "right", // Lado direito
             backgroundColor: "#333", // Cor de fundo
             stopOnFocus: true, // Pausa na interação
-            close: true // Adiciona um botão de fechar (x)
+            close: true, // Adiciona um botão de fechar (x)
+            className: "custom-toast" // Adiciona uma classe personalizada
         }).showToast();
 
         // Atualiza a data da última exibição no localStorage
         localStorage.setItem('lastToastTime', currentTime);
-    
+    }
 });
+
 
 
 // Função para inicializar o estado da página
