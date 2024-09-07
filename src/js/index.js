@@ -87,22 +87,22 @@
     })
 
    
-   // Função para armazenar o nome de usuário e redirecionar
+
 function storeUsername(event) {
     event.preventDefault(); 
     const username = document.getElementById('username').value;
     localStorage.setItem('username', username);
     
-    // Verifica se já há itens no carrinho e favoritos no localStorage
+
     const currentCart = localStorage.getItem('cart');
     const currentFavoritos = localStorage.getItem('favoritos');
     
     if (!currentCart) {
-        localStorage.setItem('cart', JSON.stringify([]));  // Inicia o carrinho vazio se não houver
+        localStorage.setItem('cart', JSON.stringify([])); 
     }
     
     if (!currentFavoritos) {
-        localStorage.setItem('favoritos', JSON.stringify([]));  // Inicia favoritos vazio se não houver
+        localStorage.setItem('favoritos', JSON.stringify([])); 
     }    
 
     window.location.href = '../../index.html';   
@@ -111,18 +111,18 @@ function storeUsername(event) {
 document.addEventListener('DOMContentLoaded', function() {
     const lastToastTime = localStorage.getItem('lastToastTime');
     const currentTime = new Date().getTime();
-    const showToastInterval = 24 * 60 * 60 * 1000; // 24 horas em milissegundos
+    const showToastInterval = 24 * 60 * 60 * 1000; 
 
     if (!lastToastTime || (currentTime - lastToastTime > showToastInterval)) {
         Toastify({
             text: "Seja Bem Vindo ao Papo Literário",
-            duration: 4000, // 4 segundos
-            gravity: "top", // Parte superior
-            position: "right", // Lado direito
-            backgroundColor: "#333", // Cor de fundo
-            stopOnFocus: true, // Pausa na interação
-            close: true, // Adiciona um botão de fechar (x)
-            className: "custom-toast" // Adiciona uma classe personalizada
+            duration: 4000, 
+            gravity: "top", 
+            position: "right", 
+            backgroundColor: "#333", 
+            stopOnFocus: true, 
+            close: true, 
+            className: "custom-toast" 
         }).showToast();
 
         // Atualiza a data da última exibição no localStorage
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// Função para inicializar o estado da página
+
 function initializePage() {
     const username = localStorage.getItem('username');
     const welcomeMessageElement = document.getElementById('welcome-message1');
@@ -143,18 +143,18 @@ function initializePage() {
             welcomeMessageElement.textContent = `Olá, ${username}!`;
             welcomeMessageElement2.textContent = `Olá, ${username}!`;
             
-            // Restaurar carrinho e favoritos
+           
             const storedCart = localStorage.getItem('cart');
             const storedFavoritos = localStorage.getItem('favoritos');
             
             if (storedCart) {
                 cart = JSON.parse(storedCart);
-                updateCarrinho();  // Atualiza a exibição do carrinho
+                updateCarrinho();  
             }
             
             if (storedFavoritos) {
                 favoritos = JSON.parse(storedFavoritos);
-                updateFavoritos();  // Atualiza a exibição dos favoritos
+                updateFavoritos();  
             }
         } else {
             welcomeMessageElement.textContent = 'Login';
@@ -165,7 +165,6 @@ function initializePage() {
     }
 }
 
-// Função para remover o nome de usuário e dados armazenados, e atualizar a página
 function logout() {
     localStorage.removeItem('username');
     localStorage.removeItem('cart');
@@ -180,39 +179,29 @@ function logout() {
     } else {
         console.error('Elemento com ID "welcome-message" não encontrado.');
     }
-    
-    // Limpa as variáveis do carrinho e favoritos
+
     cart = [];
     favoritos = [];
     updateCarrinho();
     updateFavoritos();
 }
 
-// Inicializa a página ao carregar
+
 document.addEventListener('DOMContentLoaded', () => {
     initializePage();
 
-    // Adiciona o evento de clique para o botão de sair
     const sairFavoritosButton = document.querySelector('.sair-favoritos');
-    if (sairFavoritosButton) {
+    const sairConta = document.querySelector('.sair-conta');
+    if (sairFavoritosButton, sairConta) {
         sairFavoritosButton.addEventListener('click', logout);
+        sairConta.addEventListener('click', logout);
     } else {
         console.error('Elemento com a classe "sair-favoritos" não encontrado.');
     }
 });
 
-// Função para atualizar o carrinho (você precisa implementá-la)
-function updateCarrinho() {
-    
-}
-
-// Função para atualizar os favoritos (você precisa implementá-la)
-function updateFavoritos() {
-    // Lógica para atualizar a interface de favoritos com os itens armazenados em "favoritos"
-}
 
 
-    // Carrinho
 
     site.addEventListener('click', function(event){
         let parentButton = event.target.closest('#add-to-cart-btn');

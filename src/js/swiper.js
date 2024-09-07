@@ -45,7 +45,6 @@ const swiperCards = new Swiper('.slider-wrapper', {
       prevEl: ".swiper-button-prev",
     },
 
-
     breakpoints: {
       0: {
         slidesPerView:3,

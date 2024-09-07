@@ -226,6 +226,10 @@ body{
     margin-right: 5px;
 }
 
+.sub-menu .sub-item span{
+    margin-right: 6px;
+}
+
 .sub-btn i{
     display: flex;
     align-items: center;
@@ -818,7 +822,7 @@ body{
 /* Sub-Cabeçalho */
 
 main.site{
-    height: 400vh;
+    height: 500vh;
     max-width: 75%;
     margin: 0 auto;
 }
@@ -1251,17 +1255,17 @@ main.site div.container div.slider-wrapper{
 .img-fixed {
     margin-top: 60px;
     height: 300px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.281);
     background-size: cover;
     background-attachment: fixed;
     display: flex;
     align-items: center;
     animation: changeImage 50s infinite;
     background-image: linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('../img/foto-fundo-1.jpg');
-    /* Transição suave para as mudanças de background */
     transition: background-image 2s ease-in-out;
 }
 
-/* Animação para alternar entre as imagens */
+
 @keyframes changeImage {
     0% {
         background-image: linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('../img/foto-fundo-1.jpg');
@@ -1274,19 +1278,34 @@ main.site div.container div.slider-wrapper{
     }
 }
 
-
-
 .dentro{
     color: white;
-    font-size: 30px;
     margin: 0 auto;
+    font-size: 30px;
     text-transform: uppercase;
 }
 
+.img-fixed-2{
+    margin-top: 60px;
+    height: 300px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.281);
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('../img/teste-fundo-site.png');
+}
 
 
+.cashbacks{
+    display: flex;
+    margin: 0 auto;
+    cursor: pointer;
+}
 
-
+.cashbacks img{
+    width: 330px;
+    object-fit: cover;
+}
 
 
 
