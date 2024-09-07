@@ -23,6 +23,27 @@ const swiperCards = new Swiper('.slider-wrapper', {
   }
 });
 
+const swiperCashbacks = new Swiper('.slider-wrapper', {
+    loop: false,
+    autoplay: {
+        delay: 4000, // Avança os slides a cada 1 segundo
+        disableOnInteraction: false, // Continua mesmo após interação
+    },
+    slidesPerGroup: 4, // Muda 4 slides a cada transição
+    speed: 800, // Transição suave de 800 milissegundos (0.8 segundos)
+    breakpoints: {
+        0: {
+            slidesPerView: 1, // Exibe 1 slide por vez em telas pequenas
+        },
+        768: {
+            slidesPerView: 3, // Exibe 3 slides por vez em telas médias
+        },
+        1024: {
+            slidesPerView: 4, // Exibe 4 slides por vez em telas grandes
+        },
+    }
+  });
+
 
 
   const swiperCarrossel = new Swiper('.carrossel', {
