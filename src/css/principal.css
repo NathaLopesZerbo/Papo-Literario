@@ -1297,7 +1297,7 @@ main.site div.container div.slider-wrapper{
     display: flex;
     align-items: center;
     background-image: linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('../img/foto-fundo-1.jpg');
-
+}
 
 .cashbacks{
     display: flex;
