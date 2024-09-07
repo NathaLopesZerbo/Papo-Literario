@@ -1292,10 +1292,11 @@ main.site div.container div.slider-wrapper{
     height: 300px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.281);
     background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
     display: flex;
     align-items: center;
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.26)), url('../img/teste-fundo-site.png');
-}
+    background-image: linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('../img/foto-fundo-1.jpg');
 
 
 .cashbacks{
