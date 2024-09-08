@@ -1305,11 +1305,18 @@ main.site div.container div.slider-wrapper{
     cursor: pointer;
 }
 
+.card-cashback{
+    transition: 0.5s;
+}
+
 .cashbacks img{
     width: 330px;
     object-fit: cover;
 }
 
+.card-cashback:hover{
+    transform: scale(1.05);
+}
 
 
 
