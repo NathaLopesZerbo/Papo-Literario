@@ -389,22 +389,38 @@ body{
   
 
 .dropdown-content-2{
-    border-radius: 30px;
+    border-radius: 5px 5px 20px 20px;
     display: none;
     position: absolute;
+    top: 32px;
+    left: 20px;
     background-color: #E4E4E4;
-    border-radius: 30px;
     width: 340px;
-    height: 190px;
+    height: 230px;
     padding: 20px;
-    z-index: 99;
+    z-index: 70;
 }
+.dropdown-content-2::before{
+    content: '';
+    position: absolute;
+    top: -7px;
+    left: 7%;
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    background-color: #E4E4E4;
+    z-index: 1;
+}
+
+
 
 .dropdown-content-2 label{
     width: 300px;
+    font-family: var(--fonte-Aleo);
     text-align: center;
     margin: 0 auto;
     font-size: 14px;
+    font-weight: bold;
 } 
 
 .input-container p{
@@ -420,6 +436,7 @@ body{
    gap: 20px;
 }
 
+
 #ok-button{
     cursor: pointer;
     color: #E5212B;
@@ -427,17 +444,39 @@ body{
     border: 1px solid #E5212B;
     width: 40px;
     height: 32px;
-    transition: 0.2s ease;
+    transition: 0.3s ease;
 }
 
 #ok-button:hover{
-    background-color: #990a11;
+    border: none;
+    background-color: #fc5c4e;
     color: white;
 }
 
 .dropdown-content-2 input{
     height: 33px;
     padding: 4px;
+    border: 2px solid #D6D6D6;
+}
+
+.login-title{
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.button-cep-login{
+    border: none;
+    background-color: var(--cor02);
+    color: white;
+    position: relative;
+    top: -15px;
+    padding: 12px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+ 
+.button-cep-login:hover{
+    background-color: #fc5c4e;
 }
 
 
