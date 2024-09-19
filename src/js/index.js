@@ -552,7 +552,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function hideDropdown2() { // Renomeada para evitar conflito
     dropdownTimeout2 = setTimeout(() => {
         contentDropdown2.style.display = 'none'; // Esconde o dropdown após o atraso
-    }, 1000); // Tempo de espera antes de esconder
+    }, 400); // Tempo de espera antes de esconder
     }
 
     // Eventos do dropdown ao passar o mouse no cabeçalho

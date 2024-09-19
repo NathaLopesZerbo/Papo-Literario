@@ -65,7 +65,7 @@ openSidebar.addEventListener('click',function(){
 
 
  const itemCabecalho = document.getElementById('item-cabecalho');
- const contentDropdown = document.getElementById('dropdown-content');
+ const contentDropdown = document.getElementById('dropdown-content1');
  const headerDropdown = document.getElementById('dropdown');
  const okButton = document.getElementById('ok-button');
  const clearButton = document.getElementById('clear-button');
@@ -73,8 +73,8 @@ openSidebar.addEventListener('click',function(){
  const inputFrete = document.getElementById('input-frete');
  const buttonFrete = document.getElementById('button-frete');
  const freteLocalizacao = document.getElementById('frete-localizacao');
- const valorFreteP = document.getElementById('valor-frete'); // Elemento para exibir o valor do frete
- const suggestionsList = document.getElementById('suggestions-list'); // Verifique se este ID está correto
+ const valorFreteP = document.getElementById('valor-frete'); 
+ const suggestionsList = document.getElementById('suggestions-list'); 
  let dropdownDelay;
  
  function showDropdown() {
@@ -88,7 +88,7 @@ openSidebar.addEventListener('click',function(){
        buscarEndereco(); // Realiza a pesquisa
        contentDropdown.style.display = 'none'; // Fecha o dropdown
      }
-   }, 4000); // Tempo de atraso em milissegundos
+   }, 400); // Tempo de atraso em milissegundos
  }
  
  let isMouseInside = false;
@@ -146,22 +146,7 @@ openSidebar.addEventListener('click',function(){
    }
  });
  
- // Adiciona evento ao botão "X" para limpar o campo de CEP
- clearButton.addEventListener('click', function() {
-   cepInput.value = ''; // Limpa o campo de CEP
-   inputFrete.value = ''; // Limpa o campo de frete
-   localStorage.removeItem('cep'); // Remove o CEP do localStorage
-   document.getElementById('localizacao-texto').textContent = 'Minha Região'; // Reseta o texto da localização
-   freteLocalizacao.textContent = 'Minha Região'; // Reseta o texto da localização no frete
-   valorFreteP.textContent = 'Calcular frete e prazo'; // Reseta o texto do parágrafo
-   inputFrete.style.display = 'inline-block'; // Mostra o campo de entrada
-   buttonFrete.style.display = 'inline-block'; // Mostra o botão "OK"
-   freteLocalizacao.style.display = 'none'; // Oculta o endereço
-   if (suggestionsList) {
-     suggestionsList.innerHTML = ''; // Limpa a lista de sugestões
-   }
- });
- 
+
  // Adiciona sugestões ao dropdown
  cepInput.addEventListener('input', function() {
    const cep = cepInput.value.replace(/\D/g, '');
