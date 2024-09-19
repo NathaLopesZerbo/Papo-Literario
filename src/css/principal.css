@@ -465,6 +465,7 @@ body{
 }
 
 .button-cep-login{
+    text-align: center;
     border: none;
     background-color: var(--cor02);
     color: white;
@@ -474,8 +475,10 @@ body{
     cursor: pointer;
     transition: 0.3s ease;
 }
+
  
 .button-cep-login:hover{
+    color: white;
     background-color: #fc5c4e;
 }
 

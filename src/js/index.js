@@ -38,6 +38,9 @@
         });
     });
 
+    
+    
+
     sidebarFavoritos.addEventListener('click', function(){
         sidebar.classList.remove('active')
         overlay.style.display = "none"
@@ -532,16 +535,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // Elementos do DOM
+
     const itemCabecalho = document.getElementById('item-cabecalho');
-    const contentDropdown2 = document.getElementById('dropdown-content-2'); // Alterado ID para evitar conflito
+    const contentDropdown2 = document.getElementById('dropdown-content-2');
     const okButton = document.getElementById('ok-button');
     const clearButton = document.getElementById('clear-button');
     const cepInput = document.getElementById('cep');
     const localizacaoTexto = document.getElementById('localizacao-texto');
 
-    let dropdownTimeout2; // Renomeado para evitar conflito
-
+    let dropdownTimeout2; 
     // Função para mostrar o dropdown
     function showDropdown2() { // Renomeada para evitar conflito
     clearTimeout(dropdownTimeout2); // Cancela o timeout caso exista
