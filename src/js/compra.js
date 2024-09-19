@@ -269,11 +269,67 @@ openSidebar.addEventListener('click',function(){
    const cepSalvo = localStorage.getItem('cep');
    if (cepSalvo) {
      cepInput.value = cepSalvo;
-     buscarEndereco(); // Realiza a pesquisa com o CEP salvo
+     buscarEndereco(); 
    }
  });
- 
- 
+
+
+const icons = document.querySelectorAll('.pagamentos-span i');
+const subBar = document.querySelector('.sub-barra');
+
+
+const offsets = {
+    'fa-credit-card': { left: 0 },  
+    'fa-barcode': { left: 235 },      
+    'fa-pix': { left: 460 }           
+};
+
+
+icons.forEach((icon) => {
+    icon.addEventListener('click', function() {
+        icons.forEach(i => i.classList.remove('active'));
+        this.classList.add('active');
+
+     
+        let iconClass;
+        if (this.classList.contains('fa-credit-card')) {
+            iconClass = 'fa-credit-card';
+        } else if (this.classList.contains('fa-barcode')) {
+            iconClass = 'fa-barcode';
+        } else if (this.classList.contains('fa-pix')) {
+            iconClass = 'fa-pix';
+        }
+
+        console.log('Icon class clicked:', iconClass); 
+
+        const offset = offsets[iconClass] || { left: 0 }; 
+        console.log('Offset:', offset); 
+
+        subBar.style.left = `${offset.left}px`;
+
+        if (iconClass === 'fa-credit-card') {
+            subBar.style.backgroundColor = '#FF6F61'; 
+        } else if (iconClass === 'fa-barcode') {
+            subBar.style.backgroundColor = '#FF6F61'; 
+        } else if (iconClass === 'fa-pix') {
+            subBar.style.backgroundColor = '#FF6F61'; 
+        }
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

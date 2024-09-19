@@ -378,14 +378,14 @@
     background-color: #fc5c4e;
 }
 
-.modal{
+.modal {
     display: flex;
     align-items: center;
     justify-content: center;
     display: none;
 }
 
-.card-modal{
+.card-modal {
     z-index: 99;
     top: 30%;
     position: absolute;
@@ -394,18 +394,51 @@
     background-color: #DBDBDB;
 }
 
-.pagamentos-span{
+.pagamentos-span {
     object-fit: cover;
-    padding: 20px;
+    padding-top: 20px;
     font-size: 50px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around; 
     align-items: center;
 }
 
-.separar-modal-card{
+.pagamentos-span i {
+    cursor: pointer;
+    color: #000; 
+    transition: color 0.3s;
+}
+
+
+i.fa-credit-card.active {
+    color: #FF6F61;
+}
+
+i.fa-barcode.active {
+    color: #FF6F61;
+}
+
+i.fa-pix.active {
+    color: #FF6F61;
+}
+
+
+.separar-modal-card {
     margin: 0 auto;
     background-color: black;
     height: 2px;
     width: 80%;
+    position: relative;
 }
+
+
+.sub-barra {
+    position: absolute;
+    height: 2px;       
+    width: 100px;      
+    background-color: transparent; 
+    transition: background-color 0.7s, right 0.7s ease; 
+}
+
+
+
