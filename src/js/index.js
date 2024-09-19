@@ -24,7 +24,8 @@
     const listaLivros = document.getElementById('lista-livros');
     const livros = listaLivros.getElementsByClassName('card-livro');
     const livrosPesquisados = document.querySelector('.livros-pesquisados');
-
+    const sidebarFavoritos = document.getElementById('fechar-abrirFavoritos');
+    const sidebarCarrinhos = document.getElementById('fechar-abrirCarrinhos');
 
     let cart = [];
     let favoritos = [];
@@ -37,6 +38,20 @@
         });
     });
 
+    sidebarFavoritos.addEventListener('click', function(){
+        sidebar.classList.remove('active')
+        overlay.style.display = "none"
+        document.body.classList.remove("no-scroll");
+        sidebarFavorito.classList.add('active-favorito');
+    })
+
+    sidebarCarrinhos.addEventListener('click', function(){
+        sidebar.classList.remove('active')
+        overlay.style.display = "none"
+        sidebarCarrinho.classList.add('active-carrinho')
+        overlay.style.display = 'flex'
+        document.body.classList.add("no-scroll");
+    })
 
 
     openSidebarFavorito.addEventListener('click', function(){
@@ -85,6 +100,9 @@
             document.body.classList.remove("no-scroll"); 
         }
     })
+
+
+    
 
    
 
@@ -630,9 +648,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     
     
+
     
-
-
 
 
 
