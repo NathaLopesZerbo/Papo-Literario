@@ -376,52 +376,71 @@ body{
     display: inline-block;
   }
   
-.dropdown-content-2 {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px;
-    z-index: 99;
-  }
-  
+
   .item-cabecalho:hover .dropdown-content {
     display: block;
   }
   
-  .dropdown-content form {
+
+.dropdown-content form {
     display: flex;
     flex-direction: column;
   }
   
-  .dropdown-content input[type="text"] {
-    margin-bottom: 8px;
-  }
-  
-.input-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
 
-.input-container input[type="text"] {
-    margin-right: 8px; /* Espaçamento entre a entrada e o botão de limpar */
-}
-
-.clear-button {
+.dropdown-content-2{
+    border-radius: 30px;
+    display: none;
     position: absolute;
-    right: 10px; /* Ajuste conforme necessário */
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    color: #888; /* Cor do botão "X" */
-    font-size: 16px; /* Tamanho do botão "X" */
+    background-color: #E4E4E4;
+    border-radius: 30px;
+    width: 340px;
+    height: 190px;
+    padding: 20px;
+    z-index: 99;
 }
 
-.clear-button:hover {
-    color: #000; /* Cor do botão "X" ao passar o mouse */
+.dropdown-content-2 label{
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 14px;
+} 
+
+.input-container p{
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
 }
+
+.dropdown-content-2 form{
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+}
+
+#ok-button{
+    cursor: pointer;
+    color: #E5212B;
+    background-color: white;
+    border: 1px solid #E5212B;
+    width: 40px;
+    height: 32px;
+    transition: 0.2s ease;
+}
+
+#ok-button:hover{
+    background-color: #990a11;
+    color: white;
+}
+
+.dropdown-content-2 input{
+    height: 33px;
+    padding: 4px;
+}
+
+
 
 .frete-localizacao{
     font-weight: bolder;

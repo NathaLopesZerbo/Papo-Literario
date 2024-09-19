@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .dropdown-content-2{
+            background-color: #E4E4E4;
+            border-radius: 30px;
+            width: 300px;
+            height: 190px;
+            padding: 20px;
+        }
+
+        .dropdown-content-2 label{
+            width: 290px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .dropdown-content-2 form{
+           display: flex;
+           flex-direction: column;
+        }
+
+        #ok-button{
+            cursor: pointer;
+            color: #E5212B;
+            background-color: white;
+            border: 1px solid #E5212B;
+            width: 40px;
+            height: 32px;
+            transition: 0.2s ease;
+        }
+
+        #ok-button:hover{
+            background-color: #990a11;
+            color: white;
+        }
+
+        .dropdown-content-2 input{
+            height: 27px;
+        }
+
+        .input-container p{
+            color: black;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+
+
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="dropdown-content-2" id="dropdown-content-2">
+        <form id="cep-form">
+          <label for="cep">As opções e velocidade de entrega podem variar de acordo com a região</label>
+          <div class="input-container">
+            <p>Insira um CEP</p>
+            <input type="text" id="cep" name="cep" placeholder="Digite o CEP">
+            <button type="button" id="ok-button">Ok</button> 
+          </div>
+        </form>
+      </div>
+
+</body>
+</html>
