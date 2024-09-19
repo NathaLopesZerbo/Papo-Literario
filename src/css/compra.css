@@ -266,12 +266,7 @@
     border-radius: 20px;
 }
 
-.modal{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    display: none;
-}
+
 
 
 .cor{ 
@@ -285,21 +280,6 @@
     background: linear-gradient(90deg, rgba(0,0,0,0.14609593837535018) 0%, rgba(0,0,0,0.5690651260504201) 0%);
     z-index: 98;
 } 
-
-.card-modal{
-    z-index: 99;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 30%;
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    background-color: #DBDBDB;
-}
-
-
-
 
 .dropdown-content1 form {
     display: flex;
@@ -398,3 +378,34 @@
     background-color: #fc5c4e;
 }
 
+.modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.card-modal{
+    z-index: 99;
+    top: 30%;
+    position: absolute;
+    width: 700px;
+    height: 400px;
+    background-color: #DBDBDB;
+}
+
+.pagamentos-span{
+    object-fit: cover;
+    padding: 20px;
+    font-size: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.separar-modal-card{
+    margin: 0 auto;
+    background-color: black;
+    height: 2px;
+    width: 80%;
+}
