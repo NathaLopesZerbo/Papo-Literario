@@ -1379,7 +1379,25 @@ main.site div.container div.slider-wrapper{
     transform: scale(1.05);
 }
 
+.temas-livros{
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.img-temas img{
+    margin-right: 6px;
+    object-fit: cover;
+    width: 310px;
+    height: 380px;
+    cursor: pointer;
+    transition: 0.2s ease-in;
+}
+
+.img-temas img:hover{
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.226);
+}
 
 
 
