@@ -273,24 +273,52 @@ openSidebar.addEventListener('click',function(){
    }
  });
 
-
-const icons = document.querySelectorAll('.pagamentos-span i');
+ const icons = document.querySelectorAll('.pagamentos-span i');
 const subBar = document.querySelector('.sub-barra');
-
+const boletoDescricao = document.querySelector('.boleto-descricao');
+const pixDescricao = document.querySelector('.pix-descricao');
+const cartaoDescricao = document.querySelector('.cartao-descricao'); 
+const cardModal = document.querySelector('.card-modal'); // Seleciona o modal para ajustar a altura
 
 const offsets = {
-    'fa-credit-card': { left: 0 },  
-    'fa-barcode': { left: 235 },      
-    'fa-pix': { left: 460 }           
+    'fa-credit-card': { left: 0, height: 700 },  // Altura de 700px para o cartão
+    'fa-barcode': { left: 235, height: 300 },    // Altura de 300px para o boleto
+    'fa-pix': { left: 460, height: 300 }         // Altura de 300px para o Pix
 };
 
+// Função para atualizar as descrições, o subBar e a altura da modal
+function updateDescription(iconClass) {
+    // Ocultar todas as descrições inicialmente
+    boletoDescricao.style.display = 'none';
+    pixDescricao.style.display = 'none';
+    cartaoDescricao.style.display = 'none';
 
+    if (iconClass === 'fa-barcode') {
+        boletoDescricao.style.display = 'block'; // Mostra a descrição do boleto
+    } else if (iconClass === 'fa-pix') {
+        pixDescricao.style.display = 'block'; // Mostra a descrição do Pix
+    } else if (iconClass === 'fa-credit-card') {
+        cartaoDescricao.style.display = 'block'; // Mostra a descrição do cartão
+    }
+
+    // Atualiza o offset da sub-barra e a altura do modal
+    const offset = offsets[iconClass] || { left: 0, height: 700 }; 
+    subBar.style.left = `${offset.left}px`;
+    cardModal.style.height = `${offset.height}px`; // Atualiza a altura da modal
+    subBar.style.backgroundColor = '#FF6F61'; // Cor fixa da sub-barra
+}
+
+// Definir o boleto como ativo inicialmente
+document.querySelector('.fa-barcode').classList.add('active');
+updateDescription('fa-barcode'); // Mostrar a descrição do boleto no início
+
+// Adiciona evento de clique aos ícones
 icons.forEach((icon) => {
     icon.addEventListener('click', function() {
+        // Remove a classe 'active' de todos os ícones
         icons.forEach(i => i.classList.remove('active'));
         this.classList.add('active');
 
-     
         let iconClass;
         if (this.classList.contains('fa-credit-card')) {
             iconClass = 'fa-credit-card';
@@ -300,22 +328,12 @@ icons.forEach((icon) => {
             iconClass = 'fa-pix';
         }
 
-        console.log('Icon class clicked:', iconClass); 
-
-        const offset = offsets[iconClass] || { left: 0 }; 
-        console.log('Offset:', offset); 
-
-        subBar.style.left = `${offset.left}px`;
-
-        if (iconClass === 'fa-credit-card') {
-            subBar.style.backgroundColor = '#FF6F61'; 
-        } else if (iconClass === 'fa-barcode') {
-            subBar.style.backgroundColor = '#FF6F61'; 
-        } else if (iconClass === 'fa-pix') {
-            subBar.style.backgroundColor = '#FF6F61'; 
-        }
+        updateDescription(iconClass); // Atualiza a descrição, barra e altura
     });
 });
+
+
+ 
 
 
 

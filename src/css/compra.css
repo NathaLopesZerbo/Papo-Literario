@@ -1,5 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 
 
 :root {
@@ -11,6 +13,7 @@
     --cor06:#95B8D1;
 
     --fonte-aleo:"Aleo", serif;
+    --fonte-sans: "Open Sans", sans-serif;
 }
 
 .card-compra{
@@ -384,15 +387,16 @@
     justify-content: center;
     display: none;
 }
-
 .card-modal {
     z-index: 99;
-    top: 30%;
+    top: 20%;
     position: absolute;
     width: 700px;
-    height: 400px;
+    height: 700px;
     background-color: #DBDBDB;
+    transition: height 0.3s ease; 
 }
+
 
 .pagamentos-span {
     object-fit: cover;
@@ -436,9 +440,56 @@ i.fa-pix.active {
     position: absolute;
     height: 2px;       
     width: 100px;      
+    margin-bottom: 30px;
     background-color: transparent; 
     transition: background-color 0.7s, right 0.7s ease; 
 }
 
+.pix-descricao h3,.boleto-descricao h3{
+    padding: 20px 0px 5px 0px;
+    font-family: var(--fonte-sans);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.pix-descricao p, .boleto-descricao p{
+    font-family: var(--fonte-sans);
+    font-size: 15px;
+    margin-left: 10px;
+    text-align: justify;
+}
+
+
+.cartao-descricao{
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 500px;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.info-pag-cartao{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding-top: 10px;
+    background-color: #CCCCCC;
+    border-radius: 20px;
+}
+
+.escuro-info, .claro-info{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.claro-info{
+    background-color: rgba(128, 128, 128, 0.459);
+}
+
+.diferente{
+    border-radius: 0px 0px 20px 20px;
+}
 
 
