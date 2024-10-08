@@ -33,13 +33,13 @@ const swiperCashbacks = new Swiper('.slider-wrapper', {
     speed: 800, 
     breakpoints: {
         0: {
-            slidesPerView: 3, 
+            slidesPerView: 2, 
         },
         768: {
-            slidesPerView: 4, 
+            slidesPerView: 3, 
         },
         1024: {
-            slidesPerView: 5, 
+            slidesPerView: 4, 
         },
     }
   });
