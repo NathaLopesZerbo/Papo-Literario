@@ -58,27 +58,35 @@ const swiperCashbacks = new Swiper('.slider-wrapper', {
     },
 });
 
-
-
-  const carrosseLivros = new Swiper('.mySwiper', {
-      navigation: {
+const carrosseLivros = new Swiper('.mySwiper', {
+    navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
-
+  
     breakpoints: {
       0: {
-        slidesPerView:3,
+        slidesPerView: 3, // Exibe 3 slides para larguras menores que 971px
+        spaceBetween: 170, // Espaçamento padrão entre os slides
       },
-      768: {
-        slidesPerView:4,
+      690: {
+        slidesPerView: 3, // Exibe 3 slides para larguras a partir de 690px
       },
-      1024: {
-        slidesPerView:5,
+      971: {
+        slidesPerView: 3, // A partir de 971px exibe 3 slides
       },
-   }
-
+      1579: {
+        slidesPerView: 4, // A partir de 1579px exibe 4 slides
+      },
+      1580: {
+        slidesPerView: 5, // A partir de 1580px exibe 5 slides
+      }
+    }
   });
+  
+  
+  
+  
 
 
   const carrosselAutores = new Swiper('.mySwiperAutores', {

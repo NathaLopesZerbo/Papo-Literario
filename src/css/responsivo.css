@@ -193,6 +193,34 @@
         margin-left: 30px;
     }
 
+    .card-livro{
+        width: 180px;
+    }
+
+    .img-livro img{
+        width: 120px;
+        height: 180px;
+    }
+
+    .titulo-livro{
+        font-size: 14px;
+        width: 170px;
+    }
+
+    .avaliacao{
+        font-size: 8px;
+    }
+
+    .preco{
+        font-size: 14px;
+    }
+
+    .icones-card-livro{
+        font-size: 17px;
+    }
+
+
+
 }
 
 @media(max-width: 782px){
@@ -211,6 +239,16 @@
     .titulo-card, .titulo-card2, .titulo-card3{
         width: 180px;
     }
+
+    .card-livro{
+        width: 165px;
+    }
+
+    .titulo-livro{
+        font-size: 14px;
+        width: 140px;
+    }
+
 }
 
 
@@ -256,6 +294,16 @@
         box-shadow: none;
     }   
     
+    .card-livro{
+        width: 170px;
+        height: 350px;
+    }
+
+    .titulo-livro{
+        font-size: 14px;
+        width: 140px;
+    }
+
 }
 
 
@@ -342,10 +390,5 @@
         display: grid;
         grid-template-columns: minmax(120px, 2fr) 2fr;
     }
-
-
-    
-   
-
-
 }
+
