@@ -896,6 +896,11 @@ main.site div.container div.slider-wrapper{
     margin: 0px 70px 0px 30px;
 }
 
+.categoria-livros h2{
+    position: relative;
+    top: 55px;
+}
+
 
 .card-list .card-item{
     display: flex;
