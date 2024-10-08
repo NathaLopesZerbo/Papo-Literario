@@ -12,6 +12,15 @@
 
 
 @media(max-width: 1484px){
+
+   .titulo-favorito-card{
+        font-size: 14px;
+   }
+
+
+
+
+
     .sub-cabecalho{
         gap: 100px;
     }
@@ -59,6 +68,14 @@
 }
 
 @media(max-width: 1321px){
+
+
+    .titulo-favorito-card{
+        font-size: 14px;
+        width: 40%;
+        padding-left: 30px;
+   }
+
     .sub-cabecalho{
         width: 80%;
         gap: 80px;
@@ -92,6 +109,34 @@
 }
 
 @media(max-width: 1024px){
+
+    .card-favoritos{
+        width: 500px;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+    }
+
+    .card-favoritos-conta{
+        width: 362px;
+        height: 400px;
+    }
+
+    .favoritos-itens{
+        justify-content: center;
+        margin-right: 20px;
+        gap: 20px;
+    }
+
+    .titulo-favorito-card{
+        font-size: 14px;
+        width: 200px;
+        padding-left: 20px;
+   }
+
+   .card-favorito::-webkit-scrollbar {
+        width: 6px;
+    }
+
 
     .nav-list li a{
         display: none;
@@ -154,6 +199,12 @@
 
 @media(max-width: 782px){
     
+    .titulo-favorito-card{
+        font-size: 14px;
+        width: 60%;
+        padding-left: 30px;
+   }
+
 
     .card-list .card-item .user-image{
         width: 180px;
@@ -211,6 +262,13 @@
 
 
 @media(max-width: 544px){
+
+    .titulo-favorito-card{
+        font-size: 12px;
+        width: 50%;
+        padding-left: 20px;
+   }
+
     .logo img{
         display: none;
     }

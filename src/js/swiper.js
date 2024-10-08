@@ -5,20 +5,20 @@ const swiperCards = new Swiper('.slider-wrapper', {
       prevEl: '.button-next',
   },
   autoplay: {
-      delay: 4000, // Avança os slides a cada 1 segundo
-      disableOnInteraction: false, // Continua mesmo após interação
+      delay: 4000, 
+      disableOnInteraction: false, 
   },
-  slidesPerGroup: 4, // Muda 4 slides a cada transição
-  speed: 800, // Transição suave de 800 milissegundos (0.8 segundos)
+  slidesPerGroup: 4, 
+  speed: 800, 
   breakpoints: {
       0: {
-          slidesPerView: 1, // Exibe 1 slide por vez em telas pequenas
+          slidesPerView: 3, 
       },
       768: {
-          slidesPerView: 3, // Exibe 3 slides por vez em telas médias
+          slidesPerView: 4, 
       },
       1024: {
-          slidesPerView: 4, // Exibe 4 slides por vez em telas grandes
+          slidesPerView: 5, 
       },
   }
 });
@@ -33,13 +33,13 @@ const swiperCashbacks = new Swiper('.slider-wrapper', {
     speed: 800, 
     breakpoints: {
         0: {
-            slidesPerView: 1, 
-        },
-        768: {
             slidesPerView: 3, 
         },
-        1024: {
+        768: {
             slidesPerView: 4, 
+        },
+        1024: {
+            slidesPerView: 5, 
         },
     }
   });
@@ -71,10 +71,10 @@ const swiperCashbacks = new Swiper('.slider-wrapper', {
         slidesPerView:3,
       },
       768: {
-        slidesPerView:4
+        slidesPerView:4,
       },
       1024: {
-        slidesPerView:5
+        slidesPerView:5,
       },
    }
 
@@ -83,20 +83,20 @@ const swiperCashbacks = new Swiper('.slider-wrapper', {
 
   const carrosselAutores = new Swiper('.mySwiperAutores', {
     autoplay: {
-        delay: 5000, // Avança 1 slide a cada 5 segundos
-        disableOnInteraction: false, // Continua mesmo após interação
+        delay: 5000, 
+        disableOnInteraction: false, 
     },
-    speed: 800, // Transição suave de 800 milissegundos (0.8 segundos)
-    slidesPerGroup: 1, // Muda 1 slide a cada transição
+    speed: 800, 
+    slidesPerGroup: 1, 
     breakpoints: {
         0: {
-            slidesPerView: 3, // Exibe 3 slides por vez em telas pequenas
+            slidesPerView: 3,
         },
         768: {
-            slidesPerView: 4, // Exibe 4 slides por vez em telas médias
+            slidesPerView: 4, 
         },
         1024: {
-            slidesPerView: 3, // Exibe 3 slides por vez em telas grandes
+            slidesPerView: 3, 
         },
     }
 });

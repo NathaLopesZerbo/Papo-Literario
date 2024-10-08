@@ -672,7 +672,7 @@ body{
 
 
 .sidebar-favoritos{
-    background-color: #F4F4F4; /* Mudar a cor #cecccc*/
+    background-color: #F4F4F4;
     width: 430px;
     right: -800px;
     height: 100vh;
@@ -704,13 +704,12 @@ body{
 }
 
 .card-favorito {
-    width: 75%;
     height: 520px;
     background-color: #d6d6d6;
     overflow-y: auto; 
 }
 
-/* Estilizando a barra de rolagem */
+
 .card-favorito::-webkit-scrollbar {
     width: 8px;
 }
@@ -727,6 +726,7 @@ body{
 .card-favorito::-webkit-scrollbar-track {
     background-color: #e0e0e0; 
 }
+
 .titulo-favorito-card{
     background-color: #DF1515;
     height: 40px;
@@ -751,7 +751,6 @@ body{
     align-items: center;
     padding: 20px;
 }
-
 
 .img-favoritos-item{
     background-color: rgba(231, 231, 231, 0.698);
@@ -780,7 +779,6 @@ body{
     justify-content: center;
     padding: 5px;
     cursor: pointer;
-
 } 
 
 .preco-favoritos-item{
@@ -790,8 +788,10 @@ body{
 .titulo-favoritos-item{
     text-transform: uppercase;
     font-size: 14px;
+    text-align: center;
     margin-top: 4px;
     font-weight: bold;
+    margin: 12px 0px 0px 12 px;
 }
 
 .item-preco-remover{
