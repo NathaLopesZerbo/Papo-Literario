@@ -111,13 +111,15 @@
 @media(max-width: 1024px){
 
     .card-favoritos{
-        width: 75%;
         flex-wrap: wrap;
         margin-bottom: 30px;
     }
-
+    
+    .card-favorito{
+        width: 80%;
+    }
     .card-favoritos-conta{
-        width: 362px;
+        width: 80%;
         height: 400px;
     }
 
