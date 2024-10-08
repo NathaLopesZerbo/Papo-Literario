@@ -704,6 +704,7 @@ body{
 }
 
 .card-favorito {
+    width: 75%;
     height: 520px;
     background-color: #d6d6d6;
     overflow-y: auto; 
