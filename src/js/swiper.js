@@ -63,23 +63,30 @@ const carrosseLivros = new Swiper('.mySwiper', {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
-  
+    
     breakpoints: {
       0: {
-        slidesPerView: 3, // Exibe 3 slides para larguras menores que 971px
-        spaceBetween: 170, // Espaçamento padrão entre os slides
+        slidesPerView: 3, 
+        spaceBetween: 10, 
+      },
+      500: {
+        spaceBetween: 170, 
       },
       690: {
-        slidesPerView: 3, // Exibe 3 slides para larguras a partir de 690px
+        slidesPerView: 3, 
+        spaceBetween: 10, 
       },
       971: {
-        slidesPerView: 3, // A partir de 971px exibe 3 slides
+        slidesPerView: 3, 
+        spaceBetween: 20, 
       },
       1579: {
-        slidesPerView: 4, // A partir de 1579px exibe 4 slides
+        slidesPerView: 4, 
+        spaceBetween: 20, 
       },
       1580: {
-        slidesPerView: 5, // A partir de 1580px exibe 5 slides
+        slidesPerView: 5, 
+        spaceBetween: 20, 
       }
     }
   });
