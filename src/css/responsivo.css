@@ -111,7 +111,7 @@
 @media(max-width: 1024px){
 
     .card-favoritos{
-        width: 500px;
+        width: 75%;
         flex-wrap: wrap;
         margin-bottom: 30px;
     }
