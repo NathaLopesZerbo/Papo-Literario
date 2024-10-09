@@ -26,6 +26,7 @@
     const livrosPesquisados = document.querySelector('.livros-pesquisados');
     const sidebarFavoritos = document.getElementById('fechar-abrirFavoritos');
     const sidebarCarrinhos = document.getElementById('fechar-abrirCarrinhos');
+    const abrirLogin = document.getElementById('abrir-login');
 
     let cart = [];
     let favoritos = [];
@@ -38,7 +39,11 @@
         });
     });
 
-    
+
+    abrirLogin.addEventListener('click', function() {
+        window.location.href = 'src/paginas/login.html'; 
+    });
+
     
 
     sidebarFavoritos.addEventListener('click', function(){

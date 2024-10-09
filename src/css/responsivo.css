@@ -309,6 +309,41 @@
 
 @media(max-width: 544px){
 
+    .sidebar-carrinho{
+        width: 350px;
+    }
+
+    .item-carrinho{
+        height: 230px;
+    }
+    
+    .img-item-carrinho img{
+        width: 140px;
+        height: 120px;
+    }
+
+    .compra-carrinho{
+        left: 180px;
+        width: 150px;
+    }
+
+    .item-total{
+        font-size: 18px;
+    }
+
+    .titulo-item-carrinho{
+        font-size: 12px;
+    }
+
+    .valor-item-carrinho{
+        font-size: 17px;
+    }
+
+    .remove-from-cart-btn{
+        padding: 8px;
+    }
+
+
     .titulo-favorito-card{
         font-size: 12px;
         width: 50%;
