@@ -58,6 +58,7 @@ const swiperCashbacks = new Swiper('.slider-wrapper', {
     },
 });
 
+
 const carrosseLivros = new Swiper('.mySwiper', {
     navigation: {
       nextEl: ".swiper-button-next",
@@ -66,29 +67,35 @@ const carrosseLivros = new Swiper('.mySwiper', {
     
     breakpoints: {
       0: {
-        slidesPerView: 3, 
+        slidesPerView: 2,
       },
       500: {
-        spaceBetween: 170, 
+        spaceBetween: 170,
       },
       690: {
-        slidesPerView: 3, 
-        spaceBetween: 10, 
+        slidesPerView: 3,
+        spaceBetween: 10,
       },
       971: {
-        slidesPerView: 3, 
-        spaceBetween: 20, 
+        slidesPerView: 3,
+        spaceBetween: 20,
       },
       1579: {
-        slidesPerView: 4, 
-        spaceBetween: 20, 
+        slidesPerView: 4,
+        spaceBetween: 20,
       },
       1580: {
-        slidesPerView: 5, 
-        spaceBetween: 20, 
+        slidesPerView: 5,
+        spaceBetween: 20,
       }
     }
   });
+  
+
+  window.addEventListener('resize', function() {
+    carrosseLivros.update(); 
+  });
+  
   
   
   
