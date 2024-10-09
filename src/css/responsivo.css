@@ -310,7 +310,7 @@
 @media(max-width: 544px){
 
     .sidebar-carrinho{
-        width: 350px;
+        width: 290px;
     }
 
     .item-carrinho{
@@ -323,11 +323,14 @@
     }
 
     .compra-carrinho{
-        left: 180px;
-        width: 150px;
+        left: 160px;
+        width: 120px;
     }
 
     .item-total{
+        position: relative;
+        left: -20px;
+        gap: 5px;
         font-size: 18px;
     }
 
@@ -342,7 +345,6 @@
     .remove-from-cart-btn{
         padding: 8px;
     }
-
 
     .titulo-favorito-card{
         font-size: 12px;
