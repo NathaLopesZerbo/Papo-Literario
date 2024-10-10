@@ -334,6 +334,43 @@
 
 @media(max-width: 544px){
 
+    .favoritos{
+        padding: 16px;
+    }
+    
+    .img-favoritos-item{
+        width: 160px;
+        height: 180px;
+    }
+    
+    .img-favoritos-item img{
+        width: 80px;
+        filter: drop-shadow(5px 10px 7px  rgba(0, 0, 0, 0.11));
+    }
+
+    .coracao-item{
+        color: red;
+        position: relative;
+        left: 152px;
+        top: -100px;
+        border-radius: 50%;
+        background-color: aliceblue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        cursor: pointer;
+    } 
+
+    .remove-from-favoritos-btn{
+        padding: 7px;
+    }
+
+    .card-favorito::-webkit-scrollbar {
+        width: 3px;
+    }
+    
+
     .card-livro{
         width: 150px;
     }
@@ -477,7 +514,7 @@
 
     .img-pagamentos img{
         object-fit: contain;
-        width: 30px;
+        width: 28px;
     }
 
     .titulo-footer, .titulo-pagamento{ 
