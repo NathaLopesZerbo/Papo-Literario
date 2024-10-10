@@ -1,3 +1,9 @@
+@media(max-width:1900px){
+    main.site{
+        height: 800vh;
+    }
+}
+
 @media(max-width: 1598px){
     .button-next, .button-prev{
       display: none;
@@ -105,6 +111,10 @@
 }
 
 @media(max-width: 1024px){
+
+    main.site{
+        height: 910vh;
+    }
 
     .card-favoritos{
         flex-wrap: wrap;
@@ -219,11 +229,18 @@
         font-size: 17px;
     }
 
+    .coracao, .carrinho{
+        margin-right: 2px;
+    }
 
 
 }
 
 @media(max-width: 782px){
+
+    main.site{
+        height: 1000vh;
+    }
     
     .titulo-favorito-card{
         font-size: 14px;
@@ -253,6 +270,14 @@
 
 
 @media(max-width: 700px){
+
+    .img-pagamentos img{
+        width: 40px;
+    }
+
+    .separacao-footer{
+        width: 100%;
+    }
 
     .logo img{
         height: 60pt;
@@ -308,6 +333,33 @@
 
 
 @media(max-width: 544px){
+
+    .card-livro{
+        width: 150px;
+    }
+
+    .img-livro img{
+        width: 100px;
+        height: 150px;
+    }
+
+    .titulo-livro{
+        font-size: 12px;
+        width: 130px;
+    }
+
+    .avaliacao{
+        font-size: 6px;
+    }
+
+    .preco{
+        font-size: 12px;
+    }
+
+    .icones-card-livro{
+        font-size: 14px;
+
+    }
 
     .sidebar-carrinho{
         width: 290px;
@@ -423,9 +475,14 @@
         font-size: 16px;
     }
 
-    .footer{
-        display: grid;
-        grid-template-columns: minmax(120px, 2fr) 2fr;
+    .img-pagamentos img{
+        width: 40px;
     }
+
+    .titulo-footer, .titulo-pagamento{ 
+        font-size: 20px;
+    }
+
+    
 }
 

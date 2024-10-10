@@ -68,7 +68,7 @@ const carrosseLivros = new Swiper('.mySwiper', {
     breakpoints: {
       0: {
         slidesPerView: 3,
-        spaceBetween: 170,
+        spaceBetween: 155,
       },
       500: {
         spaceBetween: 170,
@@ -111,14 +111,11 @@ const carrosseLivros = new Swiper('.mySwiper', {
     speed: 800, 
     slidesPerGroup: 1, 
     breakpoints: {
-        0: {
-            slidesPerView: 3,
-        },
         768: {
-            slidesPerView: 4, 
+            slidesPerView: 1, 
         },
         1024: {
-            slidesPerView: 3, 
+            slidesPerView: 4, 
         },
     }
 });

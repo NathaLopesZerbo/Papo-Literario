@@ -884,7 +884,7 @@ body{
 /* Sub-Cabeçalho */
 
 main.site{
-    height: 500vh;
+    height: 550vh;
     max-width: 75%;
     margin: 0 auto;
 }
@@ -1083,8 +1083,11 @@ main.site div.container div.slider-wrapper{
     margin-top: 5px;
     margin-bottom: 15px;
 }
+
 .capa{
     font-size: 12px;
+    margin-left: 20px;
+    margin-bottom: 10px;
 }
 
 .titulo-livro{
@@ -1118,10 +1121,6 @@ main.site div.container div.slider-wrapper{
     margin-left: 10px;
 }
 
-.capa{
-    margin-left: 20px;
-    margin-bottom: 10px;
-}
     
 .comprar{
     display: flex;
@@ -1416,6 +1415,7 @@ main.site div.container div.slider-wrapper{
 
 .colunas-footer{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: start;
