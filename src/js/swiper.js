@@ -68,7 +68,7 @@ const carrosseLivros = new Swiper('.mySwiper', {
   breakpoints: {
     0: {
       slidesPerView: 2, // Mostrar dois livros em telas pequenas
-      spaceBetween: 10, // Espaço entre os slides
+      spaceBetween: 20, // Espaço entre os slides
     },
     500: {
       slidesPerView: 2, // Manter dois livros para telas maiores que 500px
