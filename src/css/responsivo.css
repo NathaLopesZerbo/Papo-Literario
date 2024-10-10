@@ -476,7 +476,8 @@
     }
 
     .img-pagamentos img{
-        width: 40px;
+        object-fit: contain;
+        width: 30px;
     }
 
     .titulo-footer, .titulo-pagamento{ 
