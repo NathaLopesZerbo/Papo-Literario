@@ -118,7 +118,7 @@
 
     .card-favoritos{
         flex-wrap: wrap;
-        margin-bottom: 30px;
+        margin-bottom: 100px;
     }
     
     .card-favorito{
@@ -311,11 +311,8 @@
         width: 230px;
     }
 
-    .carrossel img{
-        height: 150px;
-    }
-
     .carrossel{
+        height: 100px;
         box-shadow: none;
     }   
     
@@ -329,10 +326,26 @@
         width: 140px;
     }
 
+    .cashbacks img{
+        width: 190px;
+    }
 }
 
 
 @media(max-width: 544px){
+
+ 
+    .img-fixed-2{
+        height: 170px;
+    }
+
+    .cashbacks img{
+        width: 190px;
+    }
+
+    .card-favoritos{
+        flex-wrap: wrap;
+    }
 
     .favoritos{
         padding: 16px;
@@ -347,6 +360,7 @@
         width: 80px;
         filter: drop-shadow(5px 10px 7px  rgba(0, 0, 0, 0.11));
     }
+
 
     .coracao-item{
         color: red;

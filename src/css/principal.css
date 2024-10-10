@@ -710,7 +710,7 @@ body{
 
 
 .card-favorito::-webkit-scrollbar {
-    width: 6px;
+    width: 8px;
 }
 
 .card-favorito::-webkit-scrollbar-thumb {
@@ -1374,7 +1374,7 @@ main.site div.container div.slider-wrapper{
 }
 
 .cashbacks img{
-    width: 330px;
+    width: 320px;
     object-fit: cover;
 }
 

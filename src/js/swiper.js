@@ -1,9 +1,7 @@
-const swiperCards = new Swiper('.slider-wrapper', {
+
+
+const swiperCashbacks = new Swiper('.slider-wrapper', {
   loop: false,
-  navigation: {
-      nextEl: '.button-prev',
-      prevEl: '.button-next',
-  },
   autoplay: {
       delay: 4000, 
       disableOnInteraction: false, 
@@ -11,38 +9,21 @@ const swiperCards = new Swiper('.slider-wrapper', {
   slidesPerGroup: 4, 
   speed: 800, 
   breakpoints: {
-      0: {
+      0: { 
+          slidesPerView: 2, 
+          spaceBetween: 20,
+      },
+      768: { 
           slidesPerView: 3, 
+          spaceBetween: 10,
       },
-      768: {
+      1440: { 
           slidesPerView: 4, 
-      },
-      1024: {
-          slidesPerView: 5, 
+          spaceBetween: 20,
       },
   }
 });
 
-const swiperCashbacks = new Swiper('.slider-wrapper', {
-    loop: false,
-    autoplay: {
-        delay: 4000, 
-        disableOnInteraction: false, 
-    },
-    slidesPerGroup: 4, 
-    speed: 800, 
-    breakpoints: {
-        0: {
-            slidesPerView: 2, 
-        },
-        768: {
-            slidesPerView: 3, 
-        },
-        1024: {
-            slidesPerView: 4, 
-        },
-    }
-  });
 
 
 
@@ -67,11 +48,11 @@ const carrosseLivros = new Swiper('.mySwiper', {
   
   breakpoints: {
     0: {
-      slidesPerView: 2, // Mostrar dois livros em telas pequenas
-      spaceBetween: 20, // Espaço entre os slides
+      slidesPerView: 2, 
+      spaceBetween: 20,
     },
     500: {
-      slidesPerView: 2, // Manter dois livros para telas maiores que 500px
+      slidesPerView: 2, 
       spaceBetween: 20, 
     },
     690: {
