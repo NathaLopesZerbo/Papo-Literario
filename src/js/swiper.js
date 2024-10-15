@@ -79,27 +79,27 @@ window.addEventListener('resize', function() {
 });
 
   
-  
-  
-  
-  
-
-
-  const carrosselAutores = new Swiper('.mySwiperAutores', {
-    autoplay: {
-        delay: 5000, 
-        disableOnInteraction: false, 
-    },
-    speed: 800, 
-    slidesPerGroup: 1, 
-    breakpoints: {
-        768: {
-            slidesPerView: 1, 
-        },
-        1024: {
-            slidesPerView: 4, 
-        },
-    }
+const carrosselAutores = new Swiper('.mySwiperAutores', {
+  autoplay: {
+      delay: 5000, 
+      disableOnInteraction: false, 
+  },
+  speed: 800, 
+  slidesPerGroup: 1, 
+  breakpoints: {
+      500: {
+        slidesPerView: 1, 
+      },
+      768: {
+          slidesPerView: 2, 
+      },
+      1024: {
+          slidesPerView: 2, 
+      },
+      1480: {
+          slidesPerView: 3, 
+      },
+  }
 });
 
 

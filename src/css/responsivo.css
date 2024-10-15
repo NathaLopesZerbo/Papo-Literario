@@ -2,6 +2,11 @@
     main.site{
         height: 800vh;
     }
+
+    .img-marrom {
+        width: 434px;
+    }
+    
 }
 
 @media(max-width: 1598px){
@@ -12,6 +17,10 @@
     main.site div.container div.slider-wrapper{
         max-width: 1200px;
         margin: 0 10px 9px;
+    }
+
+    .img-marrom {
+        width: 393px;
     }
 
 }
@@ -38,6 +47,11 @@
         max-width: 1800px;
         margin: 0 70px 9px;
     }
+
+    .img-marrom {
+        width: 360px;
+    }
+
 }
 
 @media(max-width: 1492px){
@@ -95,6 +109,8 @@
         height: 180px;
     }
 
+
+
 }
 
 @media(max-width: 1074px){
@@ -106,6 +122,26 @@
     }
     .nav-list li a{
        font-size: 18px;
+    }
+
+    .img-marrom {
+        width: 264px;
+    }
+    
+    .img-autor img{ 
+        width: 80px;
+        object-fit: cover;
+        background-position: center;
+    }
+    
+    .text-autores{
+        font-size: 9px;
+        padding: 24px;
+
+    }
+    
+    .titulo-autores{
+        font-size: 18px;
     }
 
 }
@@ -239,7 +275,7 @@
 @media(max-width: 782px){
 
     main.site{
-        height: 1000vh;
+        height: 750vh;
     }
     
     .titulo-favorito-card{
@@ -264,6 +300,9 @@
     .titulo-livro{
         font-size: 14px;
         width: 140px;
+    }
+    .dentro{
+        font-size: 18px;
     }
 
 }
@@ -404,11 +443,11 @@
     }
 
     .preco{
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .icones-card-livro{
-        font-size: 14px;
+        font-size: 17px;
 
     }
 
@@ -515,14 +554,15 @@
     }
 
     .card-list .card-item .user-image{
-        width: 190px;
+        width: 150px;
     }
 
     .titulo-card, .titulo-card2, .titulo-card3{
-        width: 190px;
+        width: 150px;
+        font-size: 12px;
     }
 
-    .titulo-recomendados{
+    .titulo-recomendados h2{
         font-size: 16px;
     }
 
@@ -535,6 +575,53 @@
         font-size: 20px;
     }
 
+    .categoria-livros h2{
+        font-size: 16px;
+    }
+
+    .img-marrom {
+        width: 362px;
+    }
     
+    .img-autor img{ 
+        width: 80px;
+        object-fit: cover;
+        background-position: center;
+    }
+    
+    .text-autores{
+        font-size: 9px;
+        padding: 24px;
+
+    }
+    
+    .titulo-autores{
+        font-size: 18px;
+    }
+    
+     
 }
 
+
+@media(max-width: 420px){
+    .img-marrom {
+        width: 310px;
+    }
+    
+    .img-autor img{ 
+        width: 80px;
+        object-fit: cover;
+        background-position: center;
+    }
+    
+    .text-autores{
+        font-size: 9px;
+        padding: 24px;
+
+    }
+    
+    .titulo-autores{
+        font-size: 18px;
+    }
+
+}
