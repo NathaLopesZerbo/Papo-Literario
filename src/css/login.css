@@ -28,7 +28,6 @@ body{
     border-radius: 10px;
     width: 1200px;
     border-radius: 20px;
-
 }
 
 .logo-login img{
@@ -100,6 +99,7 @@ body{
     font-size: 16px;
     margin-bottom: 30px;
 }
+
 .login .box-user label{
     position: absolute;
     top: 0;
@@ -129,6 +129,13 @@ body{
     color: black;
     font-size: 14px;
 }
+
+.login .box-user input:focus,
+.login .box-user input:valid {
+    font-size: 14px; 
+}
+
+
 .forget{
     text-decoration: underline;
     position: relative;
@@ -159,6 +166,7 @@ body{
     overflow: hidden;
     cursor: pointer;
 }
+
 .btn:hover{
     background: var(--cor2);
     color: black;

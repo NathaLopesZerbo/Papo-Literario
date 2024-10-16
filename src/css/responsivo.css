@@ -424,10 +424,6 @@
     }
     
 
-    .card-livro{
-        width: 150px;
-    }
-
     .img-livro img{
         width: 100px;
         height: 150px;
@@ -448,7 +444,6 @@
 
     .icones-card-livro{
         font-size: 17px;
-
     }
 
     .sidebar-carrinho{
@@ -602,10 +597,14 @@
      
 }
 
-
 @media(max-width: 420px){
+
+    main.site{
+        height: 930vh;
+    }
+
     .img-marrom {
-        width: 310px;
+        width: 290px;
     }
     
     .img-autor img{ 
@@ -623,5 +622,67 @@
     .titulo-autores{
         font-size: 18px;
     }
+
+    .cashbacks img{
+        width: 160px;
+    }
+
+    .card-livro{
+        width: 145px;
+    }
+
+    .preco{
+        font-size: 12px;
+    }
+
+    .icones-card-livro{
+        font-size: 15px;
+    }
+
+    .titulo-avaliacao{
+        font-size: 8px;
+    }
+
+    .img-fixed{
+        height: 170px;
+    }
+
+    .login{
+        width: 400px;
+    }
+    
+    .login .box-user label{
+        top: 0;
+        left: 110px;
+    }
+    
+    .login .box-user img{
+        left: 68%;
+        width: 20px;
+    }
+
+    .login .box-user input:focus~label,
+    .login .box-user input:valid~label
+    {
+        top: -40px;
+        left: 110px;
+        font-size: 12px;
+    }
+
+    .login .box-user input:focus,
+    .login .box-user input:valid {
+        padding-left: 10px;
+        font-size: 11px; 
+    }
+
+    .forget{
+        left: 145px;
+    }
+
+    .btn{
+        left: 130px;
+    }
+
+
 
 }
