@@ -103,7 +103,18 @@ const carrosselAutores = new Swiper('.mySwiperAutores', {
 });
 
 
-
-
-
+const carrosselTemas = new Swiper('.mySwiperTemas', {
+  breakpoints: {
+    500: {
+      slidesPerView: 1, 
+      spaceBetween:0
+    },
+    971: {
+      slidesPerView: 2,
+    },
+    1580: {
+      slidesPerView: 4,
+    }
+  }
+});
   
