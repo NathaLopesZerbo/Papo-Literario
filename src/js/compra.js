@@ -334,6 +334,10 @@ icons.forEach((icon) => {
 
 
  
+function trocarImagem(novaImagem) {
+  const imagemPrincipal = document.getElementById("imagem-principal");
+  imagemPrincipal.src = novaImagem;
+}
 
 
 

@@ -43,19 +43,28 @@
     align-items: center;
 }
 
-.img-livros{
-    height: 80px;
-    width: 300px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 10px;
+.imagem-compra img {
+    width: 100%; /* Ajuste conforme necessário */
+    height: auto; /* Manter proporção da imagem */
 }
 
-.img{
-    background-color: gray;
-    width: 100px;
-    height: 80px;
+.img-livros {
+    display: flex;
+    gap: 10px; /* Espaçamento entre as miniaturas */
+}
+
+.img {
+    cursor: pointer; /* Mostrar que é clicável */
+}
+
+.img img {
+    width: 50px; /* Ajuste o tamanho das miniaturas */
+    height: auto; /* Manter proporção da imagem */
+    border: 2px solid transparent; /* Adicionar borda quando selecionado */
+}
+
+.img:hover img {
+    border: 2px solid #007bff; /* Cor da borda ao passar o mouse */
 }
 
 .social{
