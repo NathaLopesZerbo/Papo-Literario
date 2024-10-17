@@ -856,29 +856,60 @@ body{
 }
 
 
-
-.livros-pesquisados{
+.livros-nao-encontrados{
     margin-top: 50px;
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-        
 }
-.livros-pesquisados img{
+
+.livros-nao-encontrados img{
     object-fit: contain;
     width: 160px;
 }
 
-.livros-pesquisados h1{
+.livros-nao-encontrados h1{
     font-size: 3em;
     margin-bottom: 7px;
 }
-.livros-pesquisados p{
+.livros-nao-encontrados p{
     font-family: var(--fonte-Aleo);
     font-weight: 500;
     font-style: italic;
     text-transform: uppercase;
 }
+
+.livros-pesquisados {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap: 20px; 
+    align-items: flex-start;
+}
+
+.titulo-resultados {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.livros-pesquisados .livro {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    transition: transform 0.2s ease;
+}
+
+.livros-pesquisados .livro:hover {
+    transform: scale(1.05); /* Um pequeno efeito de zoom ao passar o mouse */
+}
+
+
+
+
 
 
 /* Sub-Cabeçalho */

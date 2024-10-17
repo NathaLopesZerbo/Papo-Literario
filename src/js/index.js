@@ -470,57 +470,84 @@ document.addEventListener('DOMContentLoaded', () => {
         const termoBusca = buscarInput.value.toLowerCase();
         const mainSite = document.getElementById('site');
         const livrosPesquisados = document.querySelector('.livros-pesquisados');
+        const livrosNaoEncontrados = document.querySelector('.livros-nao-encontrados'); // Nova div para livros não encontrados
+        const tituloResultados = document.querySelector('.titulo-resultados'); // Seleciona o título de resultados, se existir
+    
         const mensagemNenhumLivro = `
-
-        <div class="livros-pesquisados"> 
-        <img src="./src/img/icons/icone-livro-rasgado.png" alt="livro rasgado">
-        <h1>Desculpe, livro não econtrado!</h1>
-        <p>Verifique se tem algo de errado ou tente mais tarde</p>
-        </div>
-
+            <div class="livros-nao-encontrados"> 
+                <img src="./src/img/icons/icone-livro-rasgado.png" alt="livro rasgado">
+                <h1>Desculpe, livro não encontrado!</h1>
+                <p>Verifique se tem algo de errado ou tente mais tarde</p>
+            </div>
         `;
-
-        livrosPesquisados.innerHTML = ''; // Limpa a seção de livros pesquisados
-
+    
+        // Limpa as seções de livros pesquisados e não encontrados
+        livrosPesquisados.innerHTML = '';
+    
         if (termoBusca === '') {
             // Se o campo de busca estiver vazio, restaura a visibilidade de todos os elementos no main
             mainSite.classList.remove('ocultar-main');
+            livrosNaoEncontrados.style.display = 'none';  // Oculta a mensagem de erro
+            livrosPesquisados.style.display = 'none';  // Esconde os livros pesquisados
+            if (tituloResultados) tituloResultados.remove(); // Remove o título se existir
             return;
         }
-
+    
         let encontrouLivro = false;
-
+    
+        // Verifica os livros
         Array.from(livros).forEach(livro => {
             const tituloLivro = livro.getAttribute('data-title');
             const autorLivro = livro.querySelector('p')?.textContent;
-
-            // Verifica se o título e autor não são nulos/undefined antes de aplicar toLowerCase
+    
             const tituloLivroLower = tituloLivro ? tituloLivro.toLowerCase() : '';
             const autorLivroLower = autorLivro ? autorLivro.toLowerCase() : '';
-
+    
             if (tituloLivroLower.includes(termoBusca) || autorLivroLower.includes(termoBusca)) {
-                const livroClone = livro.cloneNode(true); // Clona o livro
-                livrosPesquisados.appendChild(livroClone); // Adiciona o clone na seção de pesquisados
+                // Se encontrar um livro, clone e adicione ao resultado
+                const livroClone = livro.cloneNode(true);
+                livrosPesquisados.appendChild(livroClone);
                 encontrouLivro = true;
             }
         });
-
+    
         if (!encontrouLivro) {
-            // Oculta todo o conteúdo dentro de main e mostra a mensagem
-            mainSite.classList.add('ocultar-main');
+            // Se não encontrou livros, oculta o conteúdo principal e exibe a mensagem de erro
+            mainSite.classList.add('ocultar-main');  // Oculta o conteúdo principal do site
             livrosPesquisados.innerHTML = mensagemNenhumLivro;
-            livrosPesquisados.style.display = 'block'; // Garante que a mensagem seja exibida
+            livrosPesquisados.style.display = 'block';  // Exibe a mensagem de erro
+            // Remove o título se existir
+            if (tituloResultados) tituloResultados.remove();
         } else {
-            // Se encontrou livros, assegura que o conteúdo principal esteja visível
-            mainSite.classList.remove('ocultar-main');
+            // Se encontrou livros, oculta o conteúdo principal
+            mainSite.classList.add('ocultar-main');  // Oculta o conteúdo principal do site
+            livrosNaoEncontrados.style.display = 'none';  // Oculta a mensagem de erro
+            livrosPesquisados.style.display = 'flex';  // Exibe os livros encontrados
+    
+            // Adiciona o título "Resultados Encontrados" apenas uma vez, fora do main
+            if (!tituloResultados) {
+                const novoTituloResultados = document.createElement('h2');
+                novoTituloResultados.className = 'titulo-resultados';
+                novoTituloResultados.textContent = 'Resultados Encontrados:';
+                // Insere o título antes do conteúdo principal
+                mainSite.insertAdjacentElement('beforebegin', novoTituloResultados);
+            }
         }
     }
-
+    
     // Filtrar ao clicar no botão de busca
     buscarBtn.addEventListener('click', filtrarLivros);
-
+    
     // Filtrar ao digitar no campo de busca
     buscarInput.addEventListener('keyup', filtrarLivros);
+    
+    
+    
+    
+    
+    
+    
+    
 
 
     let timeout;
