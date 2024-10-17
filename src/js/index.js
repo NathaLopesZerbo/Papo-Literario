@@ -541,7 +541,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Filtrar ao digitar no campo de busca
     buscarInput.addEventListener('keyup', filtrarLivros);
     
-    
+
     
     
     
