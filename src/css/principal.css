@@ -884,7 +884,7 @@ body{
 /* Sub-Cabeçalho */
 
 main.site{
-    height: 580vh;
+    height: 650vh;
     max-width: 75%;
     margin: 0 auto;
 }
@@ -895,7 +895,8 @@ main.site div.container div.slider-wrapper{
     margin: 0px 70px 0px 30px;
 }
 
-.categoria-livros h2{
+.categoria-livros h1{
+    font-size: 20px;
     position: relative;
     top: 55px;
 }
@@ -1159,75 +1160,71 @@ main.site div.container div.slider-wrapper{
     background-color: var(--cor04);
 }
 
-
-
-.objetivos{
-    margin-top: 70px;
+.categoria-objetivos {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 30px;
-    cursor: pointer;
-    flex-wrap: wrap;
+    text-transform: uppercase;
+    font-size: 25px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.objetivos{
+    margin-top: 30px;
+    margin-right: 70px;
+}
+
+
+.logo-objetivo img{
+    object-fit: contain;
+    height: 110px;
+}
+
+
+.separacao-objetivo{
+    background-color: #cccccc;
+    width: 75%;
+    height: 2px;
 }
 
 .objetivo-item{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    background-color: #D3C4B1;
-    border-radius: 30px;
-    width: 300px;
-    height: 250px;
-    transition: 0.2s ease-in-out;
+    gap: 15px;
 }
 
-.objetivos:has(.objetivo-item:hover) .objetivo-item:not(:hover){
-    scale: 0.8;
-    opacity: 0.8;
-}
-
-.titulo-objetivo{
-    text-align: center;
-    position: absolute;
-    padding-top: 30px;
-}
-
-.logo-objetivo{
+.objetivo-conforto{
     position: relative;
-    left: -130px;
-    top: -20px;
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
+    top: -12px;
 }
 
-.logo-objetivo img{
-    object-fit: contain;
-    background-position: center;
+.objetivo-chat{
     position: relative;
-    left: 14px;
-    top: 12px;
-    width: 50px;
-    height: 50px;
+    left: -40px;
 }
 
-.conforto{
-    background-color: #C7ABFF;
-}
-
-.chat{
-    background-color: #FFEA93;
-}
-
-.equipe{
-   background-color: #85D0FF; 
-}
+.swiper-pagination-bullet {
+    background-color: black; 
+    position: relative;
+  }
+  
+  .swiper-pagination-bullet-active {
+    background-color: black; 
+    width: 12px;  
+    height: 12px;
+  }
+  
 
 .info-objetivo{
+    width: 70%;
     text-align: justify;
-    line-height: 1.2em;
+    font-size: 15px;
+    line-height: 1.7em;
     padding: 0px 15px;
+    margin-bottom: 30px;
 }
 
 .titulo-card-autores{

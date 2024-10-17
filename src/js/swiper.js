@@ -118,3 +118,23 @@ const carrosselTemas = new Swiper('.mySwiperTemas', {
   }
 });
   
+
+
+const carrosselObjetivos = new Swiper('.mySwiperObjetivos', {
+  breakpoints: {
+    500: {
+      slidesPerView: 1, 
+      spaceBetween: 0
+    },
+    971: {
+      slidesPerView: 2,
+    },
+    1580: {
+      slidesPerView: 3,
+    }
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,  // As bolinhas serão clicáveis
+  },
+});

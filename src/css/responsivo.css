@@ -594,6 +594,30 @@
         font-size: 18px;
     }
     
+    .categoria-livros h1{
+        font-size: 20px;
+        text-transform: uppercase;
+        text-align: center;
+        position: relative;
+        top: 45px;
+    }
+
+    .titulo-card-autores {
+        font-size: 20px;
+        text-transform: uppercase;
+        text-align: center;
+        position: relative;
+        top: -25px;
+    }
+
+    .info-objetivo{
+       font-size: 13px;
+       width: 75%;
+    }
+
+    .categoria-objetivos{
+        font-size: 20px;
+    }
      
 }
 
@@ -688,7 +712,10 @@
         height: 300px;
     }
 
-    
+    .categoria-objetivos{
+        font-size: 16px;
+    }
+     
 
 
 }
