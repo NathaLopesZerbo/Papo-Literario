@@ -44,32 +44,64 @@
 }
 
 .imagem-compra img {
-    width: 100%; /* Ajuste conforme necessário */
-    height: auto; /* Manter proporção da imagem */
+    width: 100%; 
+    height: auto;
 }
 
 .img-livros {
     display: flex;
-    gap: 10px; /* Espaçamento entre as miniaturas */
+    gap: 10px; 
 }
 
 .img {
-    cursor: pointer; /* Mostrar que é clicável */
+    cursor: pointer; 
 }
 
 .img img {
-    width: 50px; /* Ajuste o tamanho das miniaturas */
-    height: auto; /* Manter proporção da imagem */
-    border: 2px solid transparent; /* Adicionar borda quando selecionado */
+    width: 50px; 
+    height: auto; 
+    border: 2px solid transparent; 
+    transition: 0.2s ease-in-out;
 }
 
 .img:hover img {
-    border: 2px solid #007bff; /* Cor da borda ao passar o mouse */
+    border: 2px solid #afb5bb; 
+    background-color: rgb(184, 184, 184);
 }
+
+
+.imagem-compra {
+    position: relative; 
+}
+
+.zoom-container {
+    overflow: hidden; 
+    width: 200px; /* Ajuste conforme necessário */
+    height: 300px; /* Ajuste conforme necessário */
+}
+
+.zoom-container img {
+    width: 100%; 
+    height: auto; 
+    transition: transform 0.5s ease; 
+    cursor: pointer; 
+}
+
+.zoom-img {
+    position: relative; 
+    backface-visibility: hidden; 
+}
+
+.zoom-container:hover .zoom-img {
+    transform: scale(1.5); /* Ajuste o fator de zoom conforme necessário */
+    transform-origin: top left; 
+}
+
+
 
 .social{
     display: flex;
-    gap: 80px;
+    gap: 40px;
     margin-bottom: 3px;
 }
 

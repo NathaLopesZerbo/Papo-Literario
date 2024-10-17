@@ -339,6 +339,17 @@ function trocarImagem(novaImagem) {
   imagemPrincipal.src = novaImagem;
 }
 
+// Adiciona o evento de mousemove para a imagem principal
+const zoomContainer = document.querySelector('.zoom-container');
+const zoomImg = document.querySelector('.zoom-img');
+
+zoomContainer.addEventListener('mousemove', (e) => {
+  const { left, top, width, height } = zoomContainer.getBoundingClientRect();
+  const x = ((e.clientX - left) / width) * 100; // Calcula a posição do mouse em porcentagem
+  const y = ((e.clientY - top) / height) * 100; // Calcula a posição do mouse em porcentagem
+  zoomImg.style.transformOrigin = `${x}% ${y}%`; // Altera o ponto de origem do zoom
+});
+
 
 
 
