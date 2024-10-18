@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" class="favicon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/principal.css">
+    <link rel="stylesheet" href="../css/compra.css">
+    <link rel="stylesheet" href="../css/responsivo.css">
+    <title>Graça Transformadora - Luciano Subira</title>
+</head>
+<body>
+
+    <header class="header">
+        <nav class="nav">
+            <div class="menu">
+                <div class="menu-btn" id="menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="overlay cor" id="overlay"></div>
+
+                <div class="sidebar" id="sidebar">
+                    <div class="close-btn" id="close-btn">
+                        <span><i class="fa-solid fa-xmark"></i></span>
+                    </div>
+                    <div class="cabecalho-sidebar">
+                        <div class="logo-sidebar">
+                            <a href="../../index.html"><img src="../img/logo.png" alt="logo"></a>
+                         </div>
+                    </div>
+                    <div class="menu-sidebar">
+                        <div class="item">
+                           <a class="sub-btn" id="sub-btn">
+                                <img src="../img/icons/icone-categoria.png" alt="icone-categoria">
+                               Categorias
+                               <i class="fa-solid fa-angle-right dropdown"></i></a>
+                           <div class="sub-menu">
+                               <a href="#" class="sub-item"> <img src="../img/icons/icone-estrela.png" alt="" class="estrela">Religiosos</a>
+                               <a href="#" class="sub-item"><img src="../img/icons/icone-estrela.png" alt="" class="estrela">Romance</a>
+                               <a href="#" class="sub-item"><img src="../img/icons/icone-estrela.png" alt="" class="estrela">Infantil</a>
+                           </div>
+                       </div>   
+                           
+                       <div class="item">
+                           <a class="sub-btn">
+                               <img src="../img/icons/icone-autores.png" alt="icone-autores">
+                               Autores
+                               <i class="fa-solid fa-angle-right dropdown"></i>
+                           </a>
+                           <div class="sub-menu">
+                               <a href="#" class="sub-item"><img src="../img/icons/icone-estrela.png" alt="" class="estrela">Luciano Subira</a>
+                               <a href="#" class="sub-item"><img src="../img/icons/icone-estrela.png" alt="" class="estrela">Machado de Assis</a>
+                               <a href="#" class="sub-item"><img src="../img/icons/icone-estrela.png" alt="" class="estrela">William Shakespeare</a>
+                           </div>
+                       </div>
+
+                           <div class="item">
+                               <a href="#">
+                               <img src="../img/icons/icone-vendidos.png" alt="icone-vendidos">
+                               Mais Vendidos
+                               </a>
+                           </div>
+                           <div class="item">
+                               <a href="#">
+                                   <img src="../img/icons/icone-recomendados.png" alt="icone-recomendados">
+                                   Recomendados
+                               </a>
+                           </div>
+                           <div class="item">
+                               <a href="#">
+                                   <img src="../img/icons/icone-bate-papo.png" alt="icone-bate-papo">
+                                   Bate-Papo
+                               </a>
+                           </div>
+                           <div class="separacao"></div>
+                           <div class="item">
+                               <a href="#">
+                                   <img src="./src/img/icons/icone-suporte.png" alt="icone-suporte">
+                                   Suporte
+                               </a>
+                           </div>
+
+                           <div class="item destaque">
+                               <a class="sub-btn">
+                                   <i class="fa-solid fa-user-plus conta"></i>
+                                   Minha Conta
+                                   <i class="fa-solid fa-angle-right dropdown"></i>
+                               </a>
+                               
+                               <div class="sub-menu">
+                                   <a href="#" class="sub-item" id="fechar-abrirFavoritos">
+                                       <span><i class="fa-regular fa-heart"></i></span>
+                                       Meus favoritos
+                                   </a>
+                                   <a href="#" class="sub-item" id="fechar-abrirCarrinhos">
+                                       <span><i class="fa-solid fa-box"></i></span>
+                                       Meus pedidos
+                                   </a>
+                                   <a href="#" class="sub-item sair-conta">
+                                       <span><i class="fa-solid fa-right-from-bracket"></i></span>
+                                       Sair
+                                   </a>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                
+                <div class="logo">
+                    <a href="../../index.html">
+                        <img src="../img/logo.png" alt="logo">
+                    </a>
+                </div>
+            </div>
+    
+            <div class="buscar-box">
+                 <div class="input-buscar">
+                    <input type="text" name="" id="" placeholder="Busque aqui o seu livro">
+                </div>
+                <div class="lupa-buscar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+
+        <ul class="nav-list">
+            <li>
+                <span><i class="fa-regular fa-heart"></i></span>
+                <a href="#" id="favoritos-link">Favoritos</a>
+            </li>
+            
+            <li>
+                <span><i class="fa-solid fa-cart-shopping"></i></span>
+                <a href="#" id="carrinho-link">Carrinho</a>
+            </li>
+            
+
+            <li>
+                <span><i class="fa-solid fa-user"></i></span>
+                <a href="../paginas/login.html">
+                   <p id="welcome-message">Login</p>
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+    <script>
+        const username = localStorage.getItem('username');
+        if (username) {
+            document.getElementById('welcome-message').textContent = `Olá, ${username}!`;
+        }
+    </script>
+</header>
+    
+    <div class="sub-cabecalho">
+        <div class="item-cabecalho" id="item-cabecalho">
+            <a href="#" class="sub-item dropdown" id="dropdown">
+              <span><i class="fa-solid fa-location-dot"></i></span>
+              <span id="localizacao-texto">Minha Região</span>
+
+                <div class="dropdown-content1" id="dropdown-content1">
+                    <form id="cep-form">
+                    <label for="cep">As opções e velocidade de entrega podem variar de acordo com a região</label>
+                    <div class="input-container">
+                        <p>Insira um CEP</p>
+                        <input type="text" id="cep" name="cep" placeholder="Digite o CEP">
+                        <button type="button" id="ok-button">Ok</button> 
+                    </div>
+                    <p class="login-title">Ou já possui uma conta?</p>
+                    <button class="button-cep-login">Faça Login</button>
+                    </form>
+                </div>  
+
+            </a>
+          </div>
+
+      <div class="item-cabecalho">
+                    <a href="#" class="sub-item">
+                        <span><i class="fa-solid fa-bars"></i></span>
+                        <div class="dropdown1" id="dropdown">
+                            Categorias
+                            <div class="dropdown-content" id="dropdownContent">
+                                <div class="itens-drop-cabecalho">
+                                    <div class="seta-cima"></div>
+                                    <div class="separar-cabecalho">
+                                        <div class="separar-itens-cabecalho">
+                                            <a href="#">Romance</a>
+                                            <a href="#">Comédia</a>
+                                            <a href="#">Ação</a>
+                                            <a href="#">Tecnico</a>
+                                        </div>
+                                        <div class="separar-itens-cabecalho">
+                                            <a href="#">Romance</a>
+                                            <a href="#">Comédia</a>
+                                            <a href="#">Ação</a>
+                                            <a href="#">Tecnico</a>
+                                        </div>
+                                        <div class="separar-itens-cabecalho">
+                                            <a href="#">Romance</a>
+                                            <a href="#">Comédia</a>
+                                            <a href="#">Ação</a>
+                                            <a href="#">Tecnico</a>
+                                        </div>
+                                        <div class="separar-itens-cabecalho">
+                                            <a href="#">Romance</a>
+                                            <a href="#">Comédia</a>
+                                            <a href="#">Ação</a>
+                                            <a href="#">Tecnico</a>
+                                        </div>
+                                        <div class="separar-itens-cabecalho">
+                                            <a href="#">Romance</a>
+                                            <a href="#">Comédia</a>
+                                            <a href="#">Ação</a>
+                                            <a href="#">Tecnico</a>
+                                        </div>
+                                        <div class="separar-itens-cabecalho">
+                                            <a href="#">Romance</a>
+                                            <a href="#">Comédia</a>
+                                            <a href="#">Ação</a>
+                                            <a href="#">Tecnico</a>
+                                        </div>
+                                        <div class="separar-itens-cabecalho">
+                                            <a href="#">Romance</a>
+                                            <a href="#">Comédia</a>
+                                            <a href="#">Ação</a>
+                                            <a href="#">Tecnico</a>
+                                        </div>
+                                    </div>
+                                     
+
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+        <div class="item-cabecalho">
+            <a href="#" class="sub-item"><span><i class="fa-regular fa-bookmark"></i></span>Autores</a>
+        </div>
+        <div class="item-cabecalho">
+            <a href="#" class="sub-item"><span><i class="fa-regular fa-hand-point-up"></i></span>Recomendados</a>
+        </div>
+        <div class="item-cabecalho chat-balao">
+            <a href="#" class="sub-item"><span><i class="fa-regular fa-comments"></i></span>Chat</a>
+        </div>
+    </div>
+
+        <div class="card-compra" id="modalClose">
+
+            <div class="cor-card-compra">
+                <div class="olhar">
+                    <div class="social">
+                        <div class="favoritar">
+                            <i class="fa-regular fa-heart"></i>
+                            <a href="#" id="favoritar-btn" data-name="Graça Transformadora" data-price="78.90" data-image="../img/capa-livros/graca-transformadora.png">Favoritar</a>
+                        </div>
+                        
+                            <div class="compartilhar">
+                                <i class="fa-regular fa-paper-plane"></i>
+                                <a href="">Compartilhar</a>
+                            </div>
+                    </div>
+                    <div class="imagem-compra">
+                        <div class="zoom-container">
+                            <img id="imagem-principal" src="../img/capa-livros/graca-transformadora.png" alt="graca-transformadora" class="zoom-img">
+                        </div>
+                    </div>
+                    
+                    <div class="avaliacao-compra">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div> 
+                    
+                    <div class="img-livros">
+                        <div class="img" onclick="trocarImagem('../img/capa-livros/graca-transformadora.png')">
+                            <img src="../img/capa-livros/graca-transformadora.png" alt="Miniatura 1">
+                        </div>
+                        <div class="img" onclick="trocarImagem('../img/capa-livros/lado1-graca.png')">
+                            <img src="../img/capa-livros/lado1-graca.png" alt="Miniatura 2">
+                        </div>
+                        <div class="img" onclick="trocarImagem('../img/capa-livros/lado2-graca.png')">
+                            <img src="../img/capa-livros/lado2-graca.png" alt="Miniatura 3">
+                        </div>
+                        <div class="img" onclick="trocarImagem('../img/capa-livros/lado3-graca.png')">
+                            <img src="../img/capa-livros/lado3-graca.png" alt="Miniatura 4">
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                </div>
+                <div class="separar"></div>
+                <div class="informacoes">
+                    <div class="autor-compra">
+                        <h1 class="titulo-compra"> O Diário de Bridget Jones</h1>
+                        <p class="autor"> Helen Fielding</p>
+                    </div>
+                    <div class="informacoes-livro">
+                        Inteligente. sarcástico. hilário. atual. Estas são as características que fizeram de O diário de Bridget Jones um grande sucesso de vendas. Escrito na forma de diário. o romance relata um ano na vida de Bridget Jones. uma solteira de trinta e poucos anos. que luta com todas as forças para emagrecer. encontrar um namorado. parar de beber e largar o cigarro. Uma história aparentemente comum. mas narrada em estilo impecável e com extrema sensibilidade pela jornalista britânica Helen Fielding. 
+                    </div>
+                    <div class="mais-informacoes">
+                        <a href="">Mais Informações</a>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+
+                    <div class="fabricante">
+
+                        <div class="paginas">
+                            <h3 class="titulo-fabricante">N° de Páginas</h3>
+                            <img src="../img/icons/icone-paginas.png" alt="icone-paginas">
+                            <p class="paginas">320 páginas</p>
+                        </div>
+
+                        <div class="idioma">
+                            <h3 class="titulo-fabricante">Idioma</h3>
+                            <img src="../img/icons/icone-idioma.png" alt="icone-paginas">
+                            <p class="linguagem">Portugues</p>
+                        </div>
+
+                        <div class="editora">
+                            <h3 class="titulo-editora">Editora</h3>
+                            <img src="../img/icons/icone-editora.png" alt="icone-paginas">
+                            <p class="paginas">Record</p>
+                        </div>
+                    </div>
+
+                 </div>
+            </div>
+
+             <div class="card-comprar" id="card-compra">
+
+                <div class="preco-comprar">
+                    <h1>R$ 45,00 </h1>
+                </div>
+
+                <div class="pagar-cartao">
+                    <img src="../img/icons/icone-cartao.png" alt="icone-cartao">
+                    <p>No cartão de crédito</p>
+                </div>
+
+                <div class="pagamentos" id="openModal">
+                    <p>Outras formas de pagamento</p>
+                </div>
+
+                <div class="calcular-frete">
+                    <p id="valor-frete">Calcular frete e prazo</p>
+                    <img src="../img/icons/icone-frete.png" alt="icone-frete">
+                  </div>
+                  
+
+                <div class="inserir-frete">
+                    <input type="text" id="input-frete" placeholder="Digite seu CEP" class="input-frete">
+                    <button id="button-frete" class="button-frete">OK</button>
+                    <span id="frete-localizacao" class="frete-localizacao"></span> 
+                  </div>
+                  
+
+
+                <div class="compra">
+                    <img src="../img/icons/icone-comprar.png" alt="icone-comprar">
+                    <p>Comprar</p>
+                </div>
+
+            <div class="botoes-abaixo">
+                    <div class="carrinho-compra">
+                        <img src="../img/icons/icone-carrinho.png" alt="icone-carrinho">
+                        <p>Carrinho</p>
+                    </div>
+
+                    
+                        <div class="chat">
+                            <img src="../img/icons/icone-chat.png" alt="icone-chat">
+                            <a href="http://localhost:5173/" class="chat-a">
+                            <p>Chat</p>
+                            </a>
+                            </div>
+                        </div>
+                </div>
+             </div>
+
+             
+             <div class="modal" id="modal">
+                <div class="card-modal">
+                    <div class="pagamentos-span">
+                        <span><i class="fa-solid fa-credit-card"></i></span>
+                        <span><i class="fa-solid fa-barcode"></i></span>
+                        <span><i class="fa-brands fa-pix"></i></span>
+                    </div>
+                    <div class="separar-modal-card">
+                        <div class="sub-barra"></div> 
+
+
+                        <div class="boleto-descricao">
+                            <h3>R$ 45,00 no Boleto Bancário.</h3>
+                            <p>O boleto será gerado após a finalização de sua compra. Imprima e pague no banco ou pague pela internet utilizando o código de barras do boleto.</p>
+                        </div>
+
+                        <div class="pix-descricao">
+                            <h3>R$ 45,00 no Pix.</h3>
+                            <p>O pagamento é instantâneo e só pode ser à vista. Na etapa de finalização da compra, a gente explica direitinho como pagar com Pix.</p>
+                        </div>
+
+                    </div>
+                    
+                    <div class="cartao-descricao">
+                        <div class="info-pag-cartao">
+                            <div class="escuro-info">
+                                <p>1x</p>
+                                <p>de R$78,90</p>
+                                <p>sem juros</p>
+                            </div>
+
+                            <div class="claro-info">
+                                <p>2x</p>
+                                <p>de R$78,90</p>
+                                <p>sem juros</p>
+                            </div>
+
+                            <div class="escuro-info">
+                                <p>3x</p>
+                                <p>de R$78,90</p>
+                                <p>sem juros</p>
+                            </div>
+
+                            <div class="claro-info">
+                                <p>4x</p>
+                                <p>de R$78,90</p>
+                                <p>sem juros</p>
+                            </div>
+                            
+                            <div class="escuro-info">
+                                <p>5x</p>
+                                <p>de R$78,90</p>
+                                <p>sem juros</p>
+                            </div>
+
+                            <div class="claro-info">
+                                <p>6x</p>
+                                <p>de R$78,90</p>
+                                <p>sem juros</p>
+                            </div>
+
+                            <div class="escuro-info">
+                                <p>7x</p>
+                                <p>de R$78,90</p>
+                                <p>sem juros</p>
+                            </div>
+
+                            <div class="claro-info">
+                                <p>8x</p>
+                                <p>de R$78,90</p>
+                                <p>sem juros</p>
+                            </div>
+
+                            <div class="escuro-info">
+                                <p>9x</p>
+                                <p>de R$78,90</p>
+                                <p>sem juros</p>
+                            </div>
+
+                            <div class="claro-info">
+                                <p>10x</p>
+                                <p>de R$78,90</p>
+                                <p>sem juros</p>
+                            </div>
+
+                            <div class="escuro-info">
+                                <p>11x</p>
+                                <p>de R$78,90</p>
+                                <p>sem juros</p>
+                            </div>
+
+                            <div class="claro-info diferente">
+                                <p>12x</p>
+                                <p>de R$78,90</p>
+                                <p>sem juros</p>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+
+
+<script src="../js/compra.js" defer ></script>
+</body>
+</html>

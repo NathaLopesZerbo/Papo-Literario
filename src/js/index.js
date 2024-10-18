@@ -32,6 +32,30 @@
     let favoritos = [];
 
 
+    document.addEventListener('DOMContentLoaded', () => {
+       
+        const shouldOpenFavoritos = localStorage.getItem('openSidebarFavoritos');
+    
+        if (shouldOpenFavoritos === 'true') {
+            localStorage.removeItem('openSidebarFavoritos'); 
+            sidebarFavorito.classList.add('active-favorito');
+            document.body.classList.add("no-scroll"); 
+        }
+    
+       
+        const shouldOpenCarrinho = localStorage.getItem('openSidebarCarrinho');
+    
+        if (shouldOpenCarrinho === 'true') {
+            localStorage.removeItem('openSidebarCarrinho'); 
+            sidebarCarrinho.classList.add('active-carrinho'); 
+            overlay.style.display = 'flex'; 
+            document.body.classList.add("no-scroll"); 
+        }
+    });
+    
+    
+    
+
     $(document).ready(function(){
         $('.sub-btn').click(function(){
         $(this).next('.sub-menu').slideToggle();
@@ -227,17 +251,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
     site.addEventListener('click', function(event){
         let parentButton = event.target.closest('#add-to-cart-btn');
 
@@ -357,16 +370,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-
-
-
-
-    // Favoritos
-
     site.addEventListener('click', function (event){
-        // console.log(event.target)
 
         let buttonFavoritos = event.target.closest("#add-to-favoritos-btn")
         

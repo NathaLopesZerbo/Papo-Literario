@@ -9,6 +9,22 @@
  const dropdown = document.getElementById('dropdown')
  const dropdownContent = document.getElementById('dropdownContent')
 
+
+ document.getElementById('favoritos-link').addEventListener('click', function(e) {
+  e.preventDefault();
+  localStorage.setItem('openSidebarFavoritos', 'true');
+  window.location.href = '../../index.html'; 
+});
+
+
+document.getElementById('carrinho-link').addEventListener('click', function(e) {
+  e.preventDefault();
+  localStorage.setItem('openSidebarCarrinho', 'true'); 
+  window.location.href = '../../index.html'; 
+});
+
+
+
  $(document).ready(function(){
     $('.sub-btn').click(function(){
     $(this).next('.sub-menu').slideToggle();
