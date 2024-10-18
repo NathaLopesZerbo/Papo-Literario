@@ -229,6 +229,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
+
     site.addEventListener('click', function(event){
         let parentButton = event.target.closest('#add-to-cart-btn');
 
@@ -240,6 +249,20 @@ document.addEventListener('DOMContentLoaded', () => {
             addToCart(name, price, image);
         }
     });
+
+    
+    function saveCart() {
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+
+    function loadCart() {
+        const storedCart = localStorage.getItem('cart');
+        if (storedCart) {
+            cart = JSON.parse(storedCart);
+            updateCarrinho();
+        }
+    }
 
     function addToCart(name, price, image){
         const existingItem = cart.find(item => item.name === name);
@@ -258,6 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCarrinho();
         saveCart(); 
     }
+
 
     function updateCarrinho(){
         cartItemsContainer.innerHTML = '';
