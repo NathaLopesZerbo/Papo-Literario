@@ -16,11 +16,101 @@
   window.location.href = '../../index.html'; 
 });
 
-
 document.getElementById('carrinho-link').addEventListener('click', function(e) {
   e.preventDefault();
   localStorage.setItem('openSidebarCarrinho', 'true'); 
   window.location.href = '../../index.html'; 
+});
+
+document.querySelector('.carrinho-compra').addEventListener('click', function(e) {
+  e.preventDefault(); 
+  localStorage.setItem('openSidebarCarrinho', 'true'); 
+  window.location.href = '../../index.html'; 
+});
+
+
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+function addToCart(name, price, image) {
+    const existingItem = cart.find(item => item.name === name);
+
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({
+            name,
+            price,
+            image,
+            quantity: 1,
+        });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+function handleCarrinhoClick(event) {
+  event.preventDefault();
+
+  const productButton = event.target.closest('#add-to-cart-btn');
+  
+  if (productButton) {
+    
+      const name = productButton.getAttribute('data-name');
+      const price = parseFloat(productButton.getAttribute('data-price'));
+      const image = productButton.getAttribute('data-image');
+      
+      addToCart(name, price, image);
+
+      localStorage.setItem('openSidebarCarrinho', 'true');
+      window.location.href = '../../index.html';
+  }
+}
+
+
+document.querySelector('.compra').addEventListener('click', function(e) {
+  handleCarrinhoClick(e); 
+});
+
+document.querySelector('.carrinho-compra').addEventListener('click', function(e) {
+  handleCarrinhoClick(e); 
+});
+
+
+
+let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+
+
+function addToFavoritos(nameFavoritos, priceFavoritos, imageFavoritos) {
+    const existingFavoritos = favoritos.find(itemf => itemf.nameFavoritos === nameFavoritos);
+
+    if (existingFavoritos) {
+        existingFavoritos.quantidadeFavoritos += 1;
+    } else {
+        favoritos.push({
+            imageFavoritos,
+            nameFavoritos,
+            priceFavoritos,
+            quantidadeFavoritos: 1
+        });
+    }
+
+    localStorage.setItem('favoritos', JSON.stringify(favoritos));
+}
+
+
+document.getElementById('add-to-favoritos-btn').addEventListener('click', function(e) {
+    e.preventDefault(); 
+
+    const nameFavoritos = this.getAttribute('data-name');
+    const priceFavoritos = parseFloat(this.getAttribute('data-price'));
+    const imageFavoritos = this.getAttribute('data-image');
+
+    
+    addToFavoritos(nameFavoritos, priceFavoritos, imageFavoritos);
+    
+    
+    localStorage.setItem('openSidebarFavoritos', 'true');
+    window.location.href = '../../index.html'; 
 });
 
 
@@ -78,8 +168,6 @@ openSidebar.addEventListener('click',function(){
  })
 
 
-
-
  const itemCabecalho = document.getElementById('item-cabecalho');
  const contentDropdown = document.getElementById('dropdown-content1');
  const headerDropdown = document.getElementById('dropdown');
@@ -101,10 +189,10 @@ openSidebar.addEventListener('click',function(){
  function hideDropdown() {
    dropdownDelay = setTimeout(() => {
      if (!isMouseInside) {
-       buscarEndereco(); // Realiza a pesquisa
-       contentDropdown.style.display = 'none'; // Fecha o dropdown
+       buscarEndereco(); 
+       contentDropdown.style.display = 'none'; 
      }
-   }, 400); // Tempo de atraso em milissegundos
+   }, 400); 
  }
  
  let isMouseInside = false;
@@ -130,40 +218,39 @@ openSidebar.addEventListener('click',function(){
    hideDropdown();
  });
  
- // Adiciona evento de clique ao botão "OK" do dropdown
+
  okButton.addEventListener('click', function() {
-   salvarCep(); // Salva o CEP no localStorage
-   buscarEndereco(); // Realiza a pesquisa
-   contentDropdown.style.display = 'none'; // Fecha o dropdown
+   salvarCep(); 
+   buscarEndereco(); 
+   contentDropdown.style.display = 'none'; 
  });
  
- // Adiciona evento de clique ao botão "OK" da seção de frete
  buttonFrete.addEventListener('click', function() {
-   salvarCep(); // Salva o CEP no localStorage
-   buscarEndereco(); // Realiza a pesquisa
+   salvarCep(); 
+   buscarEndereco(); 
  });
  
- // Adiciona evento para pressionar Enter no campo de CEP
+
  cepInput.addEventListener('keydown', function(event) {
    if (event.key === 'Enter') {
-     event.preventDefault(); // Evita o envio do formulário padrão
-     salvarCep(); // Salva o CEP no localStorage
-     buscarEndereco(); // Realiza a pesquisa
-     contentDropdown.style.display = 'none'; // Fecha o dropdown
-   }
- });
- 
- // Adiciona evento para pressionar Enter no campo de frete
- inputFrete.addEventListener('keydown', function(event) {
-   if (event.key === 'Enter') {
-     event.preventDefault(); // Evita o envio do formulário padrão
-     salvarCep(); // Salva o CEP no localStorage
-     buscarEndereco(); // Realiza a pesquisa
+     event.preventDefault(); 
+     salvarCep(); 
+     buscarEndereco(); 
+     contentDropdown.style.display = 'none'; 
    }
  });
  
 
- // Adiciona sugestões ao dropdown
+ inputFrete.addEventListener('keydown', function(event) {
+   if (event.key === 'Enter') {
+     event.preventDefault(); 
+     salvarCep(); 
+     buscarEndereco(); 
+   }
+ });
+ 
+
+
  cepInput.addEventListener('input', function() {
    const cep = cepInput.value.replace(/\D/g, '');
    if (cep.length > 0) {
@@ -172,12 +259,12 @@ openSidebar.addEventListener('click',function(){
      displaySuggestions(suggestions);
    } else {
      if (suggestionsList) {
-       suggestionsList.innerHTML = ''; // Limpa a lista se o campo estiver vazio
+       suggestionsList.innerHTML = ''; 
      }
    }
  });
  
- // Adiciona sugestões ao campo de frete
+
  inputFrete.addEventListener('input', function() {
    const cep = inputFrete.value.replace(/\D/g, '');
    if (cep.length > 0) {
@@ -189,16 +276,16 @@ openSidebar.addEventListener('click',function(){
  
  function displaySuggestions(suggestions) {
    if (suggestionsList) {
-     suggestionsList.innerHTML = ''; // Limpa a lista de sugestões
+     suggestionsList.innerHTML = ''; 
      suggestions.forEach(suggestion => {
        const li = document.createElement('li');
        li.textContent = suggestion;
        li.addEventListener('click', function() {
          cepInput.value = suggestion;
          inputFrete.value = suggestion;
-         salvarCep(); // Salva o CEP no localStorage
-         buscarEndereco(); // Realiza a pesquisa
-         contentDropdown.style.display = 'none'; // Fecha o dropdown
+         salvarCep(); 
+         buscarEndereco(); 
+         contentDropdown.style.display = 'none'; 
        });
        suggestionsList.appendChild(li);
      });
@@ -230,57 +317,50 @@ openSidebar.addEventListener('click',function(){
            // Exibe a rua e o bairro
            const localizacao = `${data.logradouro}, ${data.bairro}`;
            document.getElementById('localizacao-texto').textContent = localizacao;
-           freteLocalizacao.textContent = localizacao; // Atualiza o endereço na seção de frete
+           freteLocalizacao.textContent = localizacao; 
  
-           // Calcula e exibe o valor do frete
-           atualizarFrete(cep); // Passa o CEP para a função que calcula o frete
- 
-           // Atualiza o campo de entrada e o botão
-           inputFrete.style.display = 'none'; // Oculta o campo de entrada
-           buttonFrete.style.display = 'none'; // Oculta o botão "OK"
-           freteLocalizacao.style.display = 'inline'; // Mostra o endereço
+           
+           atualizarFrete(cep); 
+           inputFrete.style.display = 'none'; 
+           buttonFrete.style.display = 'none'; 
+           freteLocalizacao.style.display = 'inline'; 
          } else {
            document.getElementById('localizacao-texto').textContent = 'Região não encontrada';
-           freteLocalizacao.textContent = 'Região não encontrada'; // Atualiza mensagem de erro na seção de frete
-           freteLocalizacao.style.display = 'inline'; // Mostra a mensagem de erro
-           valorFreteP.textContent = 'Calcular frete e prazo'; // Reseta o texto do parágrafo
+           freteLocalizacao.textContent = 'Região não encontrada'; 
+           freteLocalizacao.style.display = 'inline'; 
+           valorFreteP.textContent = 'Calcular frete e prazo'; 
          }
        })
        .catch(error => {
          console.error('Erro ao buscar o endereço:', error);
          document.getElementById('localizacao-texto').textContent = 'Erro ao buscar a região';
-         freteLocalizacao.textContent = 'Erro ao buscar a região'; // Atualiza mensagem de erro na seção de frete
-         freteLocalizacao.style.display = 'inline'; // Mostra a mensagem de erro
-         valorFreteP.textContent = 'Calcular frete e prazo'; // Reseta o texto do parágrafo
+         freteLocalizacao.textContent = 'Erro ao buscar a região'; 
+         freteLocalizacao.style.display = 'inline'; 
+         valorFreteP.textContent = 'Calcular frete e prazo'; 
        });
    } else {
      document.getElementById('localizacao-texto').textContent = 'CEP inválido';
-     freteLocalizacao.textContent = 'CEP inválido'; // Atualiza mensagem de CEP inválido na seção de frete
-     freteLocalizacao.style.display = 'inline'; // Mostra a mensagem de erro
-     valorFreteP.textContent = 'Calcular frete e prazo'; // Reseta o texto do parágrafo
+     freteLocalizacao.textContent = 'CEP inválido'; 
+     freteLocalizacao.style.display = 'inline';
+     valorFreteP.textContent = 'Calcular frete e prazo'; 
    }
  }
  
- // Função para calcular o frete com base no CEP inserido
  function atualizarFrete(cep) {
    let valorFrete;
- 
-   // Simulação de valores de frete com base no CEP
    if (cep.startsWith('13')) {
-     valorFrete = 6.00; // Frete para a região de São Paulo (exemplo)
+     valorFrete = 6.00; 
    } else if (cep.startsWith('20')) {
-     valorFrete = 25.00; // Frete para a região do Rio de Janeiro (exemplo)
+     valorFrete = 25.00;
    } else if (cep.startsWith('30')) {
-     valorFrete = 20.00; // Frete para a região de Minas Gerais (exemplo)
+     valorFrete = 20.00;
    } else {
-     valorFrete = 30.00; // Frete padrão para outras regiões
+     valorFrete = 30.00; 
    }
  
-   // Atualiza o valor do frete no elemento HTML
    valorFreteP.textContent = `Frete: R$ ${valorFrete.toFixed(2)}`;
  }
  
- // Inicializa o campo de frete com o CEP salvo, se existir
  window.addEventListener('load', function() {
    const cepSalvo = localStorage.getItem('cep');
    if (cepSalvo) {
@@ -294,44 +374,38 @@ const subBar = document.querySelector('.sub-barra');
 const boletoDescricao = document.querySelector('.boleto-descricao');
 const pixDescricao = document.querySelector('.pix-descricao');
 const cartaoDescricao = document.querySelector('.cartao-descricao'); 
-const cardModal = document.querySelector('.card-modal'); // Seleciona o modal para ajustar a altura
+const cardModal = document.querySelector('.card-modal');
 
 const offsets = {
-    'fa-credit-card': { left: 0, height: 700 },  // Altura de 700px para o cartão
-    'fa-barcode': { left: 235, height: 300 },    // Altura de 300px para o boleto
-    'fa-pix': { left: 460, height: 300 }         // Altura de 300px para o Pix
+    'fa-credit-card': { left: 0, height: 700 },  
+    'fa-barcode': { left: 235, height: 300 },    
+    'fa-pix': { left: 460, height: 300 }        
 };
 
-// Função para atualizar as descrições, o subBar e a altura da modal
 function updateDescription(iconClass) {
-    // Ocultar todas as descrições inicialmente
     boletoDescricao.style.display = 'none';
     pixDescricao.style.display = 'none';
     cartaoDescricao.style.display = 'none';
 
     if (iconClass === 'fa-barcode') {
-        boletoDescricao.style.display = 'block'; // Mostra a descrição do boleto
+        boletoDescricao.style.display = 'block';
     } else if (iconClass === 'fa-pix') {
-        pixDescricao.style.display = 'block'; // Mostra a descrição do Pix
+        pixDescricao.style.display = 'block'; 
     } else if (iconClass === 'fa-credit-card') {
-        cartaoDescricao.style.display = 'block'; // Mostra a descrição do cartão
+        cartaoDescricao.style.display = 'block'; 
     }
 
-    // Atualiza o offset da sub-barra e a altura do modal
     const offset = offsets[iconClass] || { left: 0, height: 700 }; 
     subBar.style.left = `${offset.left}px`;
-    cardModal.style.height = `${offset.height}px`; // Atualiza a altura da modal
-    subBar.style.backgroundColor = '#FF6F61'; // Cor fixa da sub-barra
+    cardModal.style.height = `${offset.height}px`; 
+    subBar.style.backgroundColor = '#FF6F61'; 
 }
 
-// Definir o boleto como ativo inicialmente
 document.querySelector('.fa-barcode').classList.add('active');
-updateDescription('fa-barcode'); // Mostrar a descrição do boleto no início
+updateDescription('fa-barcode');
 
-// Adiciona evento de clique aos ícones
 icons.forEach((icon) => {
     icon.addEventListener('click', function() {
-        // Remove a classe 'active' de todos os ícones
         icons.forEach(i => i.classList.remove('active'));
         this.classList.add('active');
 
@@ -344,7 +418,7 @@ icons.forEach((icon) => {
             iconClass = 'fa-pix';
         }
 
-        updateDescription(iconClass); // Atualiza a descrição, barra e altura
+        updateDescription(iconClass); 
     });
 });
 
@@ -355,15 +429,15 @@ function trocarImagem(novaImagem) {
   imagemPrincipal.src = novaImagem;
 }
 
-// Adiciona o evento de mousemove para a imagem principal
+
 const zoomContainer = document.querySelector('.zoom-container');
 const zoomImg = document.querySelector('.zoom-img');
 
 zoomContainer.addEventListener('mousemove', (e) => {
   const { left, top, width, height } = zoomContainer.getBoundingClientRect();
-  const x = ((e.clientX - left) / width) * 100; // Calcula a posição do mouse em porcentagem
-  const y = ((e.clientY - top) / height) * 100; // Calcula a posição do mouse em porcentagem
-  zoomImg.style.transformOrigin = `${x}% ${y}%`; // Altera o ponto de origem do zoom
+  const x = ((e.clientX - left) / width) * 100; 
+  const y = ((e.clientY - top) / height) * 100; 
+  zoomImg.style.transformOrigin = `${x}% ${y}%`; 
 });
 
 

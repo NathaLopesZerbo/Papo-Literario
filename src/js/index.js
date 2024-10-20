@@ -54,8 +54,6 @@
     });
     
     
-    
-
     $(document).ready(function(){
         $('.sub-btn').click(function(){
         $(this).next('.sub-menu').slideToggle();
@@ -69,7 +67,6 @@
     });
 
     
-
     sidebarFavoritos.addEventListener('click', function(){
         sidebar.classList.remove('active')
         overlay.style.display = "none"
@@ -84,7 +81,6 @@
         overlay.style.display = 'flex'
         document.body.classList.add("no-scroll");
     })
-
 
     openSidebarFavorito.addEventListener('click', function(){
         updateFavoritos()
@@ -133,11 +129,6 @@
         }
     })
 
-
-    
-
-   
-
 function storeUsername(event) {
     event.preventDefault(); 
     const username = document.getElementById('username').value;
@@ -175,7 +166,6 @@ document.addEventListener('DOMContentLoaded', function() {
             className: "custom-toast" 
         }).showToast();
 
-        // Atualiza a data da última exibição no localStorage
         localStorage.setItem('lastToastTime', currentTime);
     }
 });
@@ -250,125 +240,137 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+function sendWhatsAppMessage() {
+    if (cart.length === 0) return; 
+    const cartItems = cart.map((item) => {
+        return (
+            `${item.name} - Preço: R$${item.price.toFixed(2)}`
+        );
+    }).join('\n');
 
-    site.addEventListener('click', function(event){
-        let parentButton = event.target.closest('#add-to-cart-btn');
+    const message = encodeURIComponent(cartItems);
+    const phone = "19989125525"; 
+    window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
 
-        if(parentButton){   
-            const name = parentButton.getAttribute('data-name');
-            const image = parentButton.getAttribute('data-image');
-            const price = parseFloat(parentButton.getAttribute('data-price'));
+    cart.length = 0;
+    updateCarrinho(); 
+    saveCart(); 
+}
 
-            addToCart(name, price, image);
-        }
-    });
+document.querySelector('.compra-carrinho').addEventListener('click', sendWhatsAppMessage);
 
-    
-    function saveCart() {
-        localStorage.setItem('cart', JSON.stringify(cart));
+
+site.addEventListener('click', function(event){
+    let parentButton = event.target.closest('#add-to-cart-btn');
+
+    if(parentButton){   
+        const name = parentButton.getAttribute('data-name');
+        const image = parentButton.getAttribute('data-image');
+        const price = parseFloat(parentButton.getAttribute('data-price'));
+
+        addToCart(name, price, image);
     }
+});
 
+function saveCart() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
 
-    function loadCart() {
-        const storedCart = localStorage.getItem('cart');
-        if (storedCart) {
-            cart = JSON.parse(storedCart);
-            updateCarrinho();
-        }
-    }
-
-    function addToCart(name, price, image){
-        const existingItem = cart.find(item => item.name === name);
-
-        if(existingItem){
-            existingItem.quantity += 1;
-        } else{
-            cart.push({
-                name,
-                price,
-                image,
-                quantity: 1,
-            });
-        }
-
+function loadCart() {
+    const storedCart = localStorage.getItem('cart');
+    if (storedCart) {
+        cart = JSON.parse(storedCart);
         updateCarrinho();
-        saveCart(); 
+    }
+}
+
+function addToCart(name, price, image){
+    const existingItem = cart.find(item => item.name === name);
+
+    if(existingItem){
+        existingItem.quantity += 1;
+    } else{
+        cart.push({
+            name,
+            price,
+            image,
+            quantity: 1,
+        });
     }
 
+    updateCarrinho();
+    saveCart(); 
+}
 
-    function updateCarrinho(){
-        cartItemsContainer.innerHTML = '';
-        let total = 0;
+function updateCarrinho(){
+    cartItemsContainer.innerHTML = '';
+    let total = 0;
 
-        cart.forEach(item => {
+    cart.forEach(item => {
         const cartItemElement = document.createElement('div');
 
         cartItemElement.innerHTML = `
-                <div class="item-carrinho">
-                    <div class="img-titulo-carrinho">
-                        <div class="img-item-carrinho">
-                            <img src="${item.image}" alt="image-capa-livro">
-                        </div>
-
-                        <div class="titulo-item-carrinho">
-                            <h1>${item.name}</h1>
-                            <p class="quantidade-livro">Quantidade: ${item.quantity}</p>
-                        </div>
+            <div class="item-carrinho">
+                <div class="img-titulo-carrinho">
+                    <div class="img-item-carrinho">
+                        <img src="${item.image}" alt="image-capa-livro">
                     </div>
 
-                    <div class="lixeira-valor-livro">
-                        <i class="fa-solid fa-trash remove-from-cart-btn" 
-                        data-name="${item.name}"></i>
-                        <p>Valor: <span class="valor-item-carrinho">R$ 
-                        ${item.price.toFixed(2)}</span></p>
+                    <div class="titulo-item-carrinho">
+                        <h1>${item.name}</h1>
+                        <p class="quantidade-livro">Quantidade: ${item.quantity}</p>
                     </div>
-
-                    <div class="separacao-carrinho"></div>
                 </div>
+
+                <div class="lixeira-valor-livro">
+                    <i class="fa-solid fa-trash remove-from-cart-btn" 
+                    data-name="${item.name}"></i>
+                    <p>Valor: <span class="valor-item-carrinho">R$ 
+                    ${item.price.toFixed(2)}</span></p>
+                </div>
+
+                <div class="separacao-carrinho"></div>
+            </div>
         `;
 
-            total += item.price * item.quantity;
-            cartItemsContainer.appendChild(cartItemElement);
-        });
-
-        cartTotal.textContent = total.toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL'
-        });
-
-        cartCounter.innerHTML = cart.length;
-    }
-
-    cartItemsContainer.addEventListener('click', function(event){
-        if(event.target.classList.contains("remove-from-cart-btn")){
-            const name = event.target.getAttribute('data-name');
-
-            removeItemCart(name);
-        }
+        total += item.price * item.quantity;
+        cartItemsContainer.appendChild(cartItemElement);
     });
 
-    function removeItemCart(name){
-        const index = cart.findIndex(item => item.name === name);
+    cartTotal.textContent = total.toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL'
+    });
 
-        if(index !== -1){
-            const item = cart[index];
+    cartCounter.innerHTML = cart.length;
+}
 
-            if(item.quantity > 1){
-                item.quantity -= 1;
-            } else{
-                cart.splice(index, 1);
-            }
-            updateCarrinho();
-            saveCart(); 
-        }
+cartItemsContainer.addEventListener('click', function(event){
+    if(event.target.classList.contains("remove-from-cart-btn")){
+        const name = event.target.getAttribute('data-name');
+        removeItemCart(name);
     }
+});
 
+function removeItemCart(name){
+    const index = cart.findIndex(item => item.name === name);
 
-    window.onload = function() {
-        loadCart();
-    };
+    if(index !== -1){
+        const item = cart[index];
 
+        if(item.quantity > 1){
+            item.quantity -= 1;
+        } else{
+            cart.splice(index, 1);
+        }
+        updateCarrinho();
+        saveCart(); 
+    }
+}
 
+window.onload = function() {
+    loadCart();
+};
 
     site.addEventListener('click', function (event){
 
@@ -379,7 +381,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const nameFavoritos = buttonFavoritos.getAttribute('data-name')
             const priceFavoritos = parseFloat(buttonFavoritos.getAttribute('data-price'))
 
-            //Adicionar aos Favoritos
             addToFavoritos(nameFavoritos, priceFavoritos, imageFavoritos);
         }
     })
@@ -497,8 +498,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const termoBusca = buscarInput.value.toLowerCase();
         const mainSite = document.getElementById('site');
         const livrosPesquisados = document.querySelector('.livros-pesquisados');
-        const livrosNaoEncontrados = document.querySelector('.livros-nao-encontrados'); // Nova div para livros não encontrados
-        const tituloResultados = document.querySelector('.titulo-resultados'); // Seleciona o título de resultados, se existir
+        const livrosNaoEncontrados = document.querySelector('.livros-nao-encontrados');
+        const tituloResultados = document.querySelector('.titulo-resultados'); 
     
         const mensagemNenhumLivro = `
             <div class="livros-nao-encontrados"> 
@@ -508,20 +509,20 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
     
-        // Limpa as seções de livros pesquisados e não encontrados
+        
         livrosPesquisados.innerHTML = '';
     
         if (termoBusca === '') {
-            // Se o campo de busca estiver vazio, restaura a visibilidade de todos os elementos no main
+            
             mainSite.classList.remove('ocultar-main');
-            livrosNaoEncontrados.style.display = 'none';  // Oculta a mensagem de erro
-            livrosPesquisados.style.display = 'none';  // Esconde os livros pesquisados
-            tituloResultados.style.display = 'none'; // Esconde o título de resultados
+            livrosNaoEncontrados.style.display = 'none'; 
+            livrosPesquisados.style.display = 'none';  
+            tituloResultados.style.display = 'none'; 
             return;
         }
     
         let encontrouLivro = false;
-        const livroEspecifico = 'titulo-do-livro-desejado'; // Substitua pelo título exato do livro que deseja destacar
+        const livroEspecifico = 'titulo-do-livro-desejado'; 
     
         // Verifica os livros
         Array.from(livros).forEach(livro => {
@@ -532,7 +533,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const autorLivroLower = autorLivro ? autorLivro.toLowerCase() : '';
     
             if (tituloLivroLower.includes(termoBusca) || autorLivroLower.includes(termoBusca)) {
-                // Se encontrar um livro, clone e adicione ao resultado
                 const livroClone = livro.cloneNode(true);
                 livrosPesquisados.appendChild(livroClone);
                 encontrouLivro = true;
@@ -540,31 +540,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     
         if (!encontrouLivro) {
-            // Se não encontrou livros, oculta o conteúdo principal e exibe a mensagem de erro
-            mainSite.classList.add('ocultar-main');  // Oculta o conteúdo principal do site
+            
+            mainSite.classList.add('ocultar-main');  
             livrosPesquisados.innerHTML = mensagemNenhumLivro;
-            livrosPesquisados.style.display = 'block';  // Exibe a mensagem de erro
-            livrosNaoEncontrados.style.display = 'block'; // Exibe a mensagem de erro
-            tituloResultados.style.display = 'none'; // Esconde o título de resultados
+            livrosPesquisados.style.display = 'block'; 
+            livrosNaoEncontrados.style.display = 'block';
+            tituloResultados.style.display = 'none'; 
         } else {
-            // Se encontrou livros, oculta o conteúdo principal
-            mainSite.classList.add('ocultar-main');  // Oculta o conteúdo principal do site
-            livrosNaoEncontrados.style.display = 'none';  // Oculta a mensagem de erro
-            livrosPesquisados.style.display = 'flex';  // Exibe os livros encontrados
+            mainSite.classList.add('ocultar-main');  
+            livrosNaoEncontrados.style.display = 'none';  
+            livrosPesquisados.style.display = 'flex';  
     
-            // Adiciona o título "Resultados Encontrados" apenas se o livro específico for pesquisado
             if (termoBusca.includes(livroEspecifico)) {
-                tituloResultados.style.display = 'block'; // Exibe o título de resultados
+                tituloResultados.style.display = 'block'; 
             } else {
-                tituloResultados.style.display = 'flex'; // Esconde o título se o livro específico não for pesquisado
+                tituloResultados.style.display = 'flex';
             }
         }
     }
     
-    // Filtrar ao clicar no botão de busca
     buscarBtn.addEventListener('click', filtrarLivros);
     
-    // Filtrar ao digitar no campo de busca
     buscarInput.addEventListener('keyup', filtrarLivros);
     
     
@@ -604,34 +600,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const localizacaoTexto = document.getElementById('localizacao-texto');
 
     let dropdownTimeout2; 
-    // Função para mostrar o dropdown
-    function showDropdown2() { // Renomeada para evitar conflito
-    clearTimeout(dropdownTimeout2); // Cancela o timeout caso exista
-    contentDropdown2.style.display = 'block'; // Mostra o dropdown
+    function showDropdown2() { 
+    clearTimeout(dropdownTimeout2); 
+    contentDropdown2.style.display = 'block'; 
     }
 
-    // Função para esconder o dropdown com atraso
-    function hideDropdown2() { // Renomeada para evitar conflito
+    function hideDropdown2() { 
     dropdownTimeout2 = setTimeout(() => {
-        contentDropdown2.style.display = 'none'; // Esconde o dropdown após o atraso
-    }, 400); // Tempo de espera antes de esconder
+        contentDropdown2.style.display = 'none'; 
+    }, 400); 
     }
 
-    // Eventos do dropdown ao passar o mouse no cabeçalho
-    itemCabecalho.addEventListener('mouseover', showDropdown2); // Usar a função renomeada
-
-    itemCabecalho.addEventListener('mouseout', hideDropdown2); // Usar a função renomeada
-
-    // Evento de carregamento da página para recuperar o CEP armazenado no localStorage
+    itemCabecalho.addEventListener('mouseover', showDropdown2); 
+    itemCabecalho.addEventListener('mouseout', hideDropdown2);
     document.addEventListener('DOMContentLoaded', () => {
     const storedCep = localStorage.getItem('cep');
     if (storedCep) {
         cepInput.value = storedCep;
-        buscarEndereco(); // Atualiza a localização com o CEP armazenado
+        buscarEndereco(); 
     }
     });
 
-    // Centraliza a lógica de submissão do CEP
     function handleCepSubmission() {
     const cep = cepInput.value.trim();
 
@@ -640,47 +629,40 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (cep.length !== 8 || !/^\d{8}$/.test(cep)) {
         localizacaoTexto.textContent = 'CEP inválido';
     } else {
-        salvarCep(); // Salva o CEP no localStorage
-        buscarEndereco(); // Realiza a pesquisa
-        hideDropdown2(); // Fecha o dropdown
+        salvarCep(); 
+        buscarEndereco(); 
+        hideDropdown2(); 
     }
     }
 
-    // Adiciona evento de clique ao botão "Ok"
     okButton.addEventListener('click', handleCepSubmission);
-
-    // Adiciona evento para pressionar "Enter" no campo de CEP
     cepInput.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
-        event.preventDefault(); // Evita o envio do formulário
-        handleCepSubmission(); // Chama a função centralizada
+        event.preventDefault(); 
+        handleCepSubmission(); 
     }
     });
 
-    // Limita o campo de CEP a 8 dígitos
     cepInput.addEventListener('input', () => {
-    let cep = cepInput.value.replace(/\D/g, ''); // Remove caracteres não numéricos
-    cepInput.value = cep.slice(0, 8); // Limita o valor a 8 dígitos
+    let cep = cepInput.value.replace(/\D/g, '');
+    cepInput.value = cep.slice(0, 8); 
     });
 
-    // Evento de clique no botão "X" para limpar o campo de CEP
     clearButton.addEventListener('click', () => {
-    cepInput.value = ''; // Limpa o campo de CEP
-    localStorage.removeItem('cep'); // Remove o CEP do localStorage
-    localizacaoTexto.textContent = 'Minha Região'; // Reseta o texto da localização
+    cepInput.value = ''; 
+    localStorage.removeItem('cep'); 
+    localizacaoTexto.textContent = 'Minha Região'; 
     });
 
-    // Função para salvar o CEP no localStorage
     function salvarCep() {
-    const cep = cepInput.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+    const cep = cepInput.value.replace(/\D/g, ''); 
     if (cep.length === 8) {
-        localStorage.setItem('cep', cep); // Salva o CEP se for válido
+        localStorage.setItem('cep', cep); 
     }
     }
 
-    // Função para buscar o endereço pelo CEP
     function buscarEndereco() {
-    const cep = cepInput.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+    const cep = cepInput.value.replace(/\D/g, ''); 
 
     if (cep.length === 8) {
         const url = `https://viacep.com.br/ws/${cep}/json/`;
@@ -689,8 +671,8 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(data => {
             if (!data.erro) {
-            const localizacao = `${data.logradouro}, ${data.bairro}`; // Monta o texto de localização
-            localizacaoTexto.textContent = localizacao; // Atualiza o texto da localização
+            const localizacao = `${data.logradouro}, ${data.bairro}`; 
+            localizacaoTexto.textContent = localizacao; 
             } else {
             localizacaoTexto.textContent = 'Região não encontrada';
             }
