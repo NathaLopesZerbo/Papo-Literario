@@ -675,6 +675,10 @@
     .cartao-descricao{
         width: 420px;
     }
+
+    .itens-carrinho::-webkit-scrollbar {
+        width: 3px; 
+    }
      
 }
 

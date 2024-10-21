@@ -506,7 +506,7 @@ body{
 
 
 .sidebar-carrinho{
-    background-color: #F4F4F4; /* Mudar a cor #cecccc*/
+    background-color: #F4F4F4; 
     width: 430px;
     right: -800px;
     height: 100vh;
@@ -565,14 +565,45 @@ body{
 }
 
 
-.item-carrinho{
+.itens-carrinho {
+    padding-bottom: 300px; 
+    overflow-y: auto;
+    border-right: 2px solid #ccc; 
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); 
+    height: calc(100vh - 100px); 
+    box-sizing: border-box; 
+}
+
+
+.itens-carrinho::-webkit-scrollbar {
+    width: 7px; 
+}
+
+.itens-carrinho::-webkit-scrollbar-track {
+    background: #f0f0f0; 
+}
+
+
+.itens-carrinho::-webkit-scrollbar-thumb {
+    background: #3498DB; 
+    border-radius: 2px; 
+}
+
+
+.itens-carrinho::-webkit-scrollbar-thumb:hover {
+    background: #277eb8; 
+}
+
+
+
+.item-carrinho {
     display: flex;
     flex-direction: column;
     gap: 20px;
     height: 300px;
 }
 
-.img-titulo-carrinho{
+.img-titulo-carrinho {
     margin-top: 10px;
     max-height: 190px;
     display: flex;
@@ -580,23 +611,23 @@ body{
     justify-content: center;
 }
 
-.img-item-carrinho img{
+.img-item-carrinho img {
     width: 150px;
     height: 150px;
     object-fit: contain;
 }
 
-.quantidade-livro{
+.quantidade-livro {
     margin-top: 12px;
 }
 
-.lixeira-valor-livro{
+.lixeira-valor-livro {
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
-.remove-from-cart-btn, .remove-from-favoritos-btn{
+.remove-from-cart-btn, .remove-from-favoritos-btn {
     color: white;
     padding: 10px;
     border-radius: 50%;
@@ -605,56 +636,56 @@ body{
     transition: 0.2s ease-in-out;
 }
 
-.remove-from-cart-btn:hover{
+.remove-from-cart-btn:hover {
     background-color: #940d0dd3;
 }
 
-.valor-item-carrinho{
+.valor-item-carrinho {
     margin-left: 4px;
     font-size: 20px;
     font-weight: bolder;
 }
 
-.separacao-carrinho{
+.separacao-carrinho {
     margin: 0 auto;
     width: 78%;
     height: 2px;
     background-color: #CCCCCC;
 }
 
-.total-compra{
+
+.total-compra {
     position: fixed;
-    z-index: 0;
-    bottom: 0;
+    bottom: 0; 
     background-color: #CCCCCC;
     width: 100%;
     height: 100px;
+    z-index: 1;
 }
 
-.item-total{
+.item-total {
     font-family: var(--fonte-Playfair);
     font-size: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    justify-content: center;
     gap: 20px;
     padding: 15px;
     max-width: 200px;
 }
 
-#cart-total{
+#cart-total {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bolder;
     font-size: 18px;
 }
 
-.compra-carrinho{
-    position: absolute;
+.compra-carrinho {
+    position: relative;
     left: 220px;
-    bottom: 30px;
-    background-color:#3498DB;
+    bottom: 60px;
+    background-color: #3498DB;
     padding: 10px;
     border-radius: 20px;
     width: 180px;
@@ -664,9 +695,10 @@ body{
     transition: 0.2s ease-in;
 }
 
-.compra-carrinho:hover{
+.compra-carrinho:hover {
     background-color: #277eb8;
 }
+
 
 
 .sidebar-favoritos{
