@@ -595,6 +595,11 @@ body{
 }
 
 
+.itens-carrinho {
+    scrollbar-width: thin; 
+    scrollbar-color: #3498DB #f0f0f0; 
+}
+
 
 .item-carrinho {
     display: flex;
