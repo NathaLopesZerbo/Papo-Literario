@@ -537,6 +537,7 @@
 
     .sidebar{
         width: 280px;
+        padding-bottom: 300px;
     }
 
     .sidebar .menu-sidebar .item a{
