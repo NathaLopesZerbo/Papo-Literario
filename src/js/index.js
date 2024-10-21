@@ -239,16 +239,21 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Elemento com a classe "sair-favoritos" não encontrado.');
     }
 });
-
 function sendWhatsAppMessage() {
     if (cart.length === 0) return; 
+
     const cartItems = cart.map((item) => {
         return (
-            `${item.name} - Preço: R$${item.price.toFixed(2)}`
+            `${item.name} - Preço: R$${item.price.toFixed(2)} - Quantidade: ${item.quantity}`
         );
     }).join('\n');
 
-    const message = encodeURIComponent(cartItems);
+    // Calcular o total
+    const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    const totalMessage = `Valor Total: R$${total.toFixed(2)}`;
+
+    // Juntar as mensagens
+    const message = encodeURIComponent(`${cartItems}\n\n${totalMessage}`);
     const phone = "19989125525"; 
     window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
 
@@ -258,7 +263,6 @@ function sendWhatsAppMessage() {
 }
 
 document.querySelector('.compra-carrinho').addEventListener('click', sendWhatsAppMessage);
-
 
 site.addEventListener('click', function(event){
     let parentButton = event.target.closest('#add-to-cart-btn');
@@ -344,6 +348,7 @@ function updateCarrinho(){
 
     cartCounter.innerHTML = cart.length;
 }
+
 
 cartItemsContainer.addEventListener('click', function(event){
     if(event.target.classList.contains("remove-from-cart-btn")){
