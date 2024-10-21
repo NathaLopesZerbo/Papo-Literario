@@ -144,6 +144,25 @@
         font-size: 18px;
     }
 
+    .card-compra{
+        position: relative;
+        left: 70px;
+        margin: 0;
+        margin-top: 90px;
+    }
+    
+
+    .cor-card-compra{
+        flex-direction: column;
+        width: 352px;
+    }
+
+    .card-comprar{
+        border-radius: 7px;
+        width: 352px;
+        margin-bottom: 30px;
+    }
+
 }
 
 @media(max-width: 1024px){
@@ -633,6 +652,29 @@
     .categoria-objetivos{
         font-size: 20px;
     }
+
+    .titulo-fabricante, .titulo-editora{
+        font-size: 12px;
+    }
+    
+    .paginas, .linguagem{
+        font-size: 12px;
+    }
+
+    .modal {
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .card-modal {
+        top: 130%;
+        right: 3.3%;
+        width: 450px;
+    }
+
+    .cartao-descricao{
+        width: 420px;
+    }
      
 }
 
@@ -730,7 +772,50 @@
     .categoria-objetivos{
         font-size: 16px;
     }
+
+    .card-compra{
+        position: relative;
+        left: 20px;
+        margin: 0;
+        margin-top: 90px;
+    }
+
+    .titulo-compra{
+        margin-bottom: 10px;
+        font-size: 25px;
+        width: 300px;
+    }
+
+    .informacoes-livro{
+        line-height: 1.7em;
+    }
+    
+    .cor-card-compra{
+        flex-direction: column;
+        width: 352px;
+    }
+
+    .card-comprar{
+        border-radius: 7px;
+        width: 352px;
+        margin-bottom: 30px;
+    }
+
+    .modal {
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .card-modal {
+        top: 156%;
+        right: 3%;
+        width: 370px;
+    }
+
+    .cartao-descricao{
+        width: 350px;
+    }
+
+
      
-
-
 }

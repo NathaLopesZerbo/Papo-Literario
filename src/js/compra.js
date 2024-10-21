@@ -368,59 +368,105 @@ openSidebar.addEventListener('click',function(){
      buscarEndereco(); 
    }
  });
-
+ 
  const icons = document.querySelectorAll('.pagamentos-span i');
-const subBar = document.querySelector('.sub-barra');
-const boletoDescricao = document.querySelector('.boleto-descricao');
-const pixDescricao = document.querySelector('.pix-descricao');
-const cartaoDescricao = document.querySelector('.cartao-descricao'); 
-const cardModal = document.querySelector('.card-modal');
+ const subBar = document.querySelector('.sub-barra');
+ const boletoDescricao = document.querySelector('.boleto-descricao');
+ const pixDescricao = document.querySelector('.pix-descricao');
+ const cartaoDescricao = document.querySelector('.cartao-descricao'); 
+ const cardModal = document.querySelector('.card-modal');
+ 
 
-const offsets = {
-    'fa-credit-card': { left: 0, height: 700 },  
-    'fa-barcode': { left: 235, height: 300 },    
-    'fa-pix': { left: 460, height: 300 }        
-};
+ const largeOffsets = {
+     'fa-credit-card': { left: 0, height: 700 },  
+     'fa-barcode': { left: 235, height: 300 },    
+     'fa-pix': { left: 460, height: 300 }        
+ };
+ 
 
-function updateDescription(iconClass) {
-    boletoDescricao.style.display = 'none';
-    pixDescricao.style.display = 'none';
-    cartaoDescricao.style.display = 'none';
+ const smallOffsets = {
+     'fa-credit-card': { left: 0, height: 700 },  
+     'fa-barcode': { left: 130, height: 250 },    
+     'fa-pix': { left: 261, height: 250 }
+ };
+ 
 
-    if (iconClass === 'fa-barcode') {
-        boletoDescricao.style.display = 'block';
-    } else if (iconClass === 'fa-pix') {
-        pixDescricao.style.display = 'block'; 
-    } else if (iconClass === 'fa-credit-card') {
-        cartaoDescricao.style.display = 'block'; 
-    }
+ const extraSmallOffsets = {
+     'fa-credit-card': { left: 0, height: 700 },  
+     'fa-barcode': { left: 97, height: 240 },    
+     'fa-pix': { left: 200, height: 240 }
+ };
+ 
 
-    const offset = offsets[iconClass] || { left: 0, height: 700 }; 
-    subBar.style.left = `${offset.left}px`;
-    cardModal.style.height = `${offset.height}px`; 
-    subBar.style.backgroundColor = '#FF6F61'; 
-}
+ function getOffsets() {
+     if (window.matchMedia('(max-width: 390px)').matches) {
+         return extraSmallOffsets;
+     } else if (window.matchMedia('(max-width: 500px)').matches) {
+         return smallOffsets;
+     } else {
+         return largeOffsets;
+     }
+ }
+ 
+ function updateDescription(iconClass) {
+     boletoDescricao.style.display = 'none';
+     pixDescricao.style.display = 'none';
+     cartaoDescricao.style.display = 'none';
+ 
+     if (iconClass === 'fa-barcode') {
+         boletoDescricao.style.display = 'block';
+     } else if (iconClass === 'fa-pix') {
+         pixDescricao.style.display = 'block'; 
+     } else if (iconClass === 'fa-credit-card') {
+         cartaoDescricao.style.display = 'block'; 
+     }
+ 
+     const offsets = getOffsets();
+     const offset = offsets[iconClass] || { left: 0, height: 700 }; 
+     subBar.style.left = `${offset.left}px`;
+     cardModal.style.height = `${offset.height}px`; 
+     subBar.style.backgroundColor = '#FF6F61'; 
+ }
+ 
 
-document.querySelector('.fa-barcode').classList.add('active');
-updateDescription('fa-barcode');
+ document.querySelector('.fa-barcode').classList.add('active');
+ updateDescription('fa-barcode');
+ 
+ icons.forEach((icon) => {
+     icon.addEventListener('click', function() {
+         icons.forEach(i => i.classList.remove('active'));
+         this.classList.add('active');
+ 
+         let iconClass;
+         if (this.classList.contains('fa-credit-card')) {
+             iconClass = 'fa-credit-card';
+         } else if (this.classList.contains('fa-barcode')) {
+             iconClass = 'fa-barcode';
+         } else if (this.classList.contains('fa-pix')) {
+             iconClass = 'fa-pix';
+         }
+ 
+         updateDescription(iconClass); 
+     });
+ });
+ 
 
-icons.forEach((icon) => {
-    icon.addEventListener('click', function() {
-        icons.forEach(i => i.classList.remove('active'));
-        this.classList.add('active');
-
-        let iconClass;
-        if (this.classList.contains('fa-credit-card')) {
-            iconClass = 'fa-credit-card';
-        } else if (this.classList.contains('fa-barcode')) {
-            iconClass = 'fa-barcode';
-        } else if (this.classList.contains('fa-pix')) {
-            iconClass = 'fa-pix';
-        }
-
-        updateDescription(iconClass); 
-    });
-});
+ window.addEventListener('resize', function() {
+     const activeIcon = document.querySelector('.pagamentos-span i.active');
+     if (activeIcon) {
+         let iconClass = '';
+         if (activeIcon.classList.contains('fa-credit-card')) {
+             iconClass = 'fa-credit-card';
+         } else if (activeIcon.classList.contains('fa-barcode')) {
+             iconClass = 'fa-barcode';
+         } else if (activeIcon.classList.contains('fa-pix')) {
+             iconClass = 'fa-pix';
+         }
+         updateDescription(iconClass);
+     }
+ });
+ 
+ 
 
 
  
