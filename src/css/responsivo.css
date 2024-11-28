@@ -65,6 +65,24 @@
 
 }
 
+@media(max-width: 1366px){
+    .card-compra{
+        margin-bottom: 40px;
+        border-radius: 7px;
+    }
+
+    .card-comprar{
+        border-radius: 7px;
+        width: 30%;
+    }
+
+    .cor-card-compra{
+        border-radius: 7px;
+        padding: 30px;
+    }
+   
+}
+
 @media(max-width: 1360px){ 
     main.site div.container div.slider-wrapper{
         max-width: 1200px;
